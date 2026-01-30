@@ -20,13 +20,32 @@
   --color-primary-glow: var(--primary-glow);
 
   --color-success-base: var(--success-base);
+  --color-success-hover: var(--success-hover);
   --color-success-active: var(--success-active);
+
   --color-danger-base: var(--danger-base);
+  --color-danger-hover: var(--danger-hover);
   --color-danger-active: var(--danger-active);
+
   --color-warning-base: var(--warning-base);
+  --color-warning-hover: var(--warning-hover);
   --color-warning-active: var(--warning-active);
+
   --color-info-base: var(--info-base);
+  --color-info-hover: var(--info-hover);
   --color-info-active: var(--info-active);
+
+  --color-teal-base: var(--teal-base);
+  --color-teal-hover: var(--teal-hover);
+  --color-teal-active: var(--teal-active);
+
+  --color-peach-base: var(--peach-base);
+  --color-peach-hover: var(--peach-hover);
+  --color-peach-active: var(--peach-active);
+
+  --color-lime-base: var(--lime-base);
+  --color-lime-hover: var(--lime-hover);
+  --color-lime-active: var(--lime-active);
 
   /* --- EFFECT TOKENS --- */
   --shadow-main: var(--main-shadow);
@@ -67,17 +86,33 @@
   --text-muted: #6b7280;
 
   /* Accents Light */
-  --primary-base: #a3b8e1;
-  --primary-hover: #8fa5d1;
-  --primary-active: #7b92c1;
-  --success-base: #a9c2a6;
-  --success-active: #7c9479;
-  --danger-base: #d99b9b;
-  --danger-active: #ac6d6d;
-  --warning-base: #e9c4a1;
-  --warning-active: #bf9875;
-  --info-base: #97b4c4;
-  --info-active: #6d8a95;
+  --primary-base: #a855f7; /* Purple 500 */
+  --primary-hover: #c084fc; /* Purple 400 (Lebih cerah/Glow) */
+  --primary-active: #9333ea; /* Purple 600 (Lebih dalam) */
+  --success-base: #22c55e; /* Green 500 */
+  --success-hover: #4ade80; /* Green 400 */
+  --success-active: #16a34a; /* Green 600 */
+  --danger-base: #f43f5e; /* Rose 500 */
+  --danger-hover: #fb7185; /* Rose 400 */
+  --danger-active: #e11d48; /* Rose 600 */
+  --warning-base: #f59e0b; /* Amber 500 */
+  --warning-hover: #fbbf24; /* Amber 400 */
+  --warning-active: #d97706; /* Amber 600 */
+  --info-base: #3b82f6; /* Blue 500 */
+  --info-hover: #60a5fa; /* Blue 400 */
+  --info-active: #2563eb; /* Blue 600 */
+
+  --teal-base: #2dd4bf;
+  --teal-hover: #5eead4;
+  --teal-active: #14b8a6;
+
+  --peach-base: #fb923c;
+  --peach-hover: #fdba74;
+  --peach-active: #f97316;
+
+  --lime-base: #a3e635;
+  --lime-hover: #bef264;
+  --lime-active: #84cc16;
 
   /* Neumorphism Light */
   --main-shadow: 4px 4px 10px #bec8d9, -4px -4px 10px #ffffff;
@@ -116,16 +151,42 @@
   --text-muted: #768390;
 
   /* Accents Dark (Slightly more saturated) */
-  --primary-base: #7c95c4;
-  --primary-active: #8da5d1;
-  --success-base: #8da689;
-  --success-active: #9fb89b;
-  --danger-base: #c48686;
-  --danger-active: #d69898;
-  --warning-base: #d4ae8b;
-  --warning-active: #e6c09d;
-  --info-base: #7fa1b3;
-  --info-active: #91b3c5;
+  /* --- PRIMARY (Purple) --- */
+  --primary-base: #c084fc; /* Purple 400: Stand out on dark surface */
+  --primary-hover: #d8b4fe; /* Purple 300: Bright glow effect */
+  --primary-active: #a855f7; /* Purple 500: Deep/Pressed state */
+
+  /* --- SUCCESS (Green) --- */
+  --success-base: #4ade80; /* Green 400 */
+  --success-hover: #86efac; /* Green 300 */
+  --success-active: #22c55e; /* Green 500 */
+
+  /* --- DANGER (Rose) --- */
+  --danger-base: #fb7185; /* Rose 400 */
+  --danger-hover: #fda4af; /* Rose 300 */
+  --danger-active: #f43f5e; /* Rose 500 */
+
+  /* --- WARNING (Amber) --- */
+  --warning-base: #fbbf24; /* Amber 400 */
+  --warning-hover: #fcd34d; /* Amber 300 */
+  --warning-active: #f59e0b; /* Amber 500 */
+
+  /* --- INFO (Blue) --- */
+  --info-base: #60a5fa; /* Blue 400 */
+  --info-hover: #93c5fd; /* Blue 300 */
+  --info-active: #3b82f6; /* Blue 500 */
+
+  --teal-base: #5eead4;
+  --teal-hover: #99f6e4;
+  --teal-active: #2dd4bf;
+
+  --peach-base: #fdba74;
+  --peach-hover: #fed7aa;
+  --peach-active: #fb923c;
+
+  --lime-base: #bef264;
+  --lime-hover: #d9f99d;
+  --lime-active: #a3e635;
 
   /* Neumorphism Dark */
   --main-shadow: 4px 4px 12px #161b22, -4px -4px 12px #2d333b;
@@ -139,7 +200,8 @@
   --glass-blur: 24px;
 
   /* Glows Dark */
-  --primary-glow: 0 0 20px rgba(141, 165, 209, 0.5);
+  --primary-glow: 0 0 20px rgba(192, 132, 252, 0.45); /* */
+  --success-glow: 0 0 20px rgba(74, 222, 128, 0.45);
 
   --skeleton-color: #2d333b;
   --selection-color: rgba(124, 149, 196, 0.3);
