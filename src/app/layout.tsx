@@ -43,6 +43,7 @@ export default function RootLayout({
   isDark?: boolean;
 }) {
 
+
   const themeStyles = {
     "--theme-base": `var(--${activeColor}-base)`,
     "--theme-active": `var(--${activeColor}-active)`,

@@ -15,7 +15,7 @@ export default function Dashboard() {
                 </div>
                 <Button variant="expel">
                     <Settings size={18} />
-                    Edit Layout
+                    Edit
                 </Button>
             </header>
 
