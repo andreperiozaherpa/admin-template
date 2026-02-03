@@ -82,7 +82,15 @@ export default function SuratEditorPage() {
         });
 
         // Logika pengiriman data ke backend bisa diletakkan di sini
-        console.log("Data Terkirim:", { nomorSurat, perihal, tanggal, penandatangan });
+        console.log("Data Terkirim:", {
+            nomorSurat,
+            perihal,
+            tanggal,
+            penandatangan,
+            mainDocument: attachedFiles[0]?.name,
+            attachmentsCount: attachments.length,
+            attachmentsList: attachments.map(a => a.name)
+        });
     };
 
     return (
