@@ -4,6 +4,8 @@ import { Layers, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { DokumentationCard } from "./dokumentationcard";
 import { DocumentationNav } from "./documentationnav";
+import { DocumentationTable } from "./documentationtable";
+import { DocumentationFileUpload } from "./documentationfileupload";
 
 export default function MoleculesDocs() {
     return (
@@ -24,6 +26,8 @@ export default function MoleculesDocs() {
             <div className="space-y-5 md:space-y-10">
                 <section id="card" className="p-3"><DokumentationCard /></section>
                 <section id="NavMenu" className="p-3"><DocumentationNav /></section>
+                <section id="Table" className="p-3"><DocumentationTable /></section>
+                <section id="fileupload" className="p-3"><DocumentationFileUpload /></section>
             </div>
         </>
     )

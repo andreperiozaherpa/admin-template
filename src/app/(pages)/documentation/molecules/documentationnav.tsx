@@ -20,7 +20,7 @@ export const DocumentationNav = () => {
     // Definisi menu untuk demo
     const menuItems: NavItem[] = [
         { href: "/documentation/atoms", label: "atom", icon: Radiation },
-        { href: "/messages", label: "Messages", icon: Mail, badge: 12, badgeColor: "danger" },
+        { href: "/messages", label: "Messages", icon: Mail, badge: 12, },
         { href: "/analytics", label: "Analytics", icon: Activity },
         {
             href: "/system",

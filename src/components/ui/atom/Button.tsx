@@ -4,7 +4,7 @@
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ReactNode } from "react";
 
-// Menambahkan 'expel' dan memastikan semua varian didukung
+// Menambahkan 'ghost' ke dalam tipe variant
 type ButtonVariant =
   | "default"
   | "primary"
@@ -13,7 +13,8 @@ type ButtonVariant =
   | "danger"
   | "success"
   | "warning"
-  | "info";
+  | "info"
+  | "ghost"; // <--- Varian baru
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
   children: ReactNode;
@@ -29,7 +30,6 @@ export const Button = ({
 
   /**
    * Mapping varian menggunakan utility classes dan design tokens dari globals.css
-   * Kita menggunakan text-main-bg untuk varian berwarna agar teks terlihat elegan menembus warna dasar.
    */
   const variantStyles: Record<ButtonVariant, string> = {
     // Default & Expel menggunakan shadow-neumorph (timbul)
@@ -37,8 +37,11 @@ export const Button = ({
     expel: "bg-surface shadow-neumorph text-text-primary active:shadow-neumorph-inset",
 
     // Inset menggunakan shadow-neumorph-inset (cekung)
-    // Saat ditekan (active), kita buat dia seolah-olah memantul keluar (shadow-neumorph)
     inset: "bg-surface-secondary shadow-neumorph-inset text-text-secondary active:shadow-neumorph active:bg-surface",
+
+    // Ghost: Tanpa background pekat, hanya muncul saat hover/active
+    // Cocok untuk tombol navigasi atau kontrol minimalis (seperti zoom di PdfEditor)
+    ghost: "bg-transparent text-text-muted hover:bg-surface-secondary hover:text-text-primary active:shadow-neumorph-inset",
 
     // Varian Warna Aksentuasi
     primary: "bg-primary-base shadow-neumorph text-main-bg font-semibold active:shadow-neumorph-inset active:bg-primary-active",
@@ -58,20 +61,20 @@ export const Button = ({
 
   /**
    * Logika gerakan vertikal (Displacement):
-   * Tombol timbul (expel) bergerak ke bawah saat ditekan (y: 1).
-   * Tombol cekung (inset) bergerak sedikit ke atas untuk simulasi "memantul" saat ditekan (y: -0.5).
+   * Tombol timbul bergerak ke bawah saat ditekan (y: 1).
+   * Tombol cekung atau ghost bergerak sedikit ke atas atau diam.
    */
-  const isSunken = variant === "inset";
+  const isSunken = variant === "inset" || variant === "ghost";
 
   return (
     <motion.button
       whileHover={{
-        y: isSunken ? 0 : -2, // Inset tidak naik saat hover untuk menjaga ilusi kedalaman
+        y: isSunken ? 0 : -2,
         scale: 1.01,
-        filter: "brightness(1.04)", // Memberikan kesan kilatan cahaya saat disentuh
+        filter: variant === "ghost" ? "none" : "brightness(1.04)",
       }}
       whileTap={{
-        y: isSunken ? -1 : 1, // Inset memantul ke atas, Expel menekan ke bawah
+        y: isSunken ? -1 : 1,
         scale: 0.97,
       }}
       transition={springTransition}

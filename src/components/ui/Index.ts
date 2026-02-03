@@ -18,6 +18,7 @@ export { ThemeToggle } from "@/components/ui/atom/ThemeToggle";
 export { Alert } from "@/components/ui/atom/Alert";
 export { Toast } from "@/components/ui/atom/Toast";
 export { Modal } from "@/components/ui/atom/Modal";
+export { Typography } from "@/components/ui/atom/Typography";
 
 // molecules
 export { Card } from "@/components/ui/molecules/Card";
@@ -25,6 +26,15 @@ export { NavMenu } from "@/components/ui/molecules/NavMenu";
 export type { NavItem } from "@/components/ui/molecules/NavMenu";
 export { SearchInput } from "@/components/ui/molecules/SearchInput";
 export { Breadcrumbs } from "@/components/ui/molecules/Breadcrumbs";
+export { Chart } from "@/components/ui/molecules/Chart";
+export {
+  Table,
+  TableCell,
+  TableRow,
+  TablePagination,
+  TableEntries,
+} from "@/components/ui/molecules/Table";
+export { FileUploader } from "@/components/ui/molecules/FileUploader";
 
 // organisms
 export { Sidebar } from "@/components/ui/organisms/Sidebar";

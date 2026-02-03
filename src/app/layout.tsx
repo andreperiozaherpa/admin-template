@@ -5,7 +5,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ToastProvider } from "@/components/providers/ToastProvider";
 import { Sidebar, NavItem, Header, Footer } from "@/components/ui/Index";
-import { Layers, LayoutDashboard, Palette } from "lucide-react";
+import { Layers, LayoutDashboard, Palette, Mail, FilePlus, Share2 } from "lucide-react";
+import { Toaster } from "sonner";
 
 // Konfigurasi font dan menu tetap sama
 const tubabaFont = localFont({
@@ -22,7 +23,26 @@ const tubabaFont = localFont({
 const menuItems: NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   {
-    href: "#",
+    href: "/surat",
+    label: "Surat",
+    icon: Mail, // Main Menu
+    children: [
+      {
+        href: "/surat/pembuatan",
+        label: "Pembuatan Surat",
+        icon: FilePlus,
+        // --- SUBMENU LEVEL 2 (Di dalam Pembuatan Surat) ---
+        children: [
+          { href: "/surat/pembuatan/daftar", label: "Daftar Surat" },
+          { href: "/surat/pembuatan/editor", label: "Pembuatan & Editor Surat" },
+          { href: "/surat/pembuatan/koordinasi", label: "Koordinasi & TTE" },
+        ]
+      },
+      { href: "/surat/distribusi", label: "Distribusi Surat", icon: Share2 }
+    ]
+  },
+  {
+    href: "/documentation",
     label: "Components",
     icon: Layers,
     children: [
@@ -75,6 +95,22 @@ export default function RootLayout({
             </div>
           </div>
         </ToastProvider>
+        <Toaster
+          position="top-right"
+          expand={false}
+          richColors // Penting: Agar atribut [data-type] muncul
+          closeButton
+          toastOptions={{
+            style: {
+              background: 'var(--surface)',
+              color: 'var(--text-primary)',
+              borderRadius: 'var(--border-radius)',
+              border: '1px solid var(--border-color)',
+              boxShadow: 'var(--main-shadow)',
+              fontFamily: 'inherit',
+            },
+          }}
+        />
       </body>
     </html>
   );

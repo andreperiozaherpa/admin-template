@@ -275,3 +275,43 @@ body {
     box-shadow: var(--inner-shadow);
   }
 }
+
+/* --- SONNER OVERRIDES (Updated) --- */
+[data-sonner-toast] {
+  padding: 16px 20px !important;
+  backdrop-filter: blur(12px) !important;
+  background: var(--glass-surface) !important;
+  border-radius: var(--border-radius) !important; /* Sinkron dengan 24px */
+}
+
+/* Mengatur warna ikon berdasarkan tipe toast */
+[data-sonner-toast][data-type="success"] [data-icon] {
+  color: var(--success-base) !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-icon] {
+  color: var(--danger-base) !important;
+}
+
+[data-sonner-toast][data-type="warning"] [data-icon] {
+  color: var(--warning-base) !important;
+}
+
+[data-sonner-toast][data-type="info"] [data-icon] {
+  color: var(--info-base) !important;
+}
+
+/* Tipografi di dalam Toast agar konsisten dengan Protocol */
+[data-sonner-toast] [data-title] {
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  font-style: italic !important;
+  letter-spacing: -0.02em !important;
+  font-size: 11px !important;
+}
+
+[data-sonner-toast] [data-description] {
+  font-size: 10px !important;
+  opacity: 0.6 !important;
+  font-style: italic !important;
+}
