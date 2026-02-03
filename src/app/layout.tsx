@@ -22,25 +22,25 @@ const tubabaFont = localFont({
 
 const menuItems: NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  {
-    href: "/surat",
-    label: "Surat",
-    icon: Mail, // Main Menu
-    children: [
-      {
-        href: "/surat/pembuatan",
-        label: "Pembuatan Surat",
-        icon: FilePlus,
-        // --- SUBMENU LEVEL 2 (Di dalam Pembuatan Surat) ---
-        children: [
-          { href: "/surat/pembuatan/daftar", label: "Daftar Surat" },
-          { href: "/surat/pembuatan/editor", label: "Pembuatan & Editor Surat" },
-          { href: "/surat/pembuatan/koordinasi", label: "Koordinasi & TTE" },
-        ]
-      },
-      { href: "/surat/distribusi", label: "Distribusi Surat", icon: Share2 }
-    ]
-  },
+  // {
+  //   href: "/surat",
+  //   label: "Surat",
+  //   icon: Mail, // Main Menu
+  //   children: [
+  //     {
+  //       href: "/surat/pembuatan",
+  //       label: "Pembuatan Surat",
+  //       icon: FilePlus,
+  //       // --- SUBMENU LEVEL 2 (Di dalam Pembuatan Surat) ---
+  //       children: [
+  //         { href: "/surat/pembuatan/daftar", label: "Daftar Surat" },
+  //         { href: "/surat/pembuatan/editor", label: "Pembuatan & Editor Surat" },
+  //         { href: "/surat/pembuatan/koordinasi", label: "Koordinasi & TTE" },
+  //       ]
+  //     },
+  //     { href: "/surat/distribusi", label: "Distribusi Surat", icon: Share2 }
+  //   ]
+  // },
   {
     href: "/documentation",
     label: "Components",
