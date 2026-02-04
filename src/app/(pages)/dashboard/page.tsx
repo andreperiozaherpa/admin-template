@@ -1,162 +1,167 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { FinancialComparisonCard } from "@/components/ui/organisms/FinancialComparisonCard";
+import { Card } from "@/components/ui/Index";
+import { useFinancialData } from "@/hooks/useFinancialData";
 import {
-    Mail, FileEdit, Send, Inbox, FileCheck,
-    Clock, FilePlus, TrendingUp
+    Wallet,
+    Landmark,
+    GraduationCap,
+    ReceiptText,
+    BarChart3,
+    Users2,
+    TrendingUp
 } from "lucide-react";
-import { Button, Card, Badge, Chart } from "@/components/ui/Index";
-import { motion } from "framer-motion";
 
-export default function Dashboard() {
-    const [themeColor, setThemeColor] = useState('#a855f7'); // Default purple
+// --- UTILITY FORMAT RUPIAH ---
+const formatIDR = (val: number) =>
+    new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        maximumFractionDigits: 0
+    }).format(val);
 
-    // Ambil warna tema dinamis dari CSS Variable
+// --- MAP ICON BERDASARKAN NAMA KATEGORI ---
+const getCategoryIcon = (name: string) => {
+    const lower = name.toLowerCase();
+    if (lower.includes('kasda')) return <Landmark className="w-5 h-5 text-blue-400" />;
+    if (lower.includes('sekolah')) return <GraduationCap className="w-5 h-5 text-emerald-400" />;
+    if (lower.includes('escrow')) return <ReceiptText className="w-5 h-5 text-amber-400" />;
+    return <Wallet className="w-5 h-5 text-[var(--theme-base)]" />;
+};
+
+export default function DashboardPage() {
+    const [allData, setAllData] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    // Fetch data utama
     useEffect(() => {
-        const style = getComputedStyle(document.documentElement);
-        const color = style.getPropertyValue('--primary-base').trim();
-        if (color) setThemeColor(color);
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/uploads/saldo.json');
+                const data = await response.json();
+                setAllData(data);
+            } catch (err) {
+                console.error("API Error:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
     }, []);
 
-    const officeStats = [
-        { label: "Surat Masuk", value: "48", icon: Inbox, trend: "8 Baru", isNew: true },
-        { label: "Draft Surat", value: "12", icon: FileEdit, trend: "Dalam Proses", isNew: false },
-        { label: "Disposisi Aktif", value: "5", icon: Mail, trend: "Perlu Tindakan", isNew: true },
-    ];
+    // Menggunakan custom hook untuk mengolah data
+    const { categorySummaries, grandTotals } = useFinancialData(allData);
 
-    // Konfigurasi Data Grafik Tren Surat
-    const chartData = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [
-            {
-                fill: true,
-                label: 'Surat Masuk',
-                data: [30, 45, 38, 52, 48, 60],
-                borderColor: themeColor,
-                backgroundColor: `${themeColor}20`, // Transparency 20%
-                tension: 0.4,
-                pointRadius: 4,
-                pointBackgroundColor: themeColor,
-                borderWidth: 3,
-            },
-        ],
-    };
-
-    const chartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: { display: false },
-            tooltip: {
-                backgroundColor: '#1c2128',
-                titleFont: { family: 'var(--font-sans)', size: 12, weight: 'bold' },
-                bodyFont: { family: 'var(--font-sans)', size: 11 },
-                padding: 12,
-                cornerRadius: 12,
-                displayColors: false,
-            }
-        },
-        scales: {
-            x: {
-                grid: { display: false },
-                ticks: { color: '#768390', font: { size: 10, weight: 'bold' } }
-            },
-            y: {
-                grid: { color: 'rgba(255,255,255,0.03)' },
-                ticks: { color: '#768390', font: { size: 10 } }
-            }
-        }
-    };
+    if (loading) return (
+        <div className="flex items-center justify-center min-h-screen bg-main-bg">
+            <div className="flex flex-col items-center gap-4">
+                <div className="w-12 h-12 border-4 border-[var(--theme-base)] border-t-transparent rounded-full animate-spin" />
+                <p className="text-text-muted font-black italic uppercase tracking-widest animate-pulse">
+                    Synchronizing Data...
+                </p>
+            </div>
+        </div>
+    );
 
     return (
-        <div className="space-y-10 pb-10">
-            {/* 1. HEADER SECTION */}
-            <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div className="space-y-1">
-                    <h1 className="text-3xl font-black italic uppercase tracking-tighter text-text-primary">
-                        Guway <span className="text-[var(--theme-base)]">E-Office</span>
+        <div className="p-8 bg-main-bg min-h-screen space-y-8 overflow-hidden">
+
+            {/* --- HEADER DASHBOARD --- */}
+            <header className="flex flex-col md:flex-row justify-between items-end border-b border-border-main pb-6 gap-4">
+                <div className="flex-1">
+                    <h1 className="text-3xl font-black italic uppercase text-text-primary tracking-tighter leading-none">
+                        Financial <span className="text-[var(--theme-base)]">Monitoring</span>
                     </h1>
-                    <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-success-base animate-pulse shadow-[0_0_8px_var(--success-glow)]" />
-                        <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">Surat Menyurat v1.0</p>
-                    </div>
+                    <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.4em] mt-3">
+                        Government Asset & Fund Tracking System
+                    </p>
                 </div>
-                <Button variant="expel" className="text-[10px] font-black uppercase tracking-widest px-6 !bg-[var(--theme-base)] text-white gap-2">
-                    <FilePlus size={14} /> Buat Surat Baru
-                </Button>
+                <div className="flex items-center gap-2 bg-surface/50 px-4 py-2 rounded-2xl border border-white/5">
+                    <TrendingUp className="w-4 h-4 text-emerald-400" />
+                    <span className="text-[10px] font-black text-text-primary uppercase italic">System Active</span>
+                </div>
             </header>
 
-            {/* 2. STATS GRID */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                {officeStats.map((stat, i) => (
-                    <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
-                        <Card className="group hover-tactile p-6 shadow-neumorph border border-white/5 bg-surface relative overflow-hidden">
-                            <div className="flex justify-between items-start relative z-10">
-                                <div className="space-y-3">
-                                    <div className="w-10 h-10 rounded-xl bg-surface shadow-neumorph flex items-center justify-center text-text-muted group-hover:text-[var(--theme-base)] transition-colors">
-                                        <stat.icon size={20} />
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] font-black text-text-muted uppercase tracking-widest">{stat.label}</p>
-                                        <h3 className="text-2xl font-black italic text-text-primary mt-1">{stat.value}</h3>
-                                    </div>
-                                </div>
-                                {stat.isNew && <Badge variant="neumorph" size="sm" className="rounded-lg italic animate-bounce">{stat.trend}</Badge>}
+            {/* --- TOP ROW: SUMMARY CARDS (Grand Totals & Categories) --- */}
+            {/* Grid ini akan otomatis menyesuaikan jumlah kolom berdasarkan jumlah kategori */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                {/* 1. KARTU GRAND TOTAL BALANCE */}
+                <Card variant="glass" padding="none" className="relative overflow-hidden group hover:bg-white/5 transition-all duration-300 shadow-neumorph"
+                >
+                    <div className="p-6">
+                        <div className="flex justify-between items-center mb-4">
+                            <div className="p-2 bg-[var(--theme-base)]/10 rounded-xl">
+                                <BarChart3 className="w-5 h-5 text-[var(--theme-base)]" />
                             </div>
-                        </Card>
-                    </motion.div>
+                            <span className="text-[7px] font-black bg-[var(--theme-base)]/10 text-[var(--theme-base)] px-2 py-1 rounded-md uppercase">Overview</span>
+                        </div>
+                        <p className="text-[9px] font-black text-text-muted uppercase italic mb-1">Total Saldo Terintegrasi</p>
+                        <h3 className="text-xl font-black text-text-primary tracking-tighter">
+                            {formatIDR(grandTotals.balance)}
+                        </h3>
+                    </div>
+                </Card>
+
+                {/* 2. KARTU TOTAL DATA/REKENING */}
+                <Card variant="glass" padding="none" className="relative overflow-hidden group hover:bg-white/5 transition-all duration-300 shadow-neumorph">
+                    <div className="p-6">
+                        <div className="flex justify-between items-center mb-4">
+                            <div className="p-2 bg-emerald-400/10 rounded-xl">
+                                <Users2 className="w-5 h-5 text-emerald-400" />
+                            </div>
+                            <span className="text-[7px] font-black bg-emerald-400/10 text-emerald-400 px-2 py-1 rounded-md uppercase">Record</span>
+                        </div>
+                        <p className="text-[9px] font-black text-text-muted uppercase italic mb-1">Total Akun Rekening</p>
+                        <h3 className="text-xl font-black text-text-primary tracking-tighter">
+                            {grandTotals.records} <span className="text-[10px] text-text-muted tracking-widest">RECORDS</span>
+                        </h3>
+                    </div>
+                </Card>
+
+                {/* 3. KARTU KATEGORI DINAMIS (Looping dari categorySummaries) */}
+                {categorySummaries.map((cat) => (
+                    <Card
+                        key={cat.key}
+                        variant="glass"
+                        padding="none"
+                        className="relative overflow-hidden group hover:bg-white/5 transition-all duration-300 shadow-neumorph"
+                    >
+                        <div className="p-6">
+                            <div className="flex justify-between items-start mb-4">
+                                <div className="p-2 bg-surface rounded-xl shadow-inset-sm">
+                                    {getCategoryIcon(cat.name)}
+                                </div>
+                                <div className="text-right">
+                                    <p className="text-[8px] font-bold text-text-muted uppercase">Account</p>
+                                    <p className="text-xs font-black text-[var(--theme-base)]">{cat.count}</p>
+                                </div>
+                            </div>
+                            <p className="text-[9px] font-black text-text-muted uppercase italic mb-1 group-hover:text-text-primary transition-colors">
+                                {cat.name}
+                            </p>
+                            <h3 className="text-lg font-black text-text-primary tracking-tighter group-hover:scale-105 origin-left transition-transform">
+                                {formatIDR(cat.total)}
+                            </h3>
+                        </div>
+                    </Card>
                 ))}
             </div>
 
-            {/* 3. CHART & ANALYTICS SECTION */}
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-                {/* GRAFIK ANALITIK (Glass Effect) */}
-                <Chart
-                    type="bar"
-                    title="Tren Surat"
-                    data={[20, 40, 30, 70]}
-                    labels={['W1', 'W2', 'W3', 'W4']}
-                    trend="+12%"
-                    className="xl:col-span-2"
-                />
-
-                {/* Doughnut Chart untuk Kategori */}
-                <Chart
-                    type="doughnut"
-                    title="Kategori Dokumen"
-                    subtitle="Distribusi Jenis Surat"
-                    data={[45, 25, 30]}
-                    labels={['Surat Masuk', 'Surat Keluar', 'Nota Dinas']}
-                    height={300}
-                />
-
-                {/* STATUS PEMBUATAN */}
-                <Card className="shadow-neumorph p-8 border border-white/5 flex flex-col">
-                    <h2 className="text-sm font-black italic uppercase tracking-widest text-text-primary mb-8">Status <span className="text-[var(--theme-base)]">Pembuatan</span></h2>
-                    <div className="space-y-6">
-                        <div className="p-4 shadow-neumorph-inset rounded-2xl bg-surface-secondary/20">
-                            <div className="flex justify-between items-center mb-2">
-                                <span className="text-[9px] font-black uppercase text-text-muted">Drafting</span>
-                                <span className="text-[10px] font-black text-[var(--theme-base)]">75%</span>
-                            </div>
-                            <div className="h-1.5 w-full bg-surface-secondary shadow-inner rounded-full overflow-hidden">
-                                <div className="h-full bg-[var(--theme-base)] rounded-full shadow-[0_0_8px_var(--theme-glow)] w-[75%]" />
-                            </div>
-                        </div>
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-3">
-                                <Clock size={14} className="text-warning-base" />
-                                <span className="text-[10px] font-bold text-text-secondary uppercase">3 Menunggu Persetujuan</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <FileCheck size={14} className="text-success-base" />
-                                <span className="text-[10px] font-bold text-text-secondary uppercase">15 Surat Terbit</span>
-                            </div>
-                        </div>
-                        <Button variant="inset" className="w-full mt-4 text-[9px] font-black uppercase tracking-widest py-4">Unduh Laporan</Button>
-                    </div>
-                </Card>
+            {/* --- BOTTOM ROW: MAIN CHART CARD --- */}
+            <div className="grid grid-cols-1">
+                {/* Komponen ini menangani animasinya sendiri di dalamnya */}
+                <FinancialComparisonCard data={allData} />
             </div>
+
+            {/* --- FOOTER INFO --- */}
+            <footer className="flex justify-center pt-4">
+                <p className="text-[8px] font-bold text-text-muted uppercase tracking-[0.5em]">
+                    Data as of {allData[allData.length - 1]?.date || 'N/A'} • Secure Encryption Active
+                </p>
+            </footer>
         </div>
     );
 }
