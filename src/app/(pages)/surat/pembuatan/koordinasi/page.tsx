@@ -68,7 +68,7 @@ export default function KoordinasiTTEPage() {
             id_user: "USR-TBB-042",
             name: "Irsyad, M.Kom",
             role: "Kepala Dinas Kominfo",
-            status: "revision", // Status berubah ke revision karena instruksi Sekda
+            status: "current", // Status berubah ke revision karena instruksi Sekda
             metadata: null,
             isTTE: false
         },
