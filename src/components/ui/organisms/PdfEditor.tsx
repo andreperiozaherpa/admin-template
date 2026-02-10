@@ -8,7 +8,7 @@ import {
     RotateCcw, Loader2, ZoomIn, ZoomOut,
     Maximize2
 } from "lucide-react";
-import { Button, Typography } from "@/components/ui/Index";
+import { Button } from "@/components/ui/Index";
 import { toast } from "sonner";
 import { PDFDocument } from "pdf-lib";
 
@@ -17,7 +17,7 @@ if (typeof window !== "undefined") {
 }
 
 export interface PdfEditorRef {
-    handleSave: () => Promise<void>;
+    handleSave: () => Promise<File | null>;
 }
 
 interface EditorElement {
@@ -55,31 +55,21 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
     const gestureOriginRef = useRef<{ x: number, y: number, w: number, h: number } | null>(null);
 
     /**
-     * RESPONSIVE ENGINE: fitToWidth
-     * Menyesuaikan skala PDF berdasarkan 3 rentang layar yang diminta
+     * RESPONSIVE ENGINE
      */
     const fitToWidth = useCallback(() => {
         if (workspaceRef.current) {
-            // Ambil lebar kontainer sebenarnya yang tersedia setelah dikurangi sidebar
             const containerWidth = workspaceRef.current.clientWidth;
-
-            // Tentukan padding dinamis berdasarkan lebar kontainer
-            // Jika kontainer sempit (seperti pada 1025px dengan sidebar), gunakan padding kecil
             const padding = containerWidth < 800 ? 32 : 80;
-
             const availableWidth = containerWidth - padding;
             const newScale = availableWidth / 800;
-
-            // Set skala dengan batas minimal agar tetap terbaca
             setScale(Math.max(newScale, 0.4));
         }
     }, []);
 
-    // Listener untuk mendeteksi perubahan ukuran layar secara real-time
     useEffect(() => {
         if (typeof window !== "undefined") {
             window.addEventListener("resize", fitToWidth);
-            // Jalankan setelah render singkat untuk memastikan DOM sudah siap
             const timer = setTimeout(fitToWidth, 300);
             return () => {
                 window.removeEventListener("resize", fitToWidth);
@@ -92,36 +82,101 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
         setIsClient(true);
     }, []);
 
+    // --- LOGIKA SAVE YANG SUDAH DIPERBAIKI (MULTI-PAGE SUPPORT) ---
     useImperativeHandle(ref, () => ({
         handleSave: async () => {
-            if (!fileUrl || elements.length === 0) {
-                toast.error("Tambahkan elemen terlebih dahulu!");
-                return;
+            if (!fileUrl) {
+                toast.error("File PDF belum dimuat.");
+                return null;
             }
-            const loadingId = toast.loading("Merender naskah...");
+            if (elements.length === 0) {
+                toast.error("Tambahkan tanda tangan atau stempel terlebih dahulu!");
+                return null;
+            }
+
+            const loadingId = toast.loading("Memproses dokumen...");
+
             try {
+                // 1. Load PDF Asli
                 const existingPdfBytes = await fetch(fileUrl).then(res => res.arrayBuffer());
                 const pdfDoc = await PDFDocument.load(existingPdfBytes);
-                const firstPage = pdfDoc.getPages()[0];
-                const { width: pdfWidth, height: pdfHeight } = firstPage.getSize();
-                const ratio = pdfWidth / 800;
+                const pages = pdfDoc.getPages();
 
+                // 2. Loop setiap elemen visual
                 for (const el of elements) {
                     if (!el.image) continue;
-                    const imgBytes = await fetch(el.image).then(res => res.arrayBuffer());
-                    const image = el.image.toLowerCase().endsWith('.png')
-                        ? await pdfDoc.embedPng(imgBytes)
-                        : await pdfDoc.embedJpg(imgBytes);
 
-                    const drawW = el.width * ratio;
-                    const drawH = el.height * ratio;
-                    firstPage.drawImage(image, {
-                        x: el.x * ratio,
-                        y: pdfHeight - (el.y * ratio) - drawH,
-                        width: drawW,
-                        height: drawH,
-                    });
+                    // Ambil bytes gambar
+                    const imgBytes = await fetch(el.image).then(res => res.arrayBuffer());
+                    let image;
+                    const isPng = el.image.toLowerCase().includes('png') || el.image.startsWith('data:image/png');
+                    if (isPng) {
+                        image = await pdfDoc.embedPng(imgBytes);
+                    } else {
+                        image = await pdfDoc.embedJpg(imgBytes);
+                    }
+
+                    // 3. CARI HALAMAN TARGET BERDASARKAN KOORDINAT Y
+                    // Kita harus menghitung akumulasi tinggi halaman untuk menemukan halaman mana
+                    // yang sesuai dengan posisi Y elemen.
+
+                    let accumulatedHeight = 0;
+                    let targetPage = null;
+                    let pdfPageHeight = 0;
+                    let pageRatio = 1;
+
+                    for (let i = 0; i < pages.length; i++) {
+                        const page = pages[i];
+                        const { width, height } = page.getSize();
+
+                        // Editor UI memaksa lebar visual menjadi 800px.
+                        // Jadi Scale Factor halaman ini = LebarAsliPDF / 800
+                        const ratio = width / 800;
+
+                        // Tinggi visual halaman ini di editor (unscaled logic units)
+                        const visualHeight = height / ratio;
+
+                        // Cek apakah elemen berada di dalam rentang vertikal halaman ini
+                        // Kita gunakan sedikit toleransi overlap
+                        if (el.y >= accumulatedHeight && el.y < (accumulatedHeight + visualHeight)) {
+                            targetPage = page;
+                            pdfPageHeight = height;
+                            pageRatio = ratio;
+                            break;
+                        }
+
+                        accumulatedHeight += visualHeight;
+                    }
+
+                    // Jika halaman ketemu, gambar elemennya
+                    if (targetPage) {
+                        // Hitung posisi Y relatif terhadap halaman tersebut (bukan total dokumen)
+                        const relativeY = el.y - accumulatedHeight;
+
+                        // Konversi ke koordinat PDF
+                        const drawW = el.width * pageRatio;
+                        const drawH = el.height * pageRatio;
+                        const drawX = el.x * pageRatio;
+
+                        // Koordinat PDF dimulai dari kiri-bawah (Y=0 di bawah)
+                        // Rumus: TinggiHalamanPDF - (Y_Relatif * Ratio) - TinggiGambar
+                        const drawY = pdfPageHeight - (relativeY * pageRatio) - drawH;
+
+                        targetPage.drawImage(image, {
+                            x: drawX,
+                            y: drawY,
+                            width: drawW,
+                            height: drawH,
+                        });
+                    }
                 }
+
+                // 4. Simpan hasil
+                const pdfBytes = await pdfDoc.save();
+                const signedBlob = new Blob([pdfBytes as any], { type: "application/pdf" });
+                const signedFile = new File([signedBlob], `Signed_${Date.now()}.pdf`, { type: "application/pdf" });
+
+                toast.success("Dokumen berhasil diproses!", { id: loadingId });
 
                 const pdfBase64 = await pdfDoc.saveAsBase64({ dataUri: true });
                 const link = document.createElement('a');
@@ -129,9 +184,12 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
                 link.download = `Signed_${Date.now()}.pdf`;
                 link.click();
 
-                toast.success("Dokumen berhasil dirender!", { id: loadingId });
+                return signedFile;
+
             } catch (error) {
-                toast.error("Gagal memproses PDF", { id: loadingId });
+                console.error("Save Error:", error);
+                toast.error("Gagal menyimpan dokumen", { id: loadingId });
+                return null;
             }
         }
     }), [elements, fileUrl]);
@@ -158,17 +216,18 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
         setSelectedId(newId);
     };
 
-    const addElementInViewport = (type: EditorElement['type'], imageSrc: string) => {
+    const addElementInViewport = (type: EditorElement['type'], imageSrc?: string) => {
         const baseWidth = 150;
         if (imageSrc && imageSrc.trim() !== "") {
-            if (!workspaceRef.current || !paperRef.current || !imageSrc) return;
+            if (!workspaceRef.current || !paperRef.current) return;
             const img = new Image();
             img.src = imageSrc;
             img.onload = () => {
-                const baseWidth = 150;
                 const calculatedHeight = baseWidth * (img.naturalHeight / img.naturalWidth);
                 const workspaceRect = workspaceRef.current!.getBoundingClientRect();
                 const paperRect = paperRef.current!.getBoundingClientRect();
+
+                // Posisikan di tengah viewport yang terlihat
                 const logicalX = (workspaceRect.left + workspaceRect.width / 2 - paperRect.left) / scale - baseWidth / 2;
                 const logicalY = (workspaceRect.top + workspaceRect.height / 2 - paperRect.top) / scale - calculatedHeight / 2;
 
@@ -176,14 +235,13 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
                     id: `el-${Date.now()}`,
                     type,
                     image: imageSrc,
-                    x: logicalX,
-                    y: logicalY,
+                    x: Math.max(0, logicalX), // Safety agar tidak minus berlebihan
+                    y: Math.max(0, logicalY),
                     width: baseWidth,
                     height: calculatedHeight
                 }]);
             };
         } else {
-            // JIKA KOSONG: Gunakan kotak persegi (Default Lucide Icon Placeholder)
             spawnElement(type, baseWidth, baseWidth);
         }
     };
@@ -204,8 +262,7 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
         <div className="w-full h-full flex flex-col gap-4 font-tubaba overflow-hidden select-none"
             onClick={() => setSelectedId(null)}
         >
-
-            {/* TOOLBAR RESPONSIF: Stack di layar sangat kecil, horizontal di sedang/besar */}
+            {/* TOOLBAR */}
             <div className="w-full flex flex-col min-[1025px]:flex-row items-center justify-between p-3 gap-4 bg-surface/40 backdrop-blur-xl border border-white/10 rounded-main shrink-0 z-50 shadow-sm">
                 <div className="flex items-center gap-2">
                     <Button variant="ghost" className="!p-2.5 rounded-xl border border-transparent hover:border-primary-base/20" onClick={() => addElementInViewport('stamp', stampImg)}>
@@ -238,16 +295,28 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
                     style={{
                         width: `${800 * scale}px`
                     }}>
-                    <Document file={fileUrl} onLoadSuccess={({ numPages }) => setNumPages(numPages)} loading={<div className="p-20 text-center"><Loader2 className="animate-spin text-primary-base mx-auto mb-2" /></div>}>
+                    <Document
+                        file={fileUrl}
+                        onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+                        loading={<div className="p-20 text-center"><Loader2 className="animate-spin text-primary-base mx-auto mb-2" /></div>}
+                        className="flex flex-col"
+                    >
                         {Array.from(new Array(numPages), (_, index) => (
-                            <Page key={index} pageNumber={index + 1} renderTextLayer={false} renderAnnotationLayer={false} scale={scale} width={800} className="shadow-sm border-b border-border-main/5" />
+                            <Page
+                                key={index}
+                                pageNumber={index + 1}
+                                renderTextLayer={false}
+                                renderAnnotationLayer={false}
+                                scale={scale}
+                                width={800}
+                                className="shadow-sm border-b border-border-main/5 bg-white"
+                            />
                         ))}
                     </Document>
 
                     <div className="absolute inset-0 z-20 pointer-events-none">
                         <AnimatePresence>
                             {elements.map((el) => {
-                                // Tentukan apakah kontrol harus terlihat
                                 const isSelected = selectedId === el.id || resizingId === el.id;
 
                                 return (
@@ -264,7 +333,7 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
                                         className="absolute left-0 top-0 pointer-events-auto group"
                                         onPointerDown={(e) => {
                                             e.stopPropagation();
-                                            setSelectedId(el.id); // Set sebagai elemen terpilih saat disentuh
+                                            setSelectedId(el.id);
                                         }}
                                         onDragStart={() => {
                                             gestureOriginRef.current = { x: el.x, y: el.y, w: el.width, h: el.height };
@@ -288,11 +357,10 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
                                                     {el.type === 'stamp' && <Stamp size={el.width * scale * 0.4} className="text-primary-base" />}
                                                     {el.type === 'signature' && <Fingerprint size={el.width * scale * 0.4} className="text-success-base" />}
                                                     {el.type === 'qr' && <QrCode size={el.width * scale * 0.4} className="text-info-base" />}
-                                                    <span className="text-[9px] font-black mt-1 uppercase tracking-widest opacity-60">Tubaba</span>
                                                 </div>
                                             )}
 
-                                            {/* TOMBOL RESIZE: Muncul jika hover (Desktop) ATAU jika dipilih (Mobile) */}
+                                            {/* RESIZE HANDLE */}
                                             <motion.div
                                                 onPointerDown={(e) => {
                                                     e.stopPropagation();
@@ -307,7 +375,7 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
                                                 <Maximize2 size={12} className="text-white rotate-90" />
                                             </motion.div>
 
-                                            {/* TOMBOL DELETE: Muncul jika hover (Desktop) ATAU jika dipilih (Mobile) */}
+                                            {/* DELETE HANDLE */}
                                             <button
                                                 onClick={(e) => {
                                                     e.stopPropagation();

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
     ChevronLeft,
     CheckCircle2,
@@ -9,7 +9,6 @@ import {
     GitMerge,
     Lock,
     Clock,
-    ShieldCheck,
     AlertCircle,
     XCircle,
     RefreshCcw,
@@ -31,6 +30,22 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 import dynamic from 'next/dynamic';
 
+// Import Type untuk Ref
+import { PdfEditorRef } from '@/components/ui/organisms/PdfEditor';
+
+interface WorkflowStep {
+    id: number;
+    id_user: string;
+    name: string;
+    role: string;
+    status: string; // Bisa diganti union type: 'completed' | 'current' | 'waiting' | 'revision'
+    metadata: string | null; // Izinkan string ATAU null
+    isTTE: boolean;
+    noteTitle?: string; // Tanda tanya (?) berarti field ini OPSIONAL
+    instructionPoints?: string[]; // Optional array of strings
+}
+
+// Dynamic Import untuk Komponen (SSR False agar canvas jalan)
 const PdfEditor = dynamic(
     () => import('@/components/ui/organisms/PdfEditor').then((mod) => mod.PdfEditor),
     { ssr: false }
@@ -38,22 +53,26 @@ const PdfEditor = dynamic(
 
 export default function KoordinasiTTEPage() {
     const router = useRouter();
+
+    // --- STATE UTAMA ---
     const [isSigned, setIsSigned] = useState(false);
+
+    // State untuk URL PDF Aktif (Agar bisa berubah setelah ditandatangani)
+    const [activePdfUrl, setActivePdfUrl] = useState("/uploads/dokumen/laporan.pdf");
+
+    // Ref ke Editor
+    const pdfEditorRef = useRef<PdfEditorRef>(null);
+
+    // --- STATE MODAL & REVISI ---
     const [showModal, setShowModal] = useState(false);
     const [showRevisionForm, setShowRevisionForm] = useState(false);
     const [revisionReason, setRevisionReason] = useState("");
     const [activeCorrection, setActiveCorrection] = useState<any>(null);
-    const pdfEditorRef = useRef<any>(null);
 
     /**
-     * MASTER WORKFLOW (5 STATUS ENGLISH)
-     * - completed: Sudah paraf
-     * - revision: Perlu perbaikan (bola di tangan pejabat ini)
-     * - current: Sedang ditelaah aktif
-     * - waiting: Antrean sekuensial
-     * - verified: TTE Final Bupati Sah
+     * WORKFLOW DATA (Gunakan useState agar bisa di-update)
      */
-    const masterWorkflow = useMemo(() => [
+    const [workflowData, setWorkflowData] = useState<WorkflowStep[]>([
         {
             id: 1,
             id_user: "USR-TBB-001",
@@ -68,8 +87,8 @@ export default function KoordinasiTTEPage() {
             id_user: "USR-TBB-042",
             name: "Irsyad, M.Kom",
             role: "Kepala Dinas Kominfo",
-            status: "current", // Status berubah ke revision karena instruksi Sekda
-            metadata: null,
+            status: "current",
+            metadata: null, // Sekarang valid karena tipe data: string | null
             isTTE: false
         },
         {
@@ -77,14 +96,12 @@ export default function KoordinasiTTEPage() {
             id_user: "USR-TBB-003",
             name: "Dr. Zaidir Alami",
             role: "Sekretaris Daerah",
-            status: "waiting", // Sekda sedang meninjau aktif
+            status: "waiting",
             metadata: null,
             isTTE: false,
-            // CATATAN DISIMPAN DI SEKDA
-            noteTitle: "Instruksi Sekretaris Daerah",
+            noteTitle: "Instruksi Sekretaris Daerah", // Valid karena tipe data: string | undefined
             instructionPoints: [
                 "Margin penulisan kop surat tidak presisi (sesuaikan 3cm).",
-                "Dasar hukum UU No. 1 Tahun 2026, belum dimasukkan ke konsideran.",
                 "Dasar hukum UU No. 1 Tahun 2026, belum dimasukkan ke konsideran.",
                 "Lampiran koordinasi harus mencantumkan ID digital masing-masing bidang.",
             ]
@@ -98,12 +115,81 @@ export default function KoordinasiTTEPage() {
             metadata: null,
             isTTE: true
         },
-    ], []);
+    ]);
 
-    // Mencari tahap aktif untuk label tombol
-    const currentActiveStep = masterWorkflow.find(s => s.status === 'current' || s.status === 'revision');
+    // Logika Label Tombol
+    const currentActiveStep = workflowData.find(s => s.status === 'current' || s.status === 'revision');
     const isFinalTTE = currentActiveStep?.isTTE;
     const actionLabel = isFinalTTE ? "Verifikasi TTE" : "Paraf Koordinasi";
+
+    /**
+     * HANDLER: PROSES TANDA TANGAN
+     * Menghubungkan tombol header dengan PdfEditor
+     */
+    const handleProcessSigning = async () => {
+        if (pdfEditorRef.current) {
+            // 1. Panggil handleSave dan tunggu FILE hasil balikan
+            const signedFile = await pdfEditorRef.current.handleSave();
+
+            if (signedFile) {
+                // 2. Buat URL objek baru agar PDF di layar terupdate dengan tanda tangan
+                const newObjectUrl = URL.createObjectURL(signedFile);
+                setActivePdfUrl(newObjectUrl);
+
+                // 3. Update Status Tombol
+                setIsSigned(true);
+
+                // 4. Update Workflow Secara Visual
+                // Update Workflow Secara Visual
+                setWorkflowData(prev => prev.map((step, index) => {
+                    // 1. Logika untuk langkah yang SEDANG AKTIF (Current -> Completed)
+                    if (step.status === 'current') {
+                        return {
+                            ...step,
+                            status: 'completed', // Ubah status jadi selesai
+                            metadata: `BSR-${Date.now().toString().slice(-6)}`
+                        };
+                    }
+
+                    // 2. Logika untuk langkah BERIKUTNYA (Waiting -> Current)
+                    // Kita cek apakah step SEBELUMNYA (index - 1) status aslinya adalah 'current'
+                    const prevStep = prev[index - 1];
+
+                    if (prevStep?.status === 'current' && step.status === 'waiting') {
+                        return {
+                            ...step,
+                            status: 'current' // <--- BAGIAN INI YANG SEBELUMNYA HILANG
+                        };
+                    }
+
+                    // 3. Jika bukan keduanya, kembalikan data apa adanya
+                    return step;
+                }));
+
+                // Update khusus untuk demo: user 2 selesai, user 3 aktif
+                setWorkflowData(prev => {
+                    const newData = [...prev];
+                    newData[1].status = "completed"; // Kadis Selesai
+                    newData[1].metadata = "DIGITAL-SIG-VALID";
+                    newData[2].status = "current";   // Sekda Aktif
+                    return newData;
+                });
+
+                toast.success("Proses Berhasil", {
+                    description: "Dokumen telah ditandatangani dan diteruskan ke tahap berikutnya."
+                });
+            }
+        }
+    };
+
+    // Cleanup URL object saat unmount
+    useEffect(() => {
+        return () => {
+            if (activePdfUrl && activePdfUrl.startsWith('blob:')) {
+                URL.revokeObjectURL(activePdfUrl);
+            }
+        };
+    }, [activePdfUrl]);
 
     return (
         <div className="flex flex-col min-h-screen lg:h-[calc(100vh-80px)] lg:overflow-hidden -m-4 md:-m-8 bg-surface">
@@ -136,17 +222,14 @@ export default function KoordinasiTTEPage() {
 
                     <Button
                         variant="primary"
-                        disabled={isSigned}
-                        className="!bg-primary-base text-white gap-2 px-6 h-10 shadow-neumorph transition-all active:scale-95"
-                        onClick={() => {
-                            // 2. Panggil fungsi simpan di dalam PdfEditor
-                            if (pdfEditorRef.current) {
-                                pdfEditorRef.current.handleSave();
-                            }
-                        }}
+                        disabled={isSigned} // Disable jika sudah tanda tangan
+                        className={`!bg-primary-base text-white gap-2 px-6 h-10 shadow-neumorph transition-all active:scale-95 ${isSigned ? 'opacity-50 grayscale' : ''}`}
+                        onClick={handleProcessSigning} // Panggil Handler Baru
                     >
                         {isFinalTTE ? <Fingerprint size={16} /> : <Stamp size={16} />}
-                        <Typography variant="caption" className="text-white">{actionLabel}</Typography>
+                        <Typography variant="caption" className="text-white">
+                            {isSigned ? "Telah Diparaf" : actionLabel}
+                        </Typography>
                     </Button>
                 </div>
             </header>
@@ -156,9 +239,12 @@ export default function KoordinasiTTEPage() {
                 <main className="flex-1 p-2 sm:p-3 md:p-4 bg-surface-secondary/20 relative overflow-hidden flex flex-col items-center">
                     <PdfEditor
                         ref={pdfEditorRef}
-                        stampImg="https://portalnews.stekom.ac.id/media/13969/10-elemen-dasar-komunikasi-visual.jpg"
+                        // Gunakan state activePdfUrl agar tampilan berubah real-time
+                        fileUrl={activePdfUrl}
+                        // Gunakan PNG transparan untuk hasil terbaik (Optional)
+                        stampImg="/uploads/visualisasi/user.jpg"
                         signatureImg="/uploads/visualisasi/user.jpg"
-                        fileUrl="/uploads/dokumen/laporan.pdf" />
+                    />
                 </main>
 
                 {/* --- WORKFLOW TIMELINE (KANAN) --- */}
@@ -169,23 +255,22 @@ export default function KoordinasiTTEPage() {
 
                     <div className="relative">
                         <div className="space-y-0">
-                            {masterWorkflow.map((step, index) => {
-                                // LOGIKA TAMPILAN INSTRUKSI:
-                                // Jika saya Kadis (idx 1), tampilkan instruksi dari Sekda (idx 2)
-                                const supervisorStep = masterWorkflow[index + 1];
+                            {workflowData.map((step, index) => {
+                                // LOGIKA TAMPILAN INSTRUKSI
+                                const supervisorStep = workflowData[index + 1];
                                 const showNoteOnThisCard = step.status === 'revision' && supervisorStep?.instructionPoints;
 
                                 return (
                                     <div key={step.id} className="relative pl-12 pb-10 last:pb-0">
 
                                         {/* DYNAMIC LINE CONNECTOR */}
-                                        {index !== masterWorkflow.length - 1 && (
+                                        {index !== workflowData.length - 1 && (
                                             <div className={`absolute left-[23px] top-10 bottom-0 w-0.5 transition-colors duration-1000 ${step.status === 'completed' || step.status === 'verified' ? 'bg-success-base' :
                                                 step.status === 'revision' ? 'bg-danger-base animate-pulse' : 'bg-border-main/10'
                                                 }`} />
                                         )}
 
-                                        {/* NODE POINT WITH QUANTUM PULSE */}
+                                        {/* NODE POINT */}
                                         <div className="absolute left-0 top-1 w-12 h-12 flex items-center justify-center z-10">
                                             <div className={`relative w-4 h-4 rounded-full border-2 bg-surface transition-all duration-500 ${step.status === 'completed' || step.status === 'verified' ? 'border-success-base shadow-[0_0_12px_var(--success-base)]' :
                                                 step.status === 'current' ? 'border-primary-base shadow-[0_0_15px_var(--primary-base)]' :
@@ -229,7 +314,7 @@ export default function KoordinasiTTEPage() {
                                                 </Badge>
                                             </div>
 
-                                            {/* TAMPILAN INSTRUKSI: Menampilkan catatan Supervisor pada kartu Subordinat (Kadis) */}
+                                            {/* Instruksi Revisi */}
                                             {showNoteOnThisCard && (
                                                 <div className="mt-4 p-3 bg-white/50 rounded-xl border border-danger-base/10 shadow-sm">
                                                     <div className="flex items-center gap-2 mb-2">
@@ -283,8 +368,9 @@ export default function KoordinasiTTEPage() {
                 </aside>
             </div>
 
-            {/* --- MODAL INSTRUKSI --- */}
+            {/* --- MODAL DAN FORM REVISI (Sama seperti sebelumnya) --- */}
             <Modal isOpen={showModal} onClose={() => setShowModal(false)} title="DAFTAR INSTRUKSI REVISI">
+                {/* ... konten modal ... */}
                 <div className="space-y-6">
                     <div className="p-4 bg-danger-base/5 rounded-main border border-danger-base/10 flex items-center gap-4">
                         <Avatar size="sm" src="/logotubaba.png" className="ring-2 ring-danger-base/20 shadow-sm" />
@@ -319,7 +405,6 @@ export default function KoordinasiTTEPage() {
                 </div>
             </Modal>
 
-            {/* --- MODAL FORM INPUT REVISI --- */}
             <Modal
                 isOpen={showRevisionForm}
                 onClose={() => setShowRevisionForm(false)}

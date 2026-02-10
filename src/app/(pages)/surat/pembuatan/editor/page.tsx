@@ -180,27 +180,6 @@ export default function SuratEditorPage() {
 
                 {/* GRID 2: ACTION SIDEBAR (RIGHT/BOTTOM) */}
                 <aside className="w-full lg:w-[400px] bg-surface p-6 md:p-10 flex flex-col gap-8 z-10 shadow-[-15px_0_40px_rgba(0,0,0,0.02)] border-t lg:border-t-0 lg:border-l border-border-main/5 overflow-y-auto custom-scrollbar">
-                    <section className="space-y-4">
-                        <div className="flex items-center justify-between px-1">
-                            <Typography variant="overline" color="muted" className="flex items-center gap-2 italic text-[10px]">
-                                <Paperclip size={12} /> Berkas Lampiran
-                            </Typography>
-                            <Badge variant="outline" color="primary" className="text-[8px] px-2 py-0.5">
-                                Opsional
-                            </Badge>
-                        </div>
-
-                        <FileUploader
-                            label="Lampiran Pendukung"
-                            description="Unggah dokumen pendukung atau lampiran"
-                            accept=".pdf"
-                            maxFiles={1} // Mengizinkan hingga 5 lampiran
-                            maxSize={20}   // Batas ukuran per file 2MB
-                            onFilesSelected={(files) => setAttachments(prev => [...prev, ...files])}
-                            onAbort={(file) => setAttachments(prev => prev.filter(f => f.name !== file.name))}
-                            className="shadow-neumorph bg-surface-secondary/10 border-dashed border-border-main/10 rounded-2xl p-2"
-                        />
-                    </section>
                     <section className="space-y-6">
                         <Typography variant="overline" color="muted" className="flex items-center gap-2 italic text-[10px]">
                             <Zap size={12} /> Dokumen Metadata
@@ -296,8 +275,30 @@ export default function SuratEditorPage() {
                         </div>
                     </section>
 
+                    <section className="space-y-4">
+                        <div className="flex items-center justify-between px-1">
+                            <Typography variant="overline" color="muted" className="flex items-center gap-2 italic text-[10px]">
+                                <Paperclip size={12} /> Berkas Lampiran
+                            </Typography>
+                            <Badge variant="outline" color="primary" className="text-[8px] px-2 py-0.5">
+                                Opsional
+                            </Badge>
+                        </div>
+
+                        <FileUploader
+                            label="Lampiran Pendukung"
+                            description="Unggah dokumen pendukung atau lampiran"
+                            accept=".pdf"
+                            maxFiles={1} // Mengizinkan hingga 5 lampiran
+                            maxSize={20}   // Batas ukuran per file 2MB
+                            onFilesSelected={(files) => setAttachments(prev => [...prev, ...files])}
+                            onAbort={(file) => setAttachments(prev => prev.filter(f => f.name !== file.name))}
+                            className="shadow-neumorph bg-surface-secondary/10 border-dashed border-border-main/10 rounded-2xl p-2"
+                        />
+                    </section>
+
                     {/* Info Footer */}
-                    <footer className="mt-auto pt-6 border-t border-border-main/5">
+                    <footer className="mt-auto pt-4 border-t border-border-main/5">
                         <Card variant="inset" className="bg-info-base/5 !border-none p-5 space-y-2 rounded-main">
                             <Typography variant="caption" color="info" className="flex items-center gap-2 !font-black uppercase italic text-[10px]"><Info size={12} /> Panduan Keamanan</Typography>
                             <Typography variant="body" className="text-[10px] leading-relaxed opacity-60 italic">
