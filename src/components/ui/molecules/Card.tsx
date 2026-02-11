@@ -7,16 +7,19 @@ interface CardProps {
   variant?: "standard" | "glass" | "accent" | "inset";
   padding?: "none" | "sm" | "md" | "lg";
   className?: string;
+  // 1. Tambahkan definisi onClick ke dalam interface
+  onClick?: () => void;
 }
 
 export const Card = ({
   children,
   variant = "standard",
   padding = "md",
-  className = ""
+  className = "",
+  // 2. Destructure properti onClick
+  onClick
 }: CardProps) => {
 
-  // Pemetaan Padding tetap dipertahankan untuk layouting
   const paddingMap = {
     none: "p-0",
     sm: "p-4",
@@ -24,30 +27,29 @@ export const Card = ({
     lg: "p-10"
   };
 
-  /**
-   * Pemetaan Gaya: 
-   * Dipastikan hanya menggunakan shadow statis (neumorph atau inner) 
-   * tanpa ada utility 'hover-tactile'.
-   */
   const variantMap = {
     standard: "bg-surface shadow-neumorph border border-border-main/20",
-    glass: "glass-effect", // Mengacu pada glass-effect di globals.css
+    glass: "glass-effect",
     accent: "bg-surface shadow-neumorph border-l-4 border-[var(--theme-base)]",
     inset: "bg-surface-secondary shadow-neumorph-inset"
   };
 
   return (
-    <div className={`
-      ${variantMap[variant]} 
-      ${paddingMap[padding]} 
-      rounded-main 
-      /* Transition tetap ada agar perpindahan warna tema halus, 
-         tapi tidak akan memicu efek tekan */
-      transition-all 
-      duration-smooth 
-      ease-guway 
-      ${className}
-    `}>
+    <div
+      // 3. Hubungkan onClick ke elemen div
+      onClick={onClick}
+      className={`
+        ${variantMap[variant]} 
+        ${paddingMap[padding]} 
+        rounded-main 
+        transition-all 
+        duration-smooth 
+        ease-guway 
+        ${className}
+        /* 4. Tambahkan cursor pointer secara otomatis jika Card bisa diklik */
+        ${onClick ? "cursor-pointer active:scale-[0.98]" : ""}
+      `}
+    >
       {children}
     </div>
   );

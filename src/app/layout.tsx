@@ -1,14 +1,10 @@
-"use client";
-
-import React from "react";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ToastProvider } from "@/components/providers/ToastProvider";
-import { Sidebar, NavItem, Header, Footer } from "@/components/ui/Index";
-import { Layers, LayoutDashboard, Palette, Mail, FilePlus, Share2 } from "lucide-react";
 import { Toaster } from "sonner";
 
-// Konfigurasi font dan menu tetap sama
+// Konfigurasi Font
 const tubabaFont = localFont({
   src: [
     { path: "../components/fonts/Tubaba-Light.ttf", weight: "300" },
@@ -20,85 +16,28 @@ const tubabaFont = localFont({
   variable: "--font-tubaba",
 });
 
-const menuItems: NavItem[] = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  {
-    href: "/surat",
-    label: "Surat",
-    icon: Mail, // Main Menu
-    children: [
-      {
-        href: "/surat/pembuatan",
-        label: "Pembuatan Surat",
-        icon: FilePlus,
-        // --- SUBMENU LEVEL 2 (Di dalam Pembuatan Surat) ---
-        children: [
-          { href: "/surat/pembuatan/daftar", label: "Daftar Surat" },
-          { href: "/surat/pembuatan/editor", label: "Pembuatan & Editor Surat" },
-          { href: "/surat/pembuatan/koordinasi", label: "Koordinasi & TTE" },
-        ]
-      },
-      { href: "/surat/distribusi", label: "Distribusi Surat", icon: Share2 }
-    ]
-  },
-  {
-    href: "/documentation",
-    label: "Components",
-    icon: Layers,
-    children: [
-      { href: "/documentation/atom", label: "Atoms" },
-      { href: "/documentation/molecules", label: "Molecules" }
-    ]
-  },
-  { href: "/documentation/foundations/colors", label: "Colors & Tokens", icon: Palette },
-];
+export const metadata: Metadata = {
+  title: "Tubaba Digital Service",
+  description: "Sistem Pemerintahan Berbasis Elektronik Tulang Bawang Barat",
+};
 
 export default function RootLayout({
   children,
-  activeColor = "peach",
-  isDark = false
 }: {
   children: React.ReactNode;
-  activeColor?: "primary" | "success" | "danger" | "warning" | "info" | "teal" | "peach" | "lime";
-  isDark?: boolean;
 }) {
-
-
-  const themeStyles = {
-    "--theme-base": `var(--${activeColor}-base)`,
-    "--theme-active": `var(--${activeColor}-active)`,
-    "--theme-hover": `var(--${activeColor}-hover)`,
-    "--theme-glow": `var(--${activeColor}-glow)`,
-  } as React.CSSProperties;
-
   return (
-    <html lang="en" className={isDark ? "dark" : ""} style={themeStyles}>
-      <body className={`${tubabaFont.variable} font-sans bg-main-bg text-text-primary antialiased transition-colors duration-500`}>
+    <html lang="id">
+      <body className={`${tubabaFont.variable} font-sans bg-main-bg text-text-primary antialiased`}>
         <ToastProvider>
-          <div className="flex min-h-screen overflow-hidden">
-            {/* 1. SIDEBAR (Dibuat responsif di dalamnya) */}
-            <Sidebar menuItems={menuItems} />
-
-            {/* 2. MAIN WRAPPER: Mengatur margin adaptif untuk HD, 2K, 4K */}
-            <div className="flex-1 flex flex-col h-screen overflow-hidden transition-all duration-500 ml-0 lg:ml-72 2xl:ml-80 [media(min-width:2560px)]:ml-96 ">
-
-              {/* 3. HEADER: Sticky di atas content area */}
-              <Header />
-
-              {/* 4. SCROLLABLE CONTENT AREA */}
-              <main className="flex-1 overflow-y-auto custom-scrollbar relative">
-                <div className="relative p-6 md:p-10 max-w-7xl mx-auto">
-                  {children}
-                </div>
-                <Footer />
-              </main>
-            </div>
-          </div>
+          {children}
         </ToastProvider>
+
+        {/* Global Toaster Configuration */}
         <Toaster
           position="top-right"
           expand={false}
-          richColors // Penting: Agar atribut [data-type] muncul
+          richColors
           closeButton
           toastOptions={{
             style: {

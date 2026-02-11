@@ -6,7 +6,7 @@ import { LucideIcon } from "lucide-react";
 interface BadgeProps {
     children: React.ReactNode;
     variant?: "neumorph" | "glass" | "soft" | "outline";
-    color?: "primary" | "success" | "danger" | "warning" | "info";
+    color?: "primary" | "success" | "danger" | "warning" | "info" | "muted" | "dark";
     size?: "sm" | "md";
     icon?: LucideIcon;
     className?: string;
@@ -29,6 +29,8 @@ export const Badge = ({
         danger: "text-danger-base border-danger-base/20",
         warning: "text-warning-base border-warning-base/20",
         info: "text-info-base border-info-base/20",
+        muted: "text-text-muted border-text-muted/20 opacity-70",
+        dark: "text-text-primary border-text-primary/20",
     };
 
     // Mapping Gaya Varian
@@ -50,7 +52,7 @@ export const Badge = ({
             inline-flex items-center gap-1.5 rounded-full font-black uppercase tracking-widest
             transition-all duration-smooth ease-guway
             ${variantMap[variant]} 
-            ${colorMap[color]} 
+            ${colorMap[color] || colorMap.primary} 
             ${sizeMap[size]}
             ${className}
         `}
