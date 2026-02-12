@@ -156,7 +156,7 @@ export const TableRow = ({ children, className = "", index = 0, statusColor, onC
         <motion.tr
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            whileHover={{ scale: 1.002, backgroundColor: "rgba(var(--surface-secondary-rgb), 0.4)" }}
+            // whileHover={{ scale: 1.002, backgroundColor: "rgba(var(--surface-secondary-rgb), 0.4)" }}
             transition={{ delay: index * 0.005, duration: 0.05 }}
             onClick={onClick}
             className={`group relative transition-all duration-smooth border-b border-border-main/5 cursor-pointer ${className}`}

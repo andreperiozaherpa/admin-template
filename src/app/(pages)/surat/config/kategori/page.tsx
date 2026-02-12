@@ -232,15 +232,15 @@ export default function KategoriConfigPage() {
                             <TableCell>
                                 <div className="flex items-center gap-2">
                                     <Button
-                                        variant="inset"
-                                        className="!p-2 rounded-lg hover:text-primary-base transition-colors"
+                                        variant="expel"
+                                        className="!p-2.5  rounded-xl hover:text-primary-base transition-colors"
                                         onClick={() => handleOpenModal(item)}
                                     >
                                         <Edit size={14} />
                                     </Button>
                                     <Button
-                                        variant="inset"
-                                        className="!p-2 rounded-lg hover:text-danger-base transition-colors"
+                                        variant="expel"
+                                        className="!p-2.5  rounded-xl hover:text-danger-base transition-colors"
                                         onClick={() => handleDelete(item.id)}
                                     >
                                         <Trash2 size={14} />

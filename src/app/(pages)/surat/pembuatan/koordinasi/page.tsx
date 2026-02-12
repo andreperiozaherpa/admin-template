@@ -9,29 +9,19 @@ import {
 import {
     Button, Typography, Card, Badge, Avatar, Modal,
 } from "@/components/ui/Index";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import dynamic from 'next/dynamic';
+import {
+    pembuatanService,
+    WorkflowStep
+} from "@/services/surat/pembuatanService";
 
 // IMPORT PENTING: PDFDocument dari pdf-lib untuk memproses file
 import { PDFDocument } from "pdf-lib";
-
 // Import Type untuk Ref dan EditorElement
 import { PdfEditorRef, EditorElement } from '@/components/ui/organisms/PdfEditor';
-
-// Interface Data Workflow
-interface WorkflowStep {
-    id: number;
-    id_user: string;
-    name: string;
-    role: string;
-    status: string;
-    metadata: string | null;
-    isTTE: boolean;
-    noteTitle?: string;
-    instructionPoints?: string[];
-}
 
 // Dynamic Import Komponen Editor
 const PdfEditor = dynamic(
@@ -41,10 +31,14 @@ const PdfEditor = dynamic(
 
 export default function KoordinasiTTEPage() {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const suratId = searchParams.get("id"); // Ambil ID dari URL
 
     // --- STATE UTAMA ---
     const [isSigned, setIsSigned] = useState(false);
-    const [activePdfUrl, setActivePdfUrl] = useState("/uploads/dokumen/laporan.pdf");
+    const [activePdfUrl, setActivePdfUrl] = useState<string | null>(null); // Ubah jadi nullable
+    const [workflowData, setWorkflowData] = useState<WorkflowStep[]>([]); // Kosongkan awal
+    const [isLoading, setIsLoading] = useState(true); // Tambah loading state
 
     // Ref ke Editor
     const pdfEditorRef = useRef<PdfEditorRef>(null);
@@ -63,61 +57,26 @@ export default function KoordinasiTTEPage() {
         setShowNoteModal(true);
     };
 
-    // --- WORKFLOW DATA ---
-    const [workflowData, setWorkflowData] = useState<WorkflowStep[]>([
-        {
-            id: 1,
-            id_user: "USR-TBB-001",
-            name: "Zaidir Alami",
-            role: "Penyusun Naskah (Pendraft)",
-            status: "completed",
-            metadata: "BSR-DRFT-2026-X1",
-            isTTE: false
-        },
-        {
-            id: 2,
-            id_user: "USR-TBB-042",
-            name: "Irsyad, M.Kom",
-            role: "Kepala Dinas Kominfo",
-            status: "revision",
-            metadata: null,
-            isTTE: false
-        },
-        {
-            id: 3,
-            id_user: "USR-TBB-003",
-            name: "Dr. Zaidir Alami",
-            role: "Sekretaris Daerah",
-            status: "current",
-            metadata: null,
-            isTTE: false,
-            noteTitle: "Instruksi Sekretaris Daerah",
-            instructionPoints: [
-                "Margin penulisan kop surat tidak presisi (sesuaikan 3cm).",
-                "Dasar hukum UU No. 1 Tahun 2026, belum dimasukkan ke konsideran.",
-                "Lampiran koordinasi harus mencantumkan ID digital masing-masing bidang.",
-                "Perbaiki ejaan pada paragraf kedua."
-            ]
-        },
-        {
-            id: 7,
-            id_user: "USR-TBB-049",
-            name: "nadir, M.Kom",
-            role: "Wakil Bupati",
-            status: "waiting",
-            metadata: null,
-            isTTE: false
-        },
-        {
-            id: 4,
-            id_user: "USR-TBB-000",
-            name: "Bupati Tubaba",
-            role: "Bupati Tulang Bawang Barat",
-            status: "waiting",
-            metadata: null,
-            isTTE: true
-        },
-    ]);
+    // --- 1. LOAD DATA ON MOUNT (PENGGANTI DATA DUMMY HARDCODED) ---
+    useEffect(() => {
+        if (suratId) {
+            const draft = pembuatanService.getDraftById(suratId);
+
+            if (draft) {
+                setWorkflowData(draft.workflow || []);
+                setActivePdfUrl(draft.fileUrl);
+
+                // Cek apakah sudah Verified (Selesai TTE)
+                if (draft.status === 'verified') {
+                    setIsSigned(true);
+                }
+            } else {
+                toast.error("Data surat tidak ditemukan");
+                router.push("/surat/pembuatan/daftar");
+            }
+            setIsLoading(false);
+        }
+    }, [suratId, router]);
 
     const currentActiveStep = workflowData.find(s => s.status === 'current' || s.status === 'revision');
     const isFinalTTE = currentActiveStep?.isTTE;
@@ -125,7 +84,10 @@ export default function KoordinasiTTEPage() {
 
     // --- LOGIKA UTAMA PEMROSESAN PDF ---
     const handleProcessSigning = async () => {
+        // 1. Validasi Awal
+        if (!suratId) return;
         if (!pdfEditorRef.current) return;
+
         const elements = pdfEditorRef.current.getElements();
 
         if (elements.length === 0) {
@@ -136,14 +98,14 @@ export default function KoordinasiTTEPage() {
         const loadingId = toast.loading("Memproses dokumen digital...");
 
         try {
-            if (activePdfUrl && activePdfUrl.startsWith('blob:')) {
-                URL.revokeObjectURL(activePdfUrl);
-            }
+            if (!activePdfUrl) throw new Error("File PDF tidak ditemukan");
 
+            // 2. Load PDF Original
             const existingPdfBytes = await fetch(activePdfUrl).then(res => res.arrayBuffer());
             const pdfDoc = await PDFDocument.load(existingPdfBytes);
             const pages = pdfDoc.getPages();
 
+            // 3. Proses Burning Image (Logika Koordinat Anda)
             for (const el of elements) {
                 if (!el.image) continue;
 
@@ -161,31 +123,39 @@ export default function KoordinasiTTEPage() {
                     }
                 }
 
+                // --- Logika Kalkulasi Halaman & Posisi (Sesuai Kode Anda) ---
                 let accumulatedHeight = 0;
                 let targetPage = null;
                 let pdfPageHeight = 0;
                 let pageRatio = 1;
 
+                // Cari halaman mana elemen ini berada
                 for (let i = 0; i < pages.length; i++) {
                     const page = pages[i];
                     const { width, height } = page.getSize();
+
+                    // Asumsi lebar canvas editor Anda 800px (sesuai kode Anda)
                     const ratio = width / 800;
                     const visualHeight = height / ratio;
 
                     if (el.y >= accumulatedHeight && el.y < (accumulatedHeight + visualHeight)) {
                         targetPage = page;
                         pdfPageHeight = height;
-                        pageRatio = ratio;
+                        pageRatio = ratio; // Simpan rasio untuk skala koordinat
                         break;
                     }
                     accumulatedHeight += visualHeight;
                 }
 
-                if (targetPage) {
+                // Gambar di halaman yang ditemukan
+                if (targetPage && image) {
+                    // Konversi koordinat Canvas ke PDF Point
                     const relativeY = el.y - accumulatedHeight;
+
                     const drawW = el.width * pageRatio;
                     const drawH = el.height * pageRatio;
                     const drawX = el.x * pageRatio;
+                    // PDF Y-axis mulai dari bawah, Canvas dari atas
                     const drawY = pdfPageHeight - (relativeY * pageRatio) - drawH;
 
                     targetPage.drawImage(image, {
@@ -197,35 +167,43 @@ export default function KoordinasiTTEPage() {
                 }
             }
 
+            // 4. Simpan PDF Baru
             const pdfBytes = await pdfDoc.save();
             const signedBlob = new Blob([pdfBytes as any], { type: "application/pdf" });
-            const signedFile = new File([signedBlob], `Signed_${Date.now()}.pdf`, { type: "application/pdf" });
+            const signedFileUrl = URL.createObjectURL(signedBlob);
 
-            const newObjectUrl = URL.createObjectURL(signedFile);
-            setActivePdfUrl(newObjectUrl);
-            setIsSigned(true);
+            // ============================================================
+            // PERUBAHAN UTAMA: INTEGRASI DENGAN SERVICE
+            // ============================================================
 
+            if (isFinalTTE) {
+                // A. Jika ini TTE Final (Bupati/Sekda)
+                // Panggil service untuk simpan file final & update status jadi 'verified'
+                pembuatanService.signDocument(suratId, signedFileUrl);
+
+                setIsSigned(true);
+                toast.success("Dokumen Sah & Terverifikasi TTE!", { id: loadingId });
+            } else {
+                // B. Jika ini Paraf Koordinasi (Staf/Kadis)
+                // Panggil service untuk update workflow step jadi 'completed'
+                pembuatanService.reviewDraft(suratId, "approve");
+
+                toast.success("Paraf Koordinasi Berhasil!", { id: loadingId });
+            }
+
+            // 5. Refresh Data UI dari Service (Agar Timeline Terupdate)
+            const updatedDraft = pembuatanService.getDraftById(suratId);
+            if (updatedDraft) {
+                setWorkflowData(updatedDraft.workflow || []);
+                // Update file URL ke versi yang baru ditandatangani
+                setActivePdfUrl(updatedDraft.fileUrl || signedFileUrl);
+
+                // Pastikan tombol berubah jika status sudah verified
+                if (updatedDraft.status === 'verified') setIsSigned(true);
+            }
+
+            // 6. Reset Editor Canvas
             pdfEditorRef.current.reset();
-
-            toast.success("Dokumen berhasil ditandatangani!", { id: loadingId });
-
-            setWorkflowData(prev => {
-                const newData = prev.map((step, index) => {
-                    if (step.status === 'current') {
-                        return { ...step, status: 'completed', metadata: `BSR-${Date.now().toString().slice(-6)}` };
-                    }
-                    const prevStep = prev[index - 1];
-                    if (prevStep?.status === 'current' && step.status === 'waiting') {
-                        return { ...step, status: 'current' };
-                    }
-                    return step;
-                });
-
-                if (newData[1]) { newData[1].status = "completed"; newData[1].metadata = "DIGITAL-SIG-VALID"; }
-                if (newData[2]) { newData[2].status = "current"; }
-
-                return newData;
-            });
 
         } catch (error) {
             console.error("Signing Error:", error);
@@ -240,6 +218,29 @@ export default function KoordinasiTTEPage() {
             }
         };
     }, [activePdfUrl]);
+
+    const handleSendRevision = () => {
+        if (!suratId || !revisionReason) {
+            toast.error("Alasan revisi wajib diisi!");
+            return;
+        }
+
+        // PANGGIL SERVICE
+        pembuatanService.reviewDraft(suratId, "revise", {
+            title: "Instruksi Perbaikan",
+            points: [revisionReason]
+        });
+
+        toast.success("Instruksi revisi berhasil dikirim");
+        setShowRevisionForm(false);
+        setRevisionReason("");
+
+        // Refresh Data
+        const updatedDraft = pembuatanService.getDraftById(suratId);
+        if (updatedDraft) setWorkflowData(updatedDraft.workflow || []);
+    };
+
+    if (isLoading) return <div className="p-10 text-center text-text-muted">Memuat Dokumen...</div>;
 
     return (
         <div className="flex flex-col min-h-screen lg:h-[calc(100vh-80px)] lg:overflow-hidden -m-4 md:-m-8 bg-surface">
@@ -423,11 +424,7 @@ export default function KoordinasiTTEPage() {
                         <Button
                             variant="primary"
                             className="!bg-danger-base text-white shadow-neumorph gap-2"
-                            onClick={() => {
-                                if (!revisionReason) return toast.error("Alasan revisi wajib diisi!");
-                                toast.success("Instruksi revisi berhasil dikirim");
-                                setShowRevisionForm(false);
-                            }}
+                            onClick={handleSendRevision}
                         >
                             <GitMerge size={16} />
                             <Typography variant="caption" className="text-white">Kirim Revisi</Typography>

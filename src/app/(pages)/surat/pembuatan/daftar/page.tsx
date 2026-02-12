@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
     Plus, Clock, CheckCircle2,
     FileEdit, Send, ArrowUpRight, Trash2,
@@ -13,57 +13,27 @@ import {
 } from "@/components/ui/Index";
 import { toast } from "sonner";
 
-// 1. DATA DUMMY DENGAN STATUS BARU ("draft", "revision", "current", "waiting", "verified")
-const INITIAL_DRAFTS = [
-    {
-        id: "DFT-2026-001",
-        perihal: "Nota Dinas Pengadaan Server Hub Tubaba",
-        tanggal: "01 Feb 2026",
-        status: "draft", // Status awal (Masih di Editor)
-        progress: 25,
-        kategori: "nota"
-    },
-    {
-        id: "DFT-2026-002",
-        perihal: "Undangan Rapat Evaluasi Kinerja Triwulan",
-        tanggal: "31 Jan 2026",
-        status: "revision", // Status MERAH (Perlu Perbaikan di Koordinasi)
-        progress: 60,
-        kategori: "undangan"
-    },
-    {
-        id: "DFT-2026-003",
-        perihal: "Surat Edaran Protokol Keamanan Data",
-        tanggal: "30 Jan 2026",
-        status: "current", // Status BIRU/KUNING (Sedang berproses paraf)
-        progress: 80,
-        kategori: "edaran"
-    },
-    {
-        id: "DFT-2026-004",
-        perihal: "SK Tim Teknis Transformasi Digital",
-        tanggal: "29 Jan 2026",
-        status: "waiting", // Status ORANGE (Menunggu TTE Bupati)
-        progress: 90,
-        kategori: "sk"
-    },
-    {
-        id: "DFT-2026-005",
-        perihal: "Laporan Perjalanan Dinas Sekretariat",
-        tanggal: "28 Jan 2026",
-        status: "verified", // Status HIJAU (Selesai/Terbit)
-        progress: 100,
-        kategori: "nota"
-    },
-];
+// --- IMPORT SERVICE ---
+import { pembuatanService, DraftSurat } from "@/services/surat/pembuatanService";
 
 export default function PembuatanSuratListPage() {
     const router = useRouter();
-    const [drafts, setDrafts] = useState(INITIAL_DRAFTS);
+
+    // --- STATE DATA (Dari Service) ---
+    // Menggunakan tipe DraftSurat dari service
+    const [drafts, setDrafts] = useState<DraftSurat[]>([]);
+
+    // --- STATE UI ---
     const [searchQuery, setSearchQuery] = useState("");
     const [filterJenis, setFilterJenis] = useState("all");
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(5);
+
+    // --- 1. LOAD DATA ON MOUNT ---
+    useEffect(() => {
+        // Ambil data dari service saat komponen dimuat
+        setDrafts(pembuatanService.getAllDrafts());
+    }, []);
 
     // --- LOGIKA NAVIGASI ---
 
@@ -72,9 +42,10 @@ export default function PembuatanSuratListPage() {
     };
 
     const handleEdit = (id: string, status: string) => {
-        // Jika status draft, edit ke editor biasa.
-        // Jika status revision/current, user diarahkan untuk memperbaiki lewat alur koordinasi
-        if (["revision", "draf"].includes(status)) {
+        // Logic Routing Cerdas:
+        // Jika status "draft" atau "revision", user perlu mengedit konten -> Ke Editor
+        // Jika status "current" (sedang paraf) atau "waiting" (TTE), user memantau -> Ke Koordinasi
+        if (["revision", "draft"].includes(status)) {
             router.push(`/surat/pembuatan/editor?id=${id}`);
         } else {
             router.push(`/surat/pembuatan/koordinasi?id=${id}`);
@@ -83,7 +54,11 @@ export default function PembuatanSuratListPage() {
 
     const handleDelete = (id: string) => {
         if (confirm(`Apakah Anda yakin ingin menghapus draf ${id}?`)) {
-            setDrafts(prev => prev.filter(s => s.id !== id));
+            // 1. Panggil Service Hapus
+            pembuatanService.deleteDraft(id);
+            // 2. Refresh State UI dengan data terbaru
+            setDrafts(pembuatanService.getAllDrafts());
+
             toast.error(`Draf ${id} berhasil dihapus`);
         }
     };
@@ -105,7 +80,7 @@ export default function PembuatanSuratListPage() {
         return filteredDrafts.slice(start, start + itemsPerPage);
     }, [filteredDrafts, currentPage, itemsPerPage]);
 
-    // 2. CONFIG TAMPILAN STATUS BARU
+    // CONFIG TAMPILAN STATUS
     const getStatusConfig = (status: string) => {
         switch (status) {
             case "draft":
@@ -142,10 +117,11 @@ export default function PembuatanSuratListPage() {
                 </Button>
             </header>
 
-            {/* 3. SUMMARY CARDS (Statistik) */}
+            {/* 3. SUMMARY CARDS (Statistik Real-time dari State) */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 {["draft", "revision", "current", "waiting", "verified"].map((statKey) => {
                     const config = getStatusConfig(statKey);
+                    // Hitung jumlah berdasarkan data real dari service (state drafts)
                     const count = drafts.filter(s => s.status === statKey).length;
 
                     return (
@@ -153,7 +129,6 @@ export default function PembuatanSuratListPage() {
                             key={statKey}
                             padding="sm"
                             onClick={() => {
-                                // Filter sederhana (Opsional: bisa dikembangkan untuk filter tabel otomatis)
                                 toast.info(`Memfilter status: ${config.label}`);
                             }}
                             className="flex flex-col items-center justify-center gap-2 shadow-neumorph border-none cursor-pointer hover:scale-105 transition-transform text-center py-6"
@@ -249,22 +224,15 @@ export default function PembuatanSuratListPage() {
                                         <Button
                                             variant="expel"
                                             className={`!p-2.5 rounded-xl transition-colors ${surat.status === 'verified'
-                                                ? 'hover:text-success-base hover:bg-success-base/10' // Hijau jika Verified
+                                                ? 'hover:text-success-base hover:bg-success-base/10'
                                                 : 'hover:text-[var(--theme-base)]'
                                                 }`}
                                             onClick={() => handleEdit(surat.id, surat.status)}
                                             title={surat.status === 'verified' ? "Buka Dokumen Sah" : "Edit / Proses"}
                                         >
                                             {(() => {
-                                                // KONDISI 1: SUDAH SAH/VERIFIED -> Ikon File (Open File)
-                                                if (surat.status === 'verified') {
-                                                    return <FileText size={16} />;
-                                                }
-                                                // KONDISI 2: MASIH DRAFT/REVISI -> Ikon Edit
-                                                if (["draft", "revision"].includes(surat.status)) {
-                                                    return <FileEdit size={16} />;
-                                                }
-                                                // KONDISI 3: SEDANG PROSES TTE -> Ikon Stamp
+                                                if (surat.status === 'verified') return <FileText size={16} />;
+                                                if (["draft", "revision"].includes(surat.status)) return <FileEdit size={16} />;
                                                 return <Stamp size={16} />;
                                             })()}
                                         </Button>

@@ -22,7 +22,16 @@ const menuItems: NavItem[] = [
           { href: "/surat/pembuatan/koordinasi", label: "Koordinasi & TTE" },
         ]
       },
-      { href: "/surat/distribusi", label: "Distribusi Surat", icon: Share2 },
+      {
+        href: "/surat/distribusi",
+        label: "Distribusi Surat",
+        icon: Share2,
+        children: [
+          { href: "/surat/distribusi/daftar", label: "Daftar Distribusi Surat" },
+          { href: "/surat/distribusi/masuk", label: "Registrasi Surat" },
+          { href: "/surat/distribusi/disposisi", label: "Surat Disposisi" },
+        ]
+      },
       {
         href: "/surat/config",
         label: "Config",

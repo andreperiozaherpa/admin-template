@@ -378,7 +378,7 @@ export default function KoordinasiConfigPage() {
             {/* EDITOR HEADER */}
             <header className="flex flex-col md:flex-row justify-between items-center gap-4 border-b border-border-main/10 pb-6 sticky top-0 bg-surface/95 backdrop-blur-sm z-30 py-4 -mt-4">
                 <div className="flex items-center gap-4 w-full">
-                    <Button variant="inset" onClick={handleBackToList} className="!p-2.5 rounded-xl shadow-sm hover:text-primary-base">
+                    <Button variant="expel" onClick={handleBackToList} className="!p-2.5 rounded-xl shadow-sm hover:text-primary-base">
                         <ArrowLeft size={18} />
                     </Button>
                     <div>
