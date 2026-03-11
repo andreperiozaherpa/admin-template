@@ -13,16 +13,16 @@ const menuItems: NavItem[] = [
   //   icon: Mail, 
   //   children: [ ... ]
   // },
-  {
-    href: "/documentation",
-    label: "Components",
-    icon: Layers,
-    children: [
-      { href: "/documentation/atom", label: "Atoms" },
-      { href: "/documentation/molecules", label: "Molecules" },
-      { href: "/documentation/foundations/colors", label: "Colors & Tokens", icon: Palette }
-    ]
-  },
+  // {
+  //   href: "/documentation",
+  //   label: "Components",
+  //   icon: Layers,
+  //   children: [
+  //     { href: "/documentation/atom", label: "Atoms" },
+  //     { href: "/documentation/molecules", label: "Molecules" },
+  //     { href: "/documentation/foundations/colors", label: "Colors & Tokens", icon: Palette }
+  //   ]
+  // },
 ];
 
 export default function MainLayout({
