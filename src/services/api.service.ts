@@ -2,7 +2,8 @@
 import { authService } from "./auth.service";
 import { useRouter } from "next/navigation";
 
-const API_BASE_URL = "http://localhost:8001/api";
+// const API_BASE_URL = "http://localhost:8001/api";
+const API_BASE_URL = process.env.NEXT_PUBLIC_ENDPOINT_API;
 
 async function fetchWithAuth(endpoint: string, options: RequestInit = {}) {
   const token = authService.getToken();
@@ -121,14 +122,17 @@ export const api = {
     });
   },
 
-  updateUser: async (id: number, data: {
-    name: string;
-    email: string;
-    password?: string;
-    nip?: string;
-    role: string;
-    bank_id?: number;
-  }) => {
+  updateUser: async (
+    id: number,
+    data: {
+      name: string;
+      email: string;
+      password?: string;
+      nip?: string;
+      role: string;
+      bank_id?: number;
+    },
+  ) => {
     return fetchWithAuth(`/users/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },

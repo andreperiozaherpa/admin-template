@@ -1,7 +1,8 @@
 // src/services/auth.service.ts
 
 // Laravel backend API
-const API_BASE_URL = "http://localhost:8001/api";
+//const API_BASE_URL = "http://localhost:8001/api";
+const API_BASE_URL = process.env.NEXT_PUBLIC_ENDPOINT_API;
 
 export interface LoginPayload {
   email: string;
@@ -21,7 +22,7 @@ export interface LoginResult {
   token?: string;
 }
 
-export type UserRole = 'admin' | 'bank' | 'viewer';
+export type UserRole = "admin" | "bank" | "viewer";
 
 export const authService = {
   /**
@@ -30,12 +31,12 @@ export const authService = {
   async login(payload: LoginPayload): Promise<LoginResult> {
     try {
       const apiUrl = `${API_BASE_URL}/login`;
-      
+
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(payload),
       });
@@ -89,15 +90,15 @@ export const authService = {
         await fetch(`${API_BASE_URL}/logout`, {
           method: "POST",
           headers: {
-            "Authorization": `Bearer ${token}`,
-            "Accept": "application/json",
+            Authorization: `Bearer ${token}`,
+            Accept: "application/json",
           },
         });
       } catch (e) {
         // Ignore
       }
     }
-    
+
     if (typeof window !== "undefined") {
       localStorage.removeItem("token");
       localStorage.removeItem("userRole");
@@ -123,10 +124,10 @@ export const authService = {
   getRole(): UserRole | null {
     if (typeof window !== "undefined") {
       const role = localStorage.getItem("userRole");
-      if (role === 'admin' || role === 'bank' || role === 'viewer') {
+      if (role === "admin" || role === "bank" || role === "viewer") {
         return role;
       }
-      
+
       // Fallback: cek apakah ada token tapi role belum diset
       const token = localStorage.getItem("token");
       if (token) {
@@ -135,7 +136,11 @@ export const authService = {
         if (userData) {
           try {
             const parsed = JSON.parse(userData);
-            if (parsed.role === 'admin' || parsed.role === 'bank' || parsed.role === 'viewer') {
+            if (
+              parsed.role === "admin" ||
+              parsed.role === "bank" ||
+              parsed.role === "viewer"
+            ) {
               // Simpan role untuk caching
               localStorage.setItem("userRole", parsed.role);
               return parsed.role;
@@ -162,7 +167,12 @@ export const authService = {
     }
   },
 
-  getUserData(): { id: string; name: string; email: string; role: string } | null {
+  getUserData(): {
+    id: string;
+    name: string;
+    email: string;
+    role: string;
+  } | null {
     if (typeof window !== "undefined") {
       const data = localStorage.getItem("userData");
       if (data) {
@@ -179,14 +189,14 @@ export const authService = {
   },
 
   isAdmin(): boolean {
-    return this.getRole() === 'admin';
+    return this.getRole() === "admin";
   },
 
   isBank(): boolean {
-    return this.getRole() === 'bank';
+    return this.getRole() === "bank";
   },
 
   isViewer(): boolean {
-    return this.getRole() === 'viewer';
+    return this.getRole() === "viewer";
   },
 };

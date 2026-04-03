@@ -97,7 +97,7 @@ export default function LoginPage() {
         if (result.success && result.token) {
             // Simpan Token
             authService.saveToken(result.token);
-            
+
             // Simpan Role dan User Data
             if (result.data) {
                 authService.setUserData(result.data);
@@ -115,6 +115,7 @@ export default function LoginPage() {
         }
     };
 
+    console.log(process.env.NEXT_PUBLIC_ENDPOINT_API);
     return (
         <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center p-4 relative overflow-hidden font-sans selection:bg-blue-100 selection:text-blue-900">
 
