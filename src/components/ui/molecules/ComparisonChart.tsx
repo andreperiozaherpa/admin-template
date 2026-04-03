@@ -27,7 +27,7 @@ ChartJS.register(
 );
 
 interface ComparisonChartProps {
-    data: { name: string; awal: number; akhir: number }[];
+    data: { name: string; nomor_rekening: string; awal: number; akhir: number }[];
     title: string;
     periodStart: string;
     periodEnd: string;
@@ -142,6 +142,13 @@ export function ComparisonChart({
                 boxPadding: 6,
                 usePointStyle: true,
                 callbacks: {
+                    title: function(context) {
+                        // Tampilkan nama rekening dan norek di title tooltip
+                        const dataIndex = context[0].dataIndex;
+                        const item = visibleData[dataIndex];
+                        const norek = item?.nomor_rekening || "";
+                        return [item?.name || "", norek];
+                    },
                     label: function (context: TooltipItem<"bar">) {
                         let label = context.dataset.label || "";
                         if (label) label += ": ";
@@ -154,8 +161,6 @@ export function ComparisonChart({
                         }
                         return label;
                     },
-                    // Kita TIDAK menambahkan callback 'title' di sini, 
-                    // sehingga tooltip akan tetap menampilkan nama lengkap (default behavior).
                 },
             },
         },

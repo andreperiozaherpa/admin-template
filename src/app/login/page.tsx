@@ -70,11 +70,14 @@ export default function LoginPage() {
 
         setIsLoading(true);
 
-        // PANGGIL SERVICE (Tidak perlu try-catch lagi untuk logic error)
+        // PANGGIL SERVICE
+        console.log("Calling login with:", formData.email);
         const result = await authService.login({
             email: formData.email,
             password: formData.password
         });
+
+        console.log("Login result:", result);
 
         setIsLoading(false); // Matikan loading segera setelah request selesai
 
@@ -94,6 +97,11 @@ export default function LoginPage() {
         if (result.success && result.token) {
             // Simpan Token
             authService.saveToken(result.token);
+            
+            // Simpan Role dan User Data
+            if (result.data) {
+                authService.setUserData(result.data);
+            }
 
             // Notifikasi Sukses
             toast.success("Login Berhasil!", {
@@ -218,6 +226,33 @@ export default function LoginPage() {
                         )}
                     </button>
                 </form>
+
+                {/* Quick Login Buttons */}
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider text-center mb-4">Login Cepat (Demo)</p>
+                    <div className="grid grid-cols-2 gap-3">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setFormData({ email: "admin@tubaba.go.id", password: "admin123" });
+                            }}
+                            className="flex items-center justify-center gap-2 w-full bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 font-semibold py-2.5 px-4 rounded-xl transition-all duration-200 text-sm"
+                        >
+                            <ShieldCheck size={16} />
+                            Login Admin
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setFormData({ email: "bank@tubaba.go.id", password: "bank123" });
+                            }}
+                            className="flex items-center justify-center gap-2 w-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-700 font-semibold py-2.5 px-4 rounded-xl transition-all duration-200 text-sm"
+                        >
+                            <Mail size={16} />
+                            Login Bank
+                        </button>
+                    </div>
+                </div>
 
                 {/* Social Login */}
                 <div className="mt-8">

@@ -44,14 +44,7 @@ export const Select = ({
     const [searchTerm, setSearchTerm] = useState("");
     const containerRef = useRef<HTMLDivElement>(null);
     const reactId = useId();
-
-    // 1. HYDRATION FIX: Pastikan ID sinkron antara Server & Client
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    const selectId = id || (mounted ? reactId : undefined);
+    const selectId = id || reactId;
 
     // 2. PERFORMANCE: Filter opsi hanya saat input/opsi berubah
     const filteredOptions = useMemo(() => {
@@ -114,6 +107,7 @@ export const Select = ({
                 <div
                     id={selectId}
                     role="combobox"
+                    aria-controls="select-dropdown"
                     aria-expanded={isOpen}
                     aria-haspopup="listbox"
                     onClick={() => !isLoading && setIsOpen(!isOpen)}

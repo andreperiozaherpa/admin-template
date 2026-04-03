@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     CheckCircle2,
@@ -32,12 +32,6 @@ export const Alert = ({
     isVisible = true,
     className = "",
 }: AlertProps) => {
-    // 1. HYDRATION GUARD: Memastikan render konsisten di klien
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
     const iconMap: Record<AlertVariant, LucideIcon | null> = {
         success: CheckCircle2,
         danger: AlertCircle,
@@ -63,9 +57,6 @@ export const Alert = ({
         info: "shadow-[0_0_15px_rgba(var(--info-rgb),0.1)]",
         default: "shadow-neumorph",
     };
-
-    // Jangan render apa pun sampai mounted untuk keamanan ekstra di Next.js 16
-    if (!mounted) return null;
 
     return (
         <AnimatePresence>

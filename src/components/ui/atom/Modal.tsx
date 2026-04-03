@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -21,22 +21,6 @@ export const Modal = ({
     footer,
     size = "md",
 }: ModalProps) => {
-    // 1. HYDRATION GUARD: Sinkronisasi Server-Client
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-        // Mencegah scroll body saat modal terbuka
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
-        return () => { document.body.style.overflow = "unset"; };
-    }, [isOpen]);
-
-    if (!mounted) return null;
-
     // Mapping Ukuran
     const sizeMap = {
         sm: "max-w-md",

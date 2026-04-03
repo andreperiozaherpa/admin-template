@@ -7,13 +7,15 @@ interface CardProps {
   variant?: "standard" | "glass" | "accent" | "inset";
   padding?: "none" | "sm" | "md" | "lg";
   className?: string;
+  onClick?: () => void;
 }
 
 export const Card = ({
   children,
   variant = "standard",
   padding = "md",
-  className = ""
+  className = "",
+  onClick
 }: CardProps) => {
 
   // Pemetaan Padding tetap dipertahankan untuk layouting
@@ -37,17 +39,18 @@ export const Card = ({
   };
 
   return (
-    <div className={`
+    <div 
+      className={`
       ${variantMap[variant]} 
       ${paddingMap[padding]} 
       rounded-main 
-      /* Transition tetap ada agar perpindahan warna tema halus, 
-         tapi tidak akan memicu efek tekan */
       transition-all 
       duration-smooth 
       ease-guway 
       ${className}
-    `}>
+    `}
+    {...(onClick && { onClick, role: "button", tabIndex: 0 })}
+    >
       {children}
     </div>
   );

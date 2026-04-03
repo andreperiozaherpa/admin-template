@@ -42,6 +42,7 @@ export interface NavItem {
     icon?: LucideIcon;
     badge?: string | number;
     children?: NavItem[];
+    roles?: ('admin' | 'bank' | 'viewer')[];
 }
 
 export interface NavMenuProps {
@@ -243,16 +244,12 @@ const NavMenuItem = ({
 // --- MAIN COMPONENT ---
 export const NavMenu = ({ items, className = "", onItemClick }: NavMenuProps) => {
     const pathname = usePathname();
-    const [mounted, setMounted] = useState(false);
-    const [openGroupHref, setOpenGroupHref] = useState<string | null>(null);
-
-    useEffect(() => {
-        setMounted(true);
-        const activeGroup = items.find(item => isAnyChildActive(item, pathname));
-        if (activeGroup) setOpenGroupHref(activeGroup.href);
-    }, [pathname, items]);
-
-    if (!mounted) return null;
+    const [openGroupHref, setOpenGroupHref] = useState<string | null>(() => {
+        if (typeof window !== 'undefined') {
+            return items.find(item => isAnyChildActive(item, pathname))?.href || null;
+        }
+        return null;
+    });
 
     const handleToggle = (href: string) => {
         setOpenGroupHref(prev => prev === href ? null : href);

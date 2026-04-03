@@ -1,5 +1,49 @@
 import React from "react";
-import { Skeleton } from "@/components/ui/atom/Skeleton"; // Pastikan path import ini benar sesuai lokasi Skeleton Anda
+import { Skeleton } from "@/components/ui/atom/Skeleton";
+
+export const ListDataSkeleton = () => {
+    return (
+        <div className="p-6 md:p-8 space-y-6">
+            {/* Header */}
+            <div>
+                <Skeleton className="h-10 w-64 rounded-2xl" />
+                <Skeleton className="h-5 w-80 rounded-xl mt-2 opacity-70" />
+            </div>
+
+            {/* List Tanggal Cards */}
+            <div className="grid gap-4">
+                {[...Array(2)].map((_, i) => (
+                    <div key={i} className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                                <Skeleton variant="circle" className="w-12 h-12" />
+                                <div>
+                                    <Skeleton className="h-6 w-40 rounded-lg" />
+                                    <Skeleton className="h-4 w-24 rounded-lg mt-1 opacity-60" />
+                                </div>
+                            </div>
+                            <div className="text-right">
+                                <Skeleton className="h-4 w-20 rounded-lg" />
+                                <Skeleton className="h-6 w-32 rounded-lg mt-1" />
+                            </div>
+                            <Skeleton variant="circle" className="w-5 h-5" />
+                        </div>
+
+                        {/* Summary Grid */}
+                        <div className="mt-4 pt-4 border-t border-gray-100 grid grid-cols-2 md:grid-cols-6 gap-4">
+                            {[...Array(6)].map((_, j) => (
+                                <div key={j} className="text-center">
+                                    <Skeleton className="h-3 w-12 mx-auto rounded-lg" />
+                                    <Skeleton className="h-4 w-20 mx-auto rounded-lg mt-1" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
 
 export const PageSkeleton = () => {
     return (
@@ -90,13 +134,13 @@ export const PageSkeleton = () => {
                         {[...Array(5)].map((_, i) => (
                             <div key={i} className="flex justify-between items-center">
                                 <div className="flex items-center gap-3">
-                                    <Skeleton className="h-8 w-8 rounded-xl" /> {/* Nomor Urut */}
+                                    <Skeleton className="h-8 w-8 rounded-xl" />
                                     <div className="space-y-2">
-                                        <Skeleton className="h-4 w-48 rounded-lg" /> {/* Nama Rekening */}
-                                        <Skeleton className="h-3 w-24 rounded-lg opacity-60" /> {/* No Rekening */}
+                                        <Skeleton className="h-4 w-48 rounded-lg" />
+                                        <Skeleton className="h-3 w-24 rounded-lg opacity-60" />
                                     </div>
                                 </div>
-                                <Skeleton className="h-5 w-24 rounded-lg" /> {/* Saldo */}
+                                <Skeleton className="h-5 w-24 rounded-lg" />
                             </div>
                         ))}
                     </div>

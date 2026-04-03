@@ -88,10 +88,6 @@ export const PdfEditor = forwardRef<PdfEditorRef, PdfEditorProps>(({
         }
     }, [fitToWidth, fileUrl]);
 
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
     useImperativeHandle(ref, () => ({
         handleSave: async () => {
             if (!fileUrl || elements.length === 0) {

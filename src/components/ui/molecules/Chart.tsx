@@ -55,7 +55,13 @@ export const Chart = ({
     // 1. REF UNTUK MENGAKSES CHART INSTANCE
     const chartRef = useRef<any>(null);
 
-    const [themeColor, setThemeColor] = useState('#6366f1');
+    const [themeColor] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const style = getComputedStyle(document.documentElement);
+            return style.getPropertyValue('--primary-base').trim() || '#6366f1';
+        }
+        return '#6366f1';
+    });
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     // 2. STATE UNTUK MELACAK DATA YANG DI-HIDE
@@ -78,14 +84,6 @@ export const Chart = ({
         style: "currency",
         currency: "IDR"
     }).format(val);
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const style = getComputedStyle(document.documentElement);
-            const primary = style.getPropertyValue('--primary-base').trim();
-            if (primary) setThemeColor(primary);
-        }
-    }, []);
 
     // Palet Warna
     const colorPalette = useMemo(() => [

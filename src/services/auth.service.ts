@@ -1,7 +1,7 @@
 // src/services/auth.service.ts
 
-// Ini mencegah error CORS saat development.
-const API_BASE_URL = "/api";
+// Laravel backend API
+const API_BASE_URL = "http://localhost:8001/api";
 
 export interface LoginPayload {
   email: string;
@@ -9,7 +9,6 @@ export interface LoginPayload {
 }
 
 // Interface untuk hasil yang dikembalikan ke UI (Login Page)
-// Kita menggunakan format ini agar tidak perlu melakukan throw Error
 export interface LoginResult {
   success: boolean;
   message: string;
@@ -22,56 +21,50 @@ export interface LoginResult {
   token?: string;
 }
 
+export type UserRole = 'admin' | 'bank' | 'viewer';
+
 export const authService = {
   /**
-   * Mengirim permintaan login ke API
-   * Mengembalikan objek status (success: true/false) tanpa melempar Error exception
+   * Login ke Laravel backend
    */
   async login(payload: LoginPayload): Promise<LoginResult> {
     try {
-      const response = await fetch(`${API_BASE_URL}/login`, {
+      const apiUrl = `${API_BASE_URL}/login`;
+      
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify(payload),
       });
 
-      // Coba parsing JSON response
       let data;
       try {
         data = await response.json();
       } catch (err) {
-        // Jika server error fatal (500) dan mengembalikan HTML/Teks biasa
         return {
           success: false,
-          message: "Terjadi kesalahan server (Invalid JSON response).",
+          message: "Terjadi kesalahan server.",
         };
       }
 
-      // 1. JIKA STATUS TIDAK OK (Misal 400, 401, 404, 500)
       if (!response.ok) {
-        // Ambil pesan error dari backend
-        // Prioritas: data.message -> data.error -> Default text
-        const errorMessage =
-          data.message || data.error || "Gagal masuk. Periksa kredensial Anda.";
-
+        const errorMessage = data?.message || "Gagal masuk.";
         return {
           success: false,
-          message: errorMessage, // Pesan ini nanti ditampilkan di Toast
+          message: errorMessage,
         };
       }
 
-      // 2. JIKA STATUS OK TAPI TOKEN TIDAK ADA
       if (!data.metadata?.token) {
         return {
           success: false,
-          message: "Token tidak ditemukan dalam respons server.",
+          message: "Token tidak ditemukan.",
         };
       }
 
-      // 3. JIKA SUKSES
       return {
         success: true,
         message: "Login berhasil.",
@@ -79,34 +72,121 @@ export const authService = {
         token: data.metadata.token,
       };
     } catch (error: any) {
-      // Menangani error jaringan (offline / DNS failed)
       return {
         success: false,
-        message: "Terjadi kesalahan jaringan. Periksa koneksi internet Anda.",
+        message: "Terjadi kesalahan jaringan.",
       };
     }
   },
 
   /**
-   * Menyimpan token ke LocalStorage & Cookies
+   * Logout dari Laravel
    */
+  async logout() {
+    const token = this.getToken();
+    if (token) {
+      try {
+        await fetch(`${API_BASE_URL}/logout`, {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/json",
+          },
+        });
+      } catch (e) {
+        // Ignore
+      }
+    }
+    
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("token");
+      localStorage.removeItem("userRole");
+      localStorage.removeItem("userData");
+      document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+  },
+
+  getToken(): string | null {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("token");
+    }
+    return null;
+  },
+
   saveToken(token: string) {
     if (typeof window !== "undefined") {
-      // Simpan di LocalStorage untuk akses cepat di client
       localStorage.setItem("token", token);
-
-      // Simpan di Cookie untuk keamanan tambahan & middleware
       document.cookie = `token=${token}; path=/; max-age=86400; SameSite=Strict; Secure`;
     }
   },
 
-  /**
-   * Menghapus sesi (Logout)
-   */
-  logout() {
+  getRole(): UserRole | null {
     if (typeof window !== "undefined") {
-      localStorage.removeItem("token");
-      document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      const role = localStorage.getItem("userRole");
+      if (role === 'admin' || role === 'bank' || role === 'viewer') {
+        return role;
+      }
+      
+      // Fallback: cek apakah ada token tapi role belum diset
+      const token = localStorage.getItem("token");
+      if (token) {
+        // Coba parsing userData
+        const userData = localStorage.getItem("userData");
+        if (userData) {
+          try {
+            const parsed = JSON.parse(userData);
+            if (parsed.role === 'admin' || parsed.role === 'bank' || parsed.role === 'viewer') {
+              // Simpan role untuk caching
+              localStorage.setItem("userRole", parsed.role);
+              return parsed.role;
+            }
+          } catch (e) {
+            // Ignore parse error
+          }
+        }
+      }
     }
+    return null;
+  },
+
+  setRole(role: UserRole) {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("userRole", role);
+    }
+  },
+
+  setUserData(data: { id: string; name: string; email: string; role: string }) {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("userData", JSON.stringify(data));
+      localStorage.setItem("userRole", data.role);
+    }
+  },
+
+  getUserData(): { id: string; name: string; email: string; role: string } | null {
+    if (typeof window !== "undefined") {
+      const data = localStorage.getItem("userData");
+      if (data) {
+        return JSON.parse(data);
+      }
+    }
+    return null;
+  },
+
+  hasRole(...roles: UserRole[]): boolean {
+    const currentRole = this.getRole();
+    if (!currentRole) return false;
+    return roles.includes(currentRole as UserRole);
+  },
+
+  isAdmin(): boolean {
+    return this.getRole() === 'admin';
+  },
+
+  isBank(): boolean {
+    return this.getRole() === 'bank';
+  },
+
+  isViewer(): boolean {
+    return this.getRole() === 'viewer';
   },
 };

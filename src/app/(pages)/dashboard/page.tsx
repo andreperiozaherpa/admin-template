@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import rawData from "../../../../public/uploads/saldo.json";
+import React, { useState, useMemo, useEffect } from "react";
+import { api } from "@/services/api.service";
 import { FinancialSnapshot, FinancialRecord } from "@/types/finance";
 import { processFinancialData } from "@/lib/finance-utils";
 import { prepareComparisonData } from "@/lib/chart-utils";
@@ -33,7 +33,9 @@ const EmptyStateMessage = () => (
 
 const getNumericDateFromInput = (inputVal: string) => {
     if (!inputVal) return 0;
+    // Format input date HTML: YYYY-MM-DD
     const [year, month, day] = inputVal.split('-').map(Number);
+    // Konversi ke format numerik: YYYYMMDD
     return (year * 10000) + (month * 100) + day;
 };
 
@@ -43,9 +45,9 @@ const sumSaldo = (records: any[]) => {
 };
 
 // Sorting Data Mentah
-const financialData = (rawData as FinancialSnapshot[]).sort((a, b) =>
-    getNumericDateFromJson(a.date) - getNumericDateFromJson(b.date)
-);
+// const financialData = (rawData as FinancialSnapshot[]).sort((a, b) =>
+//     getNumericDateFromJson(a.date) - getNumericDateFromJson(b.date)
+// );
 
 const CATEGORY_OPTIONS: SelectOption[] = [
     { label: "Kas Daerah (KASDA)", value: "kasda" },
@@ -57,36 +59,105 @@ const CATEGORY_OPTIONS: SelectOption[] = [
 ];
 
 export default function DashboardPage() {
+    const [financialData, setFinancialData] = useState<FinancialSnapshot[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                setIsLoading(true);
+                const response = await api.getDashboard() as { data: FinancialSnapshot[] };
+                const sortedData = (response.data || []).sort((a, b) =>
+                    getNumericDateFromJson(a.date) - getNumericDateFromJson(b.date)
+                );
+                setFinancialData(sortedData);
+                setError(null);
+            } catch (err: any) {
+                console.error("Error fetching data:", err);
+                setError(err.message || "Gagal memuat data");
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+
     const summary = processFinancialData(financialData);
     const [selectedCategory, setSelectedCategory] = useState("kasda");
     const [detailData, setDetailData] = useState<{ title: string; items: FinancialRecord[] } | null>(null);
-    const [isLoading, setIsLoading] = React.useState(true);
 
-    const formatDateForInput = (dateStr: string) => {
-        const [month, day, year] = dateStr.split('/').map(String);
-        return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-    };
-    const [startDate, setStartDate] = useState(formatDateForInput(financialData[0].date));
-    const [endDate, setEndDate] = useState(formatDateForInput(financialData[financialData.length - 1].date));
+// Helper Functions untuk tanggal
+// Format dari API: YYYY-MM-DD (ISO standard)
+const parseApiDate = (dateStr: string): Date => {
+    if (!dateStr) return new Date();
+    // Format ISO: yyyy-mm-dd
+    return new Date(dateStr);
+};
 
-    // Simulasi loading 2 detik
-    React.useEffect(() => {
-        const timer = setTimeout(() => setIsLoading(false), 2000);
-        return () => clearTimeout(timer);
-    }, []);
+const formatDateForInput = (dateStr: string): string => {
+    if (!dateStr) return "";
+    // Format API (yyyy-mm-dd) sudah sama dengan format input date
+    return dateStr;
+};
+
+const getNumericDateFromJson = (dateStr: string): number => {
+    if (!dateStr) return 0;
+    // Format: yyyy-mm-dd → YYYYMMDD
+    const [year, month, day] = dateStr.split('-').map(Number);
+    return (year * 10000) + (month * 100) + day;
+};
+
+    const [startDate, setStartDate] = useState<string>("");
+    const [endDate, setEndDate] = useState<string>("");
+
+    // Debug: lihat format tanggal dari API
+    useEffect(() => {
+        if (financialData.length > 0) {
+            console.log("Sample dates from API:");
+            financialData.slice(0, 3).forEach(d => {
+                const parsed = parseApiDate(d.date);
+                console.log(`  Raw: "${d.date}" → Parsed: ${parsed.toISOString().split('T')[0]}`);
+            });
+        }
+    }, [financialData]);
+
+    useEffect(() => {
+        if (financialData.length > 0) {
+            setStartDate(formatDateForInput(financialData[0].date));
+            setEndDate(formatDateForInput(financialData[financialData.length - 1].date));
+        }
+    }, [financialData]);
 
     // --- Filter Logic ---
     const filteredData = useMemo(() => {
+        if (!startDate || !endDate || financialData.length === 0) return financialData;
+        
         const startNum = getNumericDateFromInput(startDate);
         const endNum = getNumericDateFromInput(endDate);
-        return financialData.filter(snapshot => {
+        
+        console.log("Filtering data:", { startDate, endDate, startNum, endNum, totalData: financialData.length });
+        
+        const filtered = financialData.filter(snapshot => {
             const snapshotNum = getNumericDateFromJson(snapshot.date);
-            return snapshotNum >= startNum && snapshotNum <= endNum;
+            const isInRange = snapshotNum >= startNum && snapshotNum <= endNum;
+            if (!isInRange) {
+                console.log("Filtered out:", snapshot.date, "=", snapshotNum);
+            }
+            return isInRange;
         });
-    }, [startDate, endDate]);
+        
+        console.log("Filtered result:", filtered.length, "items");
+        return filtered;
+    }, [startDate, endDate, financialData]);
 
     const dynamicComparison = useMemo(() => {
-        return prepareComparisonData(filteredData, selectedCategory as keyof FinancialSnapshot);
+        console.log("prepareComparisonData called with:", filteredData.length, "items, category:", selectedCategory);
+        console.log("First item:", filteredData[0]?.date);
+        console.log("Last item:", filteredData[filteredData.length - 1]?.date);
+        const result = prepareComparisonData(filteredData, selectedCategory as keyof FinancialSnapshot);
+        console.log("prepareComparisonData result:", result.chartData.length, "chart items");
+        return result;
     }, [filteredData, selectedCategory]);
 
     const latestSnapshot = filteredData[filteredData.length - 1];
@@ -204,6 +275,7 @@ export default function DashboardPage() {
         return <EmptyStateMessage />;
     }
 
+    console.log(financialData)
     return (
         <div className="p-6 md:p-8 space-y-8 min-h-screen font-sans">
             {/* Header */}

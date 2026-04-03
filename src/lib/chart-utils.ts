@@ -2,6 +2,7 @@ import { FinancialSnapshot, FinancialRecord } from "@/types/finance";
 
 interface ComparisonData {
   name: string;
+  nomor_rekening: string;
   awal: number;
   akhir: number;
 }
@@ -66,6 +67,7 @@ export function prepareComparisonData(
 
     return {
       name: cleanName,
+      nomor_rekening: accNumber,
       // Jika itemAwal undefined (berarti rekening baru), saldonya 0
       awal: itemAwal ? itemAwal.saldo || 0 : 0,
       // Jika itemAkhir undefined (berarti rekening tutup), saldonya 0

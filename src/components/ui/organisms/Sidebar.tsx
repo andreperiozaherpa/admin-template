@@ -14,6 +14,10 @@ export const Sidebar = ({ menuItems }: { menuItems: any[] }) => {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const closeSidebar = () => setIsMobileOpen(false);
 
+    // Get user data from auth service
+    const userData = authService.getUserData();
+    const userRole = authService.getRole();
+
     // 4. Buat fungsi handleLogout
     const handleLogout = () => {
         // Hapus token & cookie
@@ -112,10 +116,10 @@ export const Sidebar = ({ menuItems }: { menuItems: any[] }) => {
                         <div className="flex items-center gap-3">
                             <Avatar src="/logotubaba.png" size="md" />
                             <div className="flex-1 min-w-0">
-                                <p className="text-xs font-black text-text-primary truncate uppercase italic">Admin System</p>
+                                <p className="text-xs font-black text-text-primary truncate uppercase italic">{userData?.name || 'User'}</p>
                                 <div className="flex items-center gap-1.5 mt-0.5">
                                     <div style={{ backgroundColor: 'var(--theme-base)', boxShadow: 'var(--theme-glow)' }} className="w-1.5 h-1.5 rounded-full" />
-                                    <span className="text-[9px] font-bold text-text-muted uppercase">Lvl 4</span>
+                                    <span className="text-[9px] font-bold text-text-muted uppercase">{userRole || 'Guest'}</span>
                                 </div>
                             </div>
                             <Button variant="expel" className="w-8 h-8 !p-0 rounded-xl shrink-0"><Settings2 size={14} /></Button>

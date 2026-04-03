@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     Bell,
     Info,
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button, Breadcrumbs, SearchInput } from "@/components/ui/Index";
+import { authService } from "@/services/auth.service";
 
 // --- 1. DATA QUICK ACCESS GLOBAL ---
 // Data ini akan dideteksi oleh SearchInput untuk navigasi cepat
@@ -35,6 +36,14 @@ export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [notifs, setNotifs] = useState(INITIAL_NOTIFICATIONS);
     const [searchHeader, setSearchHeader] = useState("");
+    const [userName, setUserName] = useState<string>("User");
+
+    useEffect(() => {
+        const userData = authService.getUserData();
+        if (userData?.name) {
+            setUserName(userData.name);
+        }
+    }, []);
 
     const markAsRead = (id: number) => {
         setNotifs(prev => prev.map(n => n.id === id ? { ...n, isRead: true } : n));
@@ -62,21 +71,21 @@ export const Header = () => {
 
                 {/* CENTER: Fixed Search Input */}
                 <div className="flex-1 md:flex-[1.5] flex justify-center min-w-0">
-                    <SearchInput
+                    {/* <SearchInput
                         data={GLOBAL_QUICK_ACCESS} // Mengirimkan data untuk deteksi otomatis
                         value={searchHeader}
                         onChange={setSearchHeader}
                         showMenu={true} // Menampilkan dropdown hasil pencarian
                         placeholder="Cari fitur atau halaman (⌘+K)..."
                         className="max-w-md"
-                    />
+                    /> */}
                 </div>
 
                 {/* RIGHT: Status & Notifications */}
                 <div className="flex-none lg:flex-1 flex items-center justify-end gap-2 md:gap-6 relative">
                     <div className="hidden md:flex flex-col items-end shrink-0">
                         <span className="text-[10px] font-black italic text-text-primary uppercase tracking-tighter leading-none">
-                            Terminal 01
+                            {userName}
                         </span>
                         <span className="text-[9px] font-bold text-success-base uppercase tracking-widest flex items-center gap-1.5 mt-1.5">
                             <span

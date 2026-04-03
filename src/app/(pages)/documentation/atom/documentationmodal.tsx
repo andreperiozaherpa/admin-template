@@ -183,7 +183,7 @@ title   : string (Judul header)
                             <div className="space-y-2">
                                 <label className="text-[10px] font-bold uppercase tracking-widest text-text-muted ml-1">Deskripsi Protokol</label>
                                 <Card variant="inset" padding="md" className="min-h-[100px] text-xs text-text-secondary leading-relaxed italic">
-                                    "Semua perubahan pada node ini akan direplikasi ke seluruh jaringan Tubaba dalam waktu 5ms."
+                                    &quot;Semua perubahan pada node ini akan direplikasi ke seluruh jaringan Tubaba dalam waktu 5ms.&quot;
                                 </Card>
                             </div>
                         </>

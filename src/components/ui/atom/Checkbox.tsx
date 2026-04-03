@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useId, useState, useEffect } from "react";
+import React, { useId } from "react";
 import { Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -13,15 +13,7 @@ interface CheckboxProps {
 
 export const Checkbox = ({ label, checked, onChange, id }: CheckboxProps) => {
     const reactId = useId();
-    // PERBAIKAN: Gunakan state mounted untuk menghindari mismatch ID saat hidrasi
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // ID hanya diterapkan jika sudah di-mount atau jika ID manual diberikan
-    const checkboxId = id || (mounted ? reactId : undefined);
+    const checkboxId = id || reactId;
 
     return (
         <label

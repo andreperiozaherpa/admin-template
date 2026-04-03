@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useId, useState, useEffect } from "react";
+import React, { useId } from "react";
 
 interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: string;
@@ -15,17 +15,7 @@ export const TextArea = ({
     ...props
 }: TextAreaProps) => {
     const reactId = useId();
-
-    // 1. PERBAIKAN: Gunakan state mounted untuk sinkronisasi hidrasi
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // 2. PERBAIKAN: Pastikan ID hanya aktif setelah komponen terpasang di klien
-    // Jika belum mounted, gunakan undefined agar server dan klien sama-sama merender tanpa ID
-    const textAreaId = id || (mounted ? reactId : undefined);
+    const textAreaId = id || reactId;
 
     return (
         <div className="w-full space-y-2">

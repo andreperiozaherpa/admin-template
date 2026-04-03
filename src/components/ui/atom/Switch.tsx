@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useId, useState, useEffect } from "react";
+import React, { useId } from "react";
 import { motion } from "framer-motion";
 
 // Mendukung atribut label standar dan membuang konflik onChange
@@ -19,16 +19,7 @@ export const Switch = ({
     ...props
 }: SwitchProps) => {
     const reactId = useId();
-
-    // 1. PERBAIKAN: Gunakan state mounted untuk memastikan ID sinkron
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // 2. PERBAIKAN: ID hanya diberikan jika komponen sudah terpasang di klien
-    const switchId = id || (mounted ? reactId : undefined);
+    const switchId = id || reactId;
 
     return (
         <label

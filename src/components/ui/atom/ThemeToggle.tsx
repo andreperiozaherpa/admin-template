@@ -5,13 +5,12 @@ import { Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const ThemeToggle = () => {
-    const [isDark, setIsDark] = useState(false);
-
-    // 1. Inisialisasi tema saat komponen dimuat
-    useEffect(() => {
-        const isDarkMode = document.documentElement.classList.contains("dark");
-        setIsDark(isDarkMode);
-    }, []);
+    const [isDark, setIsDark] = useState(() => {
+        if (typeof window !== "undefined") {
+            return document.documentElement.classList.contains("dark");
+        }
+        return false;
+    });
 
     // 2. Fungsi Toggle dengan sinkronisasi DOM dan State
     const toggleTheme = () => {

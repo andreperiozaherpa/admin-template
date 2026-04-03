@@ -1,6 +1,6 @@
 "use client";
 
-import React, { InputHTMLAttributes, useId, useState, useEffect } from "react";
+import React, { InputHTMLAttributes, useId } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -9,14 +9,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const Input = ({ label, error, id, className = "", ...props }: InputProps) => {
   const reactId = useId();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // PERBAIKAN: Hubungkan ID secara aman agar label berfungsi
-  const inputId = id || (mounted ? reactId : undefined);
+  const inputId = id || reactId;
 
   return (
     <div className="flex flex-col gap-2 w-full">

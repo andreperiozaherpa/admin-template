@@ -1,1478 +1,3718 @@
 [
-    {
-        "date": "11/02/2025",
-        "kasda": [
-            {
-                "no": 1,
-                "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
-                "nomor_rekening": "396.100.09.00002.3",
-                "saldo": 34218952088.8
-            },
-            {
-                "no": 2,
-                "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
-                "nomor_rekening": "396.00.09.00002.3",
-                "saldo": 41059496291.65
-            },
-            {
-                "no": 3,
-                "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
-                "nomor_rekening": "396.00.09.00003.3",
-                "saldo": 60341913637.43
-            }
-        ],
-        "escrow": [
-            {
-                "no": 4,
-                "nama_rekening": "TITIPAN PAJAK LAINNYA",
-                "nomor_rekening": "396.20.202.10.00018",
-                "saldo": 780167405.98
-            },
-            {
-                "no": 5,
-                "nama_rekening": "TITIPAN POTONGAN GAJI",
-                "nomor_rekening": "396.20.202.03.00007",
-                "saldo": 369763852.16
-            },
-            {
-                "no": 6,
-                "nama_rekening": "TITIPAN PAJAK LAINNYA",
-                "nomor_rekening": "396.20.202.03.00008",
-                "saldo": 1408217505.65
-            },
-            {
-                "no": 7,
-                "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
-                "nomor_rekening": "20.202.10.00033",
-                "saldo": 730874799.78
-            },
-            {
-                "no": 8,
-                "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN\u2014KB  PEMDA",
-                "nomor_rekening": "20.202.10.00035",
-                "saldo": 919628488.18
-            },
-            {
-                "no": 9,
-                "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
-                "nomor_rekening": "20.202.10.00036",
-                "saldo": 57337500.74
-            },
-            {
-                "no": 10,
-                "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
-                "nomor_rekening": "20.202.10.00037",
-                "saldo": 1435114826.79
-            },
-            {
-                "no": 11,
-                "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
-                "nomor_rekening": "396.03.01.03103.4",
-                "saldo": 779647281.41
-            },
-            {
-                "no": 12,
-                "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
-                "nomor_rekening": "396.03.01.03193.8",
-                "saldo": 466993185.24
-            },
-            {
-                "no": 13,
-                "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
-                "nomor_rekening": "396.03.01.03196.4",
-                "saldo": 1415958234.78
-            },
-            {
-                "no": 14,
-                "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
-                "nomor_rekening": "396.03.01.03197.8",
-                "saldo": 1721027362.0
-            },
-            {
-                "no": 15,
-                "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
-                "nomor_rekening": "396.03.01.03199.8",
-                "saldo": 706242159.68
-            },
-            {
-                "no": 16,
-                "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
-                "nomor_rekening": "396.03.01.03200.7",
-                "saldo": 1901419757.84
-            },
-            {
-                "no": 17,
-                "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
-                "nomor_rekening": "396.03.01.03201.0",
-                "saldo": 739747311.77
-            },
-            {
-                "no": 18,
-                "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
-                "nomor_rekening": "396.03.01.22525.4",
-                "saldo": 965183038.29
-            },
-            {
-                "no": 19,
-                "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
-                "nomor_rekening": "396.03.01.29814.5",
-                "saldo": 660565280.61
-            }
-        ],
-        "skpd_pengeluaran": [
-            {
-                "no": 20,
-                "nama_rekening": "Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00066.8",
-                "saldo": 4033821789.85
-            },
-            {
-                "no": 21,
-                "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00040.7",
-                "saldo": 4784112174.64
-            },
-            {
-                "no": 22,
-                "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
-                "nomor_rekening": "390.00.05.00041.6",
-                "saldo": 2626203668.38
-            },
-            {
-                "no": 23,
-                "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00042.6",
-                "saldo": 2263237250.75
-            },
-            {
-                "no": 24,
-                "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00044.7",
-                "saldo": 240654555.85
-            },
-            {
-                "no": 25,
-                "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00045.3",
-                "saldo": 2791923742.05
-            },
-            {
-                "no": 26,
-                "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00010.1",
-                "saldo": 4696791745.22
-            },
-            {
-                "no": 27,
-                "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00172.6",
-                "saldo": 3090814222.11
-            },
-            {
-                "no": 28,
-                "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
-                "nomor_rekening": "396.00.05.00039.5",
-                "saldo": 4457963316.7
-            },
-            {
-                "no": 29,
-                "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00063.9",
-                "saldo": 3310854713.88
-            },
-            {
-                "no": 30,
-                "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00345.8",
-                "saldo": 3227854693.45
-            }
-        ],
-        "blud_pasar_puskes": [
-            {
-                "no": 65,
-                "nama_rekening": "RSUD Tulang Bawang Barat",
-                "nomor_rekening": "396.00.05.00174.8",
-                "saldo": 333535795.36
-            },
-            {
-                "no": 78,
-                "nama_rekening": "Puskesmas  Dayamurni Program JKN",
-                "nomor_rekening": "396.00.05.00186.8",
-                "saldo": 604411024.62
-            },
-            {
-                "no": 79,
-                "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
-                "nomor_rekening": "396.00.05.00331.5",
-                "saldo": 578434980.41
-            },
-            {
-                "no": 80,
-                "nama_rekening": "Puskesmas Karta Raharja Program JKN",
-                "nomor_rekening": "396.00.05.00194.5",
-                "saldo": 170407296.57
-            },
-            {
-                "no": 81,
-                "nama_rekening": "Puskesmas Marga Kencana Program JKN",
-                "nomor_rekening": "\u203a96.00.05.00329.7",
-                "saldo": 525349040.01
-            },
-            {
-                "no": 82,
-                "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
-                "nomor_rekening": "396.00.05.00187.1",
-                "saldo": 887023097.85
-            },
-            {
-                "no": 83,
-                "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
-                "nomor_rekening": "396.00. 05.00190.4",
-                "saldo": 696326118.27
-            },
-            {
-                "no": 84,
-                "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
-                "nomor_rekening": "396.00. 05.00189.2",
-                "saldo": 100811363.69
-            },
-            {
-                "no": 85,
-                "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
-                "nomor_rekening": "396.00.05.00196.0",
-                "saldo": 58819495.55
-            },
-            {
-                "no": 86,
-                "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
-                "nomor_rekening": "396.00. 05.00192.9",
-                "saldo": 324692277.73
-            },
-            {
-                "no": 87,
-                "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
-                "nomor_rekening": "396.00.05.00332.2",
-                "saldo": 221264904.14
-            },
-            {
-                "no": 88,
-                "nama_rekening": "Puskesmas Sukajaya Program JKN",
-                "nomor_rekening": "396.00.05.00193.2",
-                "saldo": 163783014.45
-            },
-            {
-                "no": 89,
-                "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
-                "nomor_rekening": "396.00.05.00195.7",
-                "saldo": 583660476.24
-            },
-            {
-                "no": 90,
-                "nama_rekening": "Puskesmas Totomulyo Program JKN",
-                "nomor_rekening": "396.00.05.00198.5",
-                "saldo": 610433411.67
-            },
-            {
-                "no": 91,
-                "nama_rekening": "Puskesmas Toto Katon Program JKN",
-                "nomor_rekening": "396.00.05.00197.7",
-                "saldo": 139146739.64
-            },
-            {
-                "no": 92,
-                "nama_rekening": "Puskesmas  Mercubuana Program JKN",
-                "nomor_rekening": "396.00.05.00188.9",
-                "saldo": 585485172.37
-            },
-            {
-                "no": 93,
-                "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
-                "nomor_rekening": "396.00. 05.00330.6",
-                "saldo": 193657361.02
-            }
-        ],
-        "skpd_penerimaan": [
-            {
-                "no": 94,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
-                "nomor_rekening": "396.00.05.00415.9",
-                "saldo": 4820642027.52
-            },
-            {
-                "no": 95,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
-                "nomor_rekening": "396.00.05.00416.9",
-                "saldo": 3503843770.26
-            },
-            {
-                "no": 96,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
-                "nomor_rekening": "396.00.05.00417.1",
-                "saldo": 2809750794.79
-            },
-            {
-                "no": 97,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
-                "nomor_rekening": "396.00.05.00418.8",
-                "saldo": 2108976218.58
-            },
-            {
-                "no": 98,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
-                "nomor_rekening": "396.00.05.00419.3",
-                "saldo": 3796026398.87
-            },
-            {
-                "no": 99,
-                "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
-                "nomor_rekening": "396.00.05.00420.5",
-                "saldo": 586190286.41
-            },
-            {
-                "no": 100,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
-                "nomor_rekening": "396.00.05.00421.6",
-                "saldo": 1837140891.4
-            },
-            {
-                "no": 101,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
-                "nomor_rekening": "396.00.05.00426.6",
-                "saldo": 253420698.82
-            }
-        ],
-        "sekolah": [
-            {
-                "no": 102,
-                "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
-                "nomor_rekening": "3940005005271",
-                "saldo": 317727837.3
-            },
-            {
-                "no": 103,
-                "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
-                "nomor_rekening": "394OOO5005427",
-                "saldo": 485690532.81
-            },
-            {
-                "no": 104,
-                "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
-                "nomor_rekening": "394OO05OO5266",
-                "saldo": 31273348.78
-            },
-            {
-                "no": 105,
-                "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
-                "nomor_rekening": "394OOO5OO5O33",
-                "saldo": 452456098.23
-            }
-        ]
-    },
-    {
-        "date": "11/30/2025",
-        "kasda": [
-            {
-                "no": 1,
-                "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
-                "nomor_rekening": "396.100.09.00002.3",
-                "saldo": 85487179551.68
-            },
-            {
-                "no": 2,
-                "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
-                "nomor_rekening": "396.00.09.00002.3",
-                "saldo": 32445495332.18
-            },
-            {
-                "no": 3,
-                "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
-                "nomor_rekening": "396.00.09.00003.3",
-                "saldo": 39180377708.29
-            }
-        ],
-        "escrow": [
-            {
-                "no": 4,
-                "nama_rekening": "TITIPAN PAJAK LAINNYA",
-                "nomor_rekening": "396.20.202.10.00018",
-                "saldo": 1535338393.17
-            },
-            {
-                "no": 5,
-                "nama_rekening": "TITIPAN POTONGAN GAJI",
-                "nomor_rekening": "396.20.202.03.00007",
-                "saldo": 508617779.32
-            },
-            {
-                "no": 6,
-                "nama_rekening": "TITIPAN PAJAK LAINNYA",
-                "nomor_rekening": "396.20.202.03.00008",
-                "saldo": 598689137.15
-            },
-            {
-                "no": 7,
-                "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
-                "nomor_rekening": "20.202.10.00033",
-                "saldo": 1640710631.63
-            },
-            {
-                "no": 8,
-                "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN\u2014KB  PEMDA",
-                "nomor_rekening": "20.202.10.00035",
-                "saldo": 1793021782.95
-            },
-            {
-                "no": 9,
-                "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
-                "nomor_rekening": "20.202.10.00036",
-                "saldo": 671548207.08
-            },
-            {
-                "no": 10,
-                "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
-                "nomor_rekening": "20.202.10.00037",
-                "saldo": 1468377693.16
-            },
-            {
-                "no": 11,
-                "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
-                "nomor_rekening": "396.03.01.03103.4",
-                "saldo": 888978908.51
-            },
-            {
-                "no": 12,
-                "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
-                "nomor_rekening": "396.03.01.03193.8",
-                "saldo": 129734370.73
-            },
-            {
-                "no": 13,
-                "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
-                "nomor_rekening": "396.03.01.03196.4",
-                "saldo": 1407996322.88
-            },
-            {
-                "no": 14,
-                "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
-                "nomor_rekening": "396.03.01.03197.8",
-                "saldo": 1993703778.63
-            },
-            {
-                "no": 15,
-                "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
-                "nomor_rekening": "396.03.01.03199.8",
-                "saldo": 1370597165.99
-            },
-            {
-                "no": 16,
-                "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
-                "nomor_rekening": "396.03.01.03200.7",
-                "saldo": 1024148189.1
-            },
-            {
-                "no": 17,
-                "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
-                "nomor_rekening": "396.03.01.03201.0",
-                "saldo": 1048275868.49
-            },
-            {
-                "no": 18,
-                "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
-                "nomor_rekening": "396.03.01.22525.4",
-                "saldo": 1658494639.15
-            },
-            {
-                "no": 19,
-                "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
-                "nomor_rekening": "396.03.01.29814.5",
-                "saldo": 1849160750.47
-            }
-        ],
-        "skpd_pengeluaran": [
-            {
-                "no": 20,
-                "nama_rekening": "Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00066.8",
-                "saldo": 4713414204.43
-            },
-            {
-                "no": 21,
-                "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00040.7",
-                "saldo": 2087669087.44
-            },
-            {
-                "no": 22,
-                "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
-                "nomor_rekening": "390.00.05.00041.6",
-                "saldo": 1260483098.06
-            },
-            {
-                "no": 23,
-                "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00042.6",
-                "saldo": 4841519815.81
-            },
-            {
-                "no": 24,
-                "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00044.7",
-                "saldo": 853632168.77
-            },
-            {
-                "no": 25,
-                "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00045.3",
-                "saldo": 790175319.83
-            },
-            {
-                "no": 26,
-                "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00010.1",
-                "saldo": 2006594593.94
-            },
-            {
-                "no": 27,
-                "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00172.6",
-                "saldo": 4724990068.26
-            },
-            {
-                "no": 28,
-                "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
-                "nomor_rekening": "396.00.05.00039.5",
-                "saldo": 1709972265.18
-            },
-            {
-                "no": 29,
-                "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00063.9",
-                "saldo": 164945329.89
-            },
-            {
-                "no": 30,
-                "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00345.8",
-                "saldo": 1113953548.9
-            }
-        ],
-        "blud_pasar_puskes": [
-            {
-                "no": 65,
-                "nama_rekening": "RSUD Tulang Bawang Barat",
-                "nomor_rekening": "396.00.05.00174.8",
-                "saldo": 789370787.45
-            },
-            {
-                "no": 78,
-                "nama_rekening": "Puskesmas  Dayamurni Program JKN",
-                "nomor_rekening": "396.00.05.00186.8",
-                "saldo": 475428201.77
-            },
-            {
-                "no": 79,
-                "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
-                "nomor_rekening": "396.00.05.00331.5",
-                "saldo": 146283734.95
-            },
-            {
-                "no": 80,
-                "nama_rekening": "Puskesmas Karta Raharja Program JKN",
-                "nomor_rekening": "396.00.05.00194.5",
-                "saldo": 933844062.32
-            },
-            {
-                "no": 81,
-                "nama_rekening": "Puskesmas Marga Kencana Program JKN",
-                "nomor_rekening": "\u203a96.00.05.00329.7",
-                "saldo": 99214677.22
-            },
-            {
-                "no": 82,
-                "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
-                "nomor_rekening": "396.00.05.00187.1",
-                "saldo": 287077553.77
-            },
-            {
-                "no": 83,
-                "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
-                "nomor_rekening": "396.00. 05.00190.4",
-                "saldo": 871004203.23
-            },
-            {
-                "no": 84,
-                "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
-                "nomor_rekening": "396.00. 05.00189.2",
-                "saldo": 800337352.69
-            },
-            {
-                "no": 85,
-                "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
-                "nomor_rekening": "396.00.05.00196.0",
-                "saldo": 535993200.73
-            },
-            {
-                "no": 86,
-                "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
-                "nomor_rekening": "396.00. 05.00192.9",
-                "saldo": 850727004.89
-            },
-            {
-                "no": 87,
-                "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
-                "nomor_rekening": "396.00.05.00332.2",
-                "saldo": 366212563.03
-            },
-            {
-                "no": 88,
-                "nama_rekening": "Puskesmas Sukajaya Program JKN",
-                "nomor_rekening": "396.00.05.00193.2",
-                "saldo": 686605329.29
-            },
-            {
-                "no": 89,
-                "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
-                "nomor_rekening": "396.00.05.00195.7",
-                "saldo": 799002755.73
-            },
-            {
-                "no": 90,
-                "nama_rekening": "Puskesmas Totomulyo Program JKN",
-                "nomor_rekening": "396.00.05.00198.5",
-                "saldo": 301252027.23
-            },
-            {
-                "no": 91,
-                "nama_rekening": "Puskesmas Toto Katon Program JKN",
-                "nomor_rekening": "396.00.05.00197.7",
-                "saldo": 530736024.55
-            },
-            {
-                "no": 92,
-                "nama_rekening": "Puskesmas  Mercubuana Program JKN",
-                "nomor_rekening": "396.00.05.00188.9",
-                "saldo": 660895791.33
-            },
-            {
-                "no": 93,
-                "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
-                "nomor_rekening": "396.00. 05.00330.6",
-                "saldo": 220773146.32
-            }
-        ],
-        "skpd_penerimaan": [
-            {
-                "no": 94,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
-                "nomor_rekening": "396.00.05.00415.9",
-                "saldo": 2443992835.31
-            },
-            {
-                "no": 95,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
-                "nomor_rekening": "396.00.05.00416.9",
-                "saldo": 3410396037.48
-            },
-            {
-                "no": 96,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
-                "nomor_rekening": "396.00.05.00417.1",
-                "saldo": 3896966841.23
-            },
-            {
-                "no": 97,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
-                "nomor_rekening": "396.00.05.00418.8",
-                "saldo": 4981780058.25
-            },
-            {
-                "no": 98,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
-                "nomor_rekening": "396.00.05.00419.3",
-                "saldo": 3384567356.72
-            },
-            {
-                "no": 99,
-                "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
-                "nomor_rekening": "396.00.05.00420.5",
-                "saldo": 477443791.26
-            },
-            {
-                "no": 100,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
-                "nomor_rekening": "396.00.05.00421.6",
-                "saldo": 560008463.57
-            },
-            {
-                "no": 101,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
-                "nomor_rekening": "396.00.05.00426.6",
-                "saldo": 1486813919.74
-            }
-        ],
-        "sekolah": [
-            {
-                "no": 102,
-                "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
-                "nomor_rekening": "3940005005271",
-                "saldo": 475031185.36
-            },
-            {
-                "no": 103,
-                "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
-                "nomor_rekening": "394OOO5005427",
-                "saldo": 37828361.77
-            },
-            {
-                "no": 104,
-                "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
-                "nomor_rekening": "394OO05OO5266",
-                "saldo": 212644352.51
-            },
-            {
-                "no": 105,
-                "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
-                "nomor_rekening": "394OOO5OO5O33",
-                "saldo": 58090797.91
-            }
-        ]
-    },
-    {
-        "date": "12/01/2025",
-        "kasda": [
-            {
-                "no": 1,
-                "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
-                "nomor_rekening": "396.100.09.00002.3",
-                "saldo": 16369992149.48
-            },
-            {
-                "no": 2,
-                "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
-                "nomor_rekening": "396.00.09.00002.3",
-                "saldo": 10368639531.25
-            },
-            {
-                "no": 3,
-                "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
-                "nomor_rekening": "396.00.09.00003.3",
-                "saldo": 37256938303.77
-            }
-        ],
-        "escrow": [
-            {
-                "no": 4,
-                "nama_rekening": "TITIPAN PAJAK LAINNYA",
-                "nomor_rekening": "396.20.202.10.00018",
-                "saldo": 1502665527.95
-            },
-            {
-                "no": 5,
-                "nama_rekening": "TITIPAN POTONGAN GAJI",
-                "nomor_rekening": "396.20.202.03.00007",
-                "saldo": 1558236818.01
-            },
-            {
-                "no": 6,
-                "nama_rekening": "TITIPAN PAJAK LAINNYA",
-                "nomor_rekening": "396.20.202.03.00008",
-                "saldo": 993448748.03
-            },
-            {
-                "no": 7,
-                "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
-                "nomor_rekening": "20.202.10.00033",
-                "saldo": 1250181398.78
-            },
-            {
-                "no": 8,
-                "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN\u2014KB  PEMDA",
-                "nomor_rekening": "20.202.10.00035",
-                "saldo": 20045293.81
-            },
-            {
-                "no": 9,
-                "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
-                "nomor_rekening": "20.202.10.00036",
-                "saldo": 954040155.31
-            },
-            {
-                "no": 10,
-                "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
-                "nomor_rekening": "20.202.10.00037",
-                "saldo": 1375370670.29
-            },
-            {
-                "no": 11,
-                "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
-                "nomor_rekening": "396.03.01.03103.4",
-                "saldo": 591090533.35
-            },
-            {
-                "no": 12,
-                "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
-                "nomor_rekening": "396.03.01.03193.8",
-                "saldo": 1059452141.13
-            },
-            {
-                "no": 13,
-                "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
-                "nomor_rekening": "396.03.01.03196.4",
-                "saldo": 1189072560.11
-            },
-            {
-                "no": 14,
-                "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
-                "nomor_rekening": "396.03.01.03197.8",
-                "saldo": 1412169016.81
-            },
-            {
-                "no": 15,
-                "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
-                "nomor_rekening": "396.03.01.03199.8",
-                "saldo": 1886242886.09
-            },
-            {
-                "no": 16,
-                "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
-                "nomor_rekening": "396.03.01.03200.7",
-                "saldo": 1867121296.99
-            },
-            {
-                "no": 17,
-                "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
-                "nomor_rekening": "396.03.01.03201.0",
-                "saldo": 876028430.42
-            },
-            {
-                "no": 18,
-                "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
-                "nomor_rekening": "396.03.01.22525.4",
-                "saldo": 1237705824.77
-            },
-            {
-                "no": 19,
-                "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
-                "nomor_rekening": "396.03.01.29814.5",
-                "saldo": 1629976313.87
-            }
-        ],
-        "skpd_pengeluaran": [
-            {
-                "no": 20,
-                "nama_rekening": "Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00066.8",
-                "saldo": 1231972296.24
-            },
-            {
-                "no": 21,
-                "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00040.7",
-                "saldo": 1504023282.22
-            },
-            {
-                "no": 22,
-                "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
-                "nomor_rekening": "390.00.05.00041.6",
-                "saldo": 1457767913.64
-            },
-            {
-                "no": 23,
-                "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00042.6",
-                "saldo": 3523332155.55
-            },
-            {
-                "no": 24,
-                "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00044.7",
-                "saldo": 4418405958.82
-            },
-            {
-                "no": 25,
-                "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00045.3",
-                "saldo": 1562567910.95
-            },
-            {
-                "no": 26,
-                "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00010.1",
-                "saldo": 1221986529.72
-            },
-            {
-                "no": 27,
-                "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00172.6",
-                "saldo": 854742116.04
-            },
-            {
-                "no": 28,
-                "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
-                "nomor_rekening": "396.00.05.00039.5",
-                "saldo": 4366574803.92
-            },
-            {
-                "no": 29,
-                "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00063.9",
-                "saldo": 4491657102.9
-            },
-            {
-                "no": 30,
-                "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00345.8",
-                "saldo": 4142297499.7
-            }
-        ],
-        "blud_pasar_puskes": [
-            {
-                "no": 65,
-                "nama_rekening": "RSUD Tulang Bawang Barat",
-                "nomor_rekening": "396.00.05.00174.8",
-                "saldo": 234088663.43
-            },
-            {
-                "no": 78,
-                "nama_rekening": "Puskesmas  Dayamurni Program JKN",
-                "nomor_rekening": "396.00.05.00186.8",
-                "saldo": 749588041.1
-            },
-            {
-                "no": 79,
-                "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
-                "nomor_rekening": "396.00.05.00331.5",
-                "saldo": 696462626.79
-            },
-            {
-                "no": 80,
-                "nama_rekening": "Puskesmas Karta Raharja Program JKN",
-                "nomor_rekening": "396.00.05.00194.5",
-                "saldo": 706309554.39
-            },
-            {
-                "no": 81,
-                "nama_rekening": "Puskesmas Marga Kencana Program JKN",
-                "nomor_rekening": "\u203a96.00.05.00329.7",
-                "saldo": 142786624.23
-            },
-            {
-                "no": 82,
-                "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
-                "nomor_rekening": "396.00.05.00187.1",
-                "saldo": 908691539.11
-            },
-            {
-                "no": 83,
-                "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
-                "nomor_rekening": "396.00. 05.00190.4",
-                "saldo": 817546972.49
-            },
-            {
-                "no": 84,
-                "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
-                "nomor_rekening": "396.00. 05.00189.2",
-                "saldo": 840261938.7
-            },
-            {
-                "no": 85,
-                "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
-                "nomor_rekening": "396.00.05.00196.0",
-                "saldo": 855181075.15
-            },
-            {
-                "no": 86,
-                "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
-                "nomor_rekening": "396.00. 05.00192.9",
-                "saldo": 323899192.53
-            },
-            {
-                "no": 87,
-                "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
-                "nomor_rekening": "396.00.05.00332.2",
-                "saldo": 461965729.43
-            },
-            {
-                "no": 88,
-                "nama_rekening": "Puskesmas Sukajaya Program JKN",
-                "nomor_rekening": "396.00.05.00193.2",
-                "saldo": 391710341.03
-            },
-            {
-                "no": 89,
-                "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
-                "nomor_rekening": "396.00.05.00195.7",
-                "saldo": 795204197.3
-            },
-            {
-                "no": 90,
-                "nama_rekening": "Puskesmas Totomulyo Program JKN",
-                "nomor_rekening": "396.00.05.00198.5",
-                "saldo": 763336897.05
-            },
-            {
-                "no": 91,
-                "nama_rekening": "Puskesmas Toto Katon Program JKN",
-                "nomor_rekening": "396.00.05.00197.7",
-                "saldo": 152405567.14
-            },
-            {
-                "no": 92,
-                "nama_rekening": "Puskesmas  Mercubuana Program JKN",
-                "nomor_rekening": "396.00.05.00188.9",
-                "saldo": 115034649.12
-            },
-            {
-                "no": 93,
-                "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
-                "nomor_rekening": "396.00. 05.00330.6",
-                "saldo": 299478075.58
-            }
-        ],
-        "skpd_penerimaan": [
-            {
-                "no": 94,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
-                "nomor_rekening": "396.00.05.00415.9",
-                "saldo": 1147380559.26
-            },
-            {
-                "no": 95,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
-                "nomor_rekening": "396.00.05.00416.9",
-                "saldo": 627603321.49
-            },
-            {
-                "no": 96,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
-                "nomor_rekening": "396.00.05.00417.1",
-                "saldo": 2252349347.41
-            },
-            {
-                "no": 97,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
-                "nomor_rekening": "396.00.05.00418.8",
-                "saldo": 3434220293.25
-            },
-            {
-                "no": 98,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
-                "nomor_rekening": "396.00.05.00419.3",
-                "saldo": 4689576586.02
-            },
-            {
-                "no": 99,
-                "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
-                "nomor_rekening": "396.00.05.00420.5",
-                "saldo": 3053971649.8
-            },
-            {
-                "no": 100,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
-                "nomor_rekening": "396.00.05.00421.6",
-                "saldo": 4753436416.63
-            },
-            {
-                "no": 101,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
-                "nomor_rekening": "396.00.05.00426.6",
-                "saldo": 2651411566.73
-            }
-        ],
-        "sekolah": [
-            {
-                "no": 102,
-                "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
-                "nomor_rekening": "3940005005271",
-                "saldo": 306101513.44
-            },
-            {
-                "no": 103,
-                "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
-                "nomor_rekening": "394OOO5005427",
-                "saldo": 484405060.39
-            },
-            {
-                "no": 104,
-                "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
-                "nomor_rekening": "394OO05OO5266",
-                "saldo": 258540859.33
-            },
-            {
-                "no": 105,
-                "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
-                "nomor_rekening": "394OOO5OO5O33",
-                "saldo": 404849765.57
-            }
-        ]
-    },
-    {
-        "date": "12/30/2025",
-        "kasda": [
-            {
-                "no": 1,
-                "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
-                "nomor_rekening": "396.100.09.00002.3",
-                "saldo": 6388746.32
-            },
-            {
-                "no": 2,
-                "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
-                "nomor_rekening": "396.00.09.00002.3",
-                "saldo": 50046610.13
-            },
-            {
-                "no": 3,
-                "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
-                "nomor_rekening": "396.00.09.00003.3",
-                "saldo": 701000.69
-            }
-        ],
-        "escrow": [
-            {
-                "no": 4,
-                "nama_rekening": "TITIPAN PAJAK LAINNYA",
-                "nomor_rekening": "396.20.202.10.00018",
-                "saldo": 782726994.13
-            },
-            {
-                "no": 5,
-                "nama_rekening": "TITIPAN POTONGAN GAJI",
-                "nomor_rekening": "396.20.202.03.00007",
-                "saldo": 1864072646.89
-            },
-            {
-                "no": 6,
-                "nama_rekening": "TITIPAN PAJAK LAINNYA",
-                "nomor_rekening": "396.20.202.03.00008",
-                "saldo": 515192485.7
-            },
-            {
-                "no": 7,
-                "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
-                "nomor_rekening": "20.202.10.00033",
-                "saldo": 1335108250.02
-            },
-            {
-                "no": 8,
-                "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN\u2014KB  PEMDA",
-                "nomor_rekening": "20.202.10.00035",
-                "saldo": 1065757040.03
-            },
-            {
-                "no": 9,
-                "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
-                "nomor_rekening": "20.202.10.00036",
-                "saldo": 127634918.18
-            },
-            {
-                "no": 10,
-                "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
-                "nomor_rekening": "20.202.10.00037",
-                "saldo": 1552342978.73
-            },
-            {
-                "no": 11,
-                "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
-                "nomor_rekening": "396.03.01.03103.4",
-                "saldo": 1667458633.7
-            },
-            {
-                "no": 12,
-                "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
-                "nomor_rekening": "396.03.01.03193.8",
-                "saldo": 961434795.29
-            },
-            {
-                "no": 13,
-                "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
-                "nomor_rekening": "396.03.01.03196.4",
-                "saldo": 1330774343.65
-            },
-            {
-                "no": 14,
-                "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
-                "nomor_rekening": "396.03.01.03197.8",
-                "saldo": 1524959452.6
-            },
-            {
-                "no": 15,
-                "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
-                "nomor_rekening": "396.03.01.03199.8",
-                "saldo": 1473951563.92
-            },
-            {
-                "no": 16,
-                "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
-                "nomor_rekening": "396.03.01.03200.7",
-                "saldo": 1998212640.65
-            },
-            {
-                "no": 17,
-                "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
-                "nomor_rekening": "396.03.01.03201.0",
-                "saldo": 1666237188.57
-            },
-            {
-                "no": 18,
-                "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
-                "nomor_rekening": "396.03.01.22525.4",
-                "saldo": 1489304317.28
-            },
-            {
-                "no": 19,
-                "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
-                "nomor_rekening": "396.03.01.29814.5",
-                "saldo": 349411872.43
-            }
-        ],
-        "skpd_pengeluaran": [
-            {
-                "no": 20,
-                "nama_rekening": "Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00066.8",
-                "saldo": 2317034407.73
-            },
-            {
-                "no": 21,
-                "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00040.7",
-                "saldo": 2011489948.33
-            },
-            {
-                "no": 22,
-                "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
-                "nomor_rekening": "390.00.05.00041.6",
-                "saldo": 713354970.88
-            },
-            {
-                "no": 23,
-                "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00042.6",
-                "saldo": 4689248386.35
-            },
-            {
-                "no": 24,
-                "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00044.7",
-                "saldo": 1696613866.4
-            },
-            {
-                "no": 25,
-                "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00045.3",
-                "saldo": 1432373288.64
-            },
-            {
-                "no": 26,
-                "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00010.1",
-                "saldo": 3492665476.64
-            },
-            {
-                "no": 27,
-                "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00172.6",
-                "saldo": 2098537538.41
-            },
-            {
-                "no": 28,
-                "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
-                "nomor_rekening": "396.00.05.00039.5",
-                "saldo": 3180783049.81
-            },
-            {
-                "no": 29,
-                "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00063.9",
-                "saldo": 1198579306.54
-            },
-            {
-                "no": 30,
-                "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
-                "nomor_rekening": "396.00.05.00345.8",
-                "saldo": 722039813.8
-            }
-        ],
-        "blud_pasar_puskes": [
-            {
-                "no": 65,
-                "nama_rekening": "RSUD Tulang Bawang Barat",
-                "nomor_rekening": "396.00.05.00174.8",
-                "saldo": 922835842.28
-            },
-            {
-                "no": 78,
-                "nama_rekening": "Puskesmas  Dayamurni Program JKN",
-                "nomor_rekening": "396.00.05.00186.8",
-                "saldo": 437630975.79
-            },
-            {
-                "no": 79,
-                "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
-                "nomor_rekening": "396.00.05.00331.5",
-                "saldo": 931882427.42
-            },
-            {
-                "no": 80,
-                "nama_rekening": "Puskesmas Karta Raharja Program JKN",
-                "nomor_rekening": "396.00.05.00194.5",
-                "saldo": 416409705.74
-            },
-            {
-                "no": 81,
-                "nama_rekening": "Puskesmas Marga Kencana Program JKN",
-                "nomor_rekening": "\u203a96.00.05.00329.7",
-                "saldo": 546302835.42
-            },
-            {
-                "no": 82,
-                "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
-                "nomor_rekening": "396.00.05.00187.1",
-                "saldo": 349364758.29
-            },
-            {
-                "no": 83,
-                "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
-                "nomor_rekening": "396.00. 05.00190.4",
-                "saldo": 683529079.22
-            },
-            {
-                "no": 84,
-                "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
-                "nomor_rekening": "396.00. 05.00189.2",
-                "saldo": 625078515.68
-            },
-            {
-                "no": 85,
-                "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
-                "nomor_rekening": "396.00.05.00196.0",
-                "saldo": 154116067.38
-            },
-            {
-                "no": 86,
-                "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
-                "nomor_rekening": "396.00. 05.00192.9",
-                "saldo": 655747399.0
-            },
-            {
-                "no": 87,
-                "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
-                "nomor_rekening": "396.00.05.00332.2",
-                "saldo": 601289932.47
-            },
-            {
-                "no": 88,
-                "nama_rekening": "Puskesmas Sukajaya Program JKN",
-                "nomor_rekening": "396.00.05.00193.2",
-                "saldo": 376619878.29
-            },
-            {
-                "no": 89,
-                "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
-                "nomor_rekening": "396.00.05.00195.7",
-                "saldo": 153320706.74
-            },
-            {
-                "no": 90,
-                "nama_rekening": "Puskesmas Totomulyo Program JKN",
-                "nomor_rekening": "396.00.05.00198.5",
-                "saldo": 476378539.3
-            },
-            {
-                "no": 91,
-                "nama_rekening": "Puskesmas Toto Katon Program JKN",
-                "nomor_rekening": "396.00.05.00197.7",
-                "saldo": 915830941.51
-            },
-            {
-                "no": 92,
-                "nama_rekening": "Puskesmas  Mercubuana Program JKN",
-                "nomor_rekening": "396.00.05.00188.9",
-                "saldo": 589765639.49
-            },
-            {
-                "no": 93,
-                "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
-                "nomor_rekening": "396.00. 05.00330.6",
-                "saldo": 84559391.27
-            }
-        ],
-        "skpd_penerimaan": [
-            {
-                "no": 94,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
-                "nomor_rekening": "396.00.05.00415.9",
-                "saldo": 1899471767.92
-            },
-            {
-                "no": 95,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
-                "nomor_rekening": "396.00.05.00416.9",
-                "saldo": 3729995641.91
-            },
-            {
-                "no": 96,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
-                "nomor_rekening": "396.00.05.00417.1",
-                "saldo": 2773378002.74
-            },
-            {
-                "no": 97,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
-                "nomor_rekening": "396.00.05.00418.8",
-                "saldo": 1090406732.1
-            },
-            {
-                "no": 98,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
-                "nomor_rekening": "396.00.05.00419.3",
-                "saldo": 4823875179.58
-            },
-            {
-                "no": 99,
-                "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
-                "nomor_rekening": "396.00.05.00420.5",
-                "saldo": 3954058499.24
-            },
-            {
-                "no": 100,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
-                "nomor_rekening": "396.00.05.00421.6",
-                "saldo": 513520227.72
-            },
-            {
-                "no": 101,
-                "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
-                "nomor_rekening": "396.00.05.00426.6",
-                "saldo": 3387454115.62
-            }
-        ],
-        "sekolah": [
-            {
-                "no": 102,
-                "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
-                "nomor_rekening": "3940005005271",
-                "saldo": 1000000.93
-            },
-            {
-                "no": 103,
-                "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
-                "nomor_rekening": "394OOO5005427",
-                "saldo": 2468782.29
-            },
-            {
-                "no": 104,
-                "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
-                "nomor_rekening": "394OO05OO5266",
-                "saldo": 492967.53
-            },
-            {
-                "no": 105,
-                "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
-                "nomor_rekening": "394OOO5OO5O33",
-                "saldo": 235470.67
-            }
-        ]
-    }
+  {
+    "date": "11/02/2025",
+    "kasda": [
+      {
+        "no": 1,
+        "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
+        "nomor_rekening": "396.100.09.00002.3",
+        "saldo": 34218952088.8
+      },
+      {
+        "no": 2,
+        "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
+        "nomor_rekening": "396.00.09.00002.3",
+        "saldo": 41059496291.65
+      },
+      {
+        "no": 3,
+        "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
+        "nomor_rekening": "396.00.09.00003.3",
+        "saldo": 60341913637.43
+      }
+    ],
+    "escrow": [
+      {
+        "no": 4,
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "nomor_rekening": "396.20.202.10.00018",
+        "saldo": 780167405.98
+      },
+      {
+        "no": 5,
+        "nama_rekening": "TITIPAN POTONGAN GAJI",
+        "nomor_rekening": "396.20.202.03.00007",
+        "saldo": 369763852.16
+      },
+      {
+        "no": 6,
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "nomor_rekening": "396.20.202.03.00008",
+        "saldo": 1408217505.65
+      },
+      {
+        "no": 7,
+        "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
+        "nomor_rekening": "20.202.10.00033",
+        "saldo": 730874799.78
+      },
+      {
+        "no": 8,
+        "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN—KB  PEMDA",
+        "nomor_rekening": "20.202.10.00035",
+        "saldo": 919628488.18
+      },
+      {
+        "no": 9,
+        "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
+        "nomor_rekening": "20.202.10.00036",
+        "saldo": 57337500.74
+      },
+      {
+        "no": 10,
+        "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
+        "nomor_rekening": "20.202.10.00037",
+        "saldo": 1435114826.79
+      },
+      {
+        "no": 11,
+        "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
+        "nomor_rekening": "396.03.01.03103.4",
+        "saldo": 779647281.41
+      },
+      {
+        "no": 12,
+        "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
+        "nomor_rekening": "396.03.01.03193.8",
+        "saldo": 466993185.24
+      },
+      {
+        "no": 13,
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
+        "nomor_rekening": "396.03.01.03196.4",
+        "saldo": 1415958234.78
+      },
+      {
+        "no": 14,
+        "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
+        "nomor_rekening": "396.03.01.03197.8",
+        "saldo": 1721027362
+      },
+      {
+        "no": 15,
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
+        "nomor_rekening": "396.03.01.03199.8",
+        "saldo": 706242159.68
+      },
+      {
+        "no": 16,
+        "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
+        "nomor_rekening": "396.03.01.03200.7",
+        "saldo": 1901419757.84
+      },
+      {
+        "no": 17,
+        "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
+        "nomor_rekening": "396.03.01.03201.0",
+        "saldo": 739747311.77
+      },
+      {
+        "no": 18,
+        "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
+        "nomor_rekening": "396.03.01.22525.4",
+        "saldo": 965183038.29
+      },
+      {
+        "no": 19,
+        "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
+        "nomor_rekening": "396.03.01.29814.5",
+        "saldo": 660565280.61
+      }
+    ],
+    "skpd_pengeluaran": [
+      {
+        "no": 20,
+        "nama_rekening": "Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00066.8",
+        "saldo": 4033821789.85
+      },
+      {
+        "no": 21,
+        "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00040.7",
+        "saldo": 4784112174.64
+      },
+      {
+        "no": 22,
+        "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
+        "nomor_rekening": "390.00.05.00041.6",
+        "saldo": 2626203668.38
+      },
+      {
+        "no": 23,
+        "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00042.6",
+        "saldo": 2263237250.75
+      },
+      {
+        "no": 24,
+        "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00044.7",
+        "saldo": 240654555.85
+      },
+      {
+        "no": 25,
+        "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00045.3",
+        "saldo": 2791923742.05
+      },
+      {
+        "no": 26,
+        "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00010.1",
+        "saldo": 4696791745.22
+      },
+      {
+        "no": 27,
+        "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00172.6",
+        "saldo": 3090814222.11
+      },
+      {
+        "no": 28,
+        "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
+        "nomor_rekening": "396.00.05.00039.5",
+        "saldo": 4457963316.7
+      },
+      {
+        "no": 29,
+        "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00063.9",
+        "saldo": 3310854713.88
+      },
+      {
+        "no": 30,
+        "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00345.8",
+        "saldo": 3227854693.45
+      }
+    ],
+    "blud_pasar_puskes": [
+      {
+        "no": 65,
+        "nama_rekening": "RSUD Tulang Bawang Barat",
+        "nomor_rekening": "396.00.05.00174.8",
+        "saldo": 333535795.36
+      },
+      {
+        "no": 78,
+        "nama_rekening": "Puskesmas  Dayamurni Program JKN",
+        "nomor_rekening": "396.00.05.00186.8",
+        "saldo": 604411024.62
+      },
+      {
+        "no": 79,
+        "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
+        "nomor_rekening": "396.00.05.00331.5",
+        "saldo": 578434980.41
+      },
+      {
+        "no": 80,
+        "nama_rekening": "Puskesmas Karta Raharja Program JKN",
+        "nomor_rekening": "396.00.05.00194.5",
+        "saldo": 170407296.57
+      },
+      {
+        "no": 81,
+        "nama_rekening": "Puskesmas Marga Kencana Program JKN",
+        "nomor_rekening": "›96.00.05.00329.7",
+        "saldo": 525349040.01
+      },
+      {
+        "no": 82,
+        "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
+        "nomor_rekening": "396.00.05.00187.1",
+        "saldo": 887023097.85
+      },
+      {
+        "no": 83,
+        "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
+        "nomor_rekening": "396.00. 05.00190.4",
+        "saldo": 696326118.27
+      },
+      {
+        "no": 84,
+        "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
+        "nomor_rekening": "396.00. 05.00189.2",
+        "saldo": 100811363.69
+      },
+      {
+        "no": 85,
+        "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
+        "nomor_rekening": "396.00.05.00196.0",
+        "saldo": 58819495.55
+      },
+      {
+        "no": 86,
+        "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
+        "nomor_rekening": "396.00. 05.00192.9",
+        "saldo": 324692277.73
+      },
+      {
+        "no": 87,
+        "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
+        "nomor_rekening": "396.00.05.00332.2",
+        "saldo": 221264904.14
+      },
+      {
+        "no": 88,
+        "nama_rekening": "Puskesmas Sukajaya Program JKN",
+        "nomor_rekening": "396.00.05.00193.2",
+        "saldo": 163783014.45
+      },
+      {
+        "no": 89,
+        "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
+        "nomor_rekening": "396.00.05.00195.7",
+        "saldo": 583660476.24
+      },
+      {
+        "no": 90,
+        "nama_rekening": "Puskesmas Totomulyo Program JKN",
+        "nomor_rekening": "396.00.05.00198.5",
+        "saldo": 610433411.67
+      },
+      {
+        "no": 91,
+        "nama_rekening": "Puskesmas Toto Katon Program JKN",
+        "nomor_rekening": "396.00.05.00197.7",
+        "saldo": 139146739.64
+      },
+      {
+        "no": 92,
+        "nama_rekening": "Puskesmas  Mercubuana Program JKN",
+        "nomor_rekening": "396.00.05.00188.9",
+        "saldo": 585485172.37
+      },
+      {
+        "no": 93,
+        "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
+        "nomor_rekening": "396.00. 05.00330.6",
+        "saldo": 193657361.02
+      }
+    ],
+    "skpd_penerimaan": [
+      {
+        "no": 94,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
+        "nomor_rekening": "396.00.05.00415.9",
+        "saldo": 4820642027.52
+      },
+      {
+        "no": 95,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
+        "nomor_rekening": "396.00.05.00416.9",
+        "saldo": 3503843770.26
+      },
+      {
+        "no": 96,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
+        "nomor_rekening": "396.00.05.00417.1",
+        "saldo": 2809750794.79
+      },
+      {
+        "no": 97,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
+        "nomor_rekening": "396.00.05.00418.8",
+        "saldo": 2108976218.58
+      },
+      {
+        "no": 98,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
+        "nomor_rekening": "396.00.05.00419.3",
+        "saldo": 3796026398.87
+      },
+      {
+        "no": 99,
+        "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
+        "nomor_rekening": "396.00.05.00420.5",
+        "saldo": 586190286.41
+      },
+      {
+        "no": 100,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
+        "nomor_rekening": "396.00.05.00421.6",
+        "saldo": 1837140891.4
+      },
+      {
+        "no": 101,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
+        "nomor_rekening": "396.00.05.00426.6",
+        "saldo": 253420698.82
+      }
+    ],
+    "sekolah": [
+      {
+        "no": 102,
+        "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
+        "nomor_rekening": "3940005005271",
+        "saldo": 317727837.3
+      },
+      {
+        "no": 103,
+        "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
+        "nomor_rekening": "394OOO5005427",
+        "saldo": 485690532.81
+      },
+      {
+        "no": 104,
+        "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
+        "nomor_rekening": "394OO05OO5266",
+        "saldo": 31273348.78
+      },
+      {
+        "no": 105,
+        "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
+        "nomor_rekening": "394OOO5OO5O33",
+        "saldo": 452456098.23
+      }
+    ]
+  },
+  {
+    "date": "11/30/2025",
+    "kasda": [
+      {
+        "no": 1,
+        "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
+        "nomor_rekening": "396.100.09.00002.3",
+        "saldo": 85487179551.68
+      },
+      {
+        "no": 2,
+        "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
+        "nomor_rekening": "396.00.09.00002.3",
+        "saldo": 32445495332.18
+      },
+      {
+        "no": 3,
+        "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
+        "nomor_rekening": "396.00.09.00003.3",
+        "saldo": 39180377708.29
+      }
+    ],
+    "escrow": [
+      {
+        "no": 4,
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "nomor_rekening": "396.20.202.10.00018",
+        "saldo": 1535338393.17
+      },
+      {
+        "no": 5,
+        "nama_rekening": "TITIPAN POTONGAN GAJI",
+        "nomor_rekening": "396.20.202.03.00007",
+        "saldo": 508617779.32
+      },
+      {
+        "no": 6,
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "nomor_rekening": "396.20.202.03.00008",
+        "saldo": 598689137.15
+      },
+      {
+        "no": 7,
+        "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
+        "nomor_rekening": "20.202.10.00033",
+        "saldo": 1640710631.63
+      },
+      {
+        "no": 8,
+        "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN—KB  PEMDA",
+        "nomor_rekening": "20.202.10.00035",
+        "saldo": 1793021782.95
+      },
+      {
+        "no": 9,
+        "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
+        "nomor_rekening": "20.202.10.00036",
+        "saldo": 671548207.08
+      },
+      {
+        "no": 10,
+        "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
+        "nomor_rekening": "20.202.10.00037",
+        "saldo": 1468377693.16
+      },
+      {
+        "no": 11,
+        "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
+        "nomor_rekening": "396.03.01.03103.4",
+        "saldo": 888978908.51
+      },
+      {
+        "no": 12,
+        "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
+        "nomor_rekening": "396.03.01.03193.8",
+        "saldo": 129734370.73
+      },
+      {
+        "no": 13,
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
+        "nomor_rekening": "396.03.01.03196.4",
+        "saldo": 1407996322.88
+      },
+      {
+        "no": 14,
+        "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
+        "nomor_rekening": "396.03.01.03197.8",
+        "saldo": 1993703778.63
+      },
+      {
+        "no": 15,
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
+        "nomor_rekening": "396.03.01.03199.8",
+        "saldo": 1370597165.99
+      },
+      {
+        "no": 16,
+        "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
+        "nomor_rekening": "396.03.01.03200.7",
+        "saldo": 1024148189.1
+      },
+      {
+        "no": 17,
+        "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
+        "nomor_rekening": "396.03.01.03201.0",
+        "saldo": 1048275868.49
+      },
+      {
+        "no": 18,
+        "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
+        "nomor_rekening": "396.03.01.22525.4",
+        "saldo": 1658494639.15
+      },
+      {
+        "no": 19,
+        "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
+        "nomor_rekening": "396.03.01.29814.5",
+        "saldo": 1849160750.47
+      }
+    ],
+    "skpd_pengeluaran": [
+      {
+        "no": 20,
+        "nama_rekening": "Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00066.8",
+        "saldo": 4713414204.43
+      },
+      {
+        "no": 21,
+        "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00040.7",
+        "saldo": 2087669087.44
+      },
+      {
+        "no": 22,
+        "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
+        "nomor_rekening": "390.00.05.00041.6",
+        "saldo": 1260483098.06
+      },
+      {
+        "no": 23,
+        "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00042.6",
+        "saldo": 4841519815.81
+      },
+      {
+        "no": 24,
+        "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00044.7",
+        "saldo": 853632168.77
+      },
+      {
+        "no": 25,
+        "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00045.3",
+        "saldo": 790175319.83
+      },
+      {
+        "no": 26,
+        "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00010.1",
+        "saldo": 2006594593.94
+      },
+      {
+        "no": 27,
+        "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00172.6",
+        "saldo": 4724990068.26
+      },
+      {
+        "no": 28,
+        "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
+        "nomor_rekening": "396.00.05.00039.5",
+        "saldo": 1709972265.18
+      },
+      {
+        "no": 29,
+        "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00063.9",
+        "saldo": 164945329.89
+      },
+      {
+        "no": 30,
+        "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00345.8",
+        "saldo": 1113953548.9
+      }
+    ],
+    "blud_pasar_puskes": [
+      {
+        "no": 65,
+        "nama_rekening": "RSUD Tulang Bawang Barat",
+        "nomor_rekening": "396.00.05.00174.8",
+        "saldo": 789370787.45
+      },
+      {
+        "no": 78,
+        "nama_rekening": "Puskesmas  Dayamurni Program JKN",
+        "nomor_rekening": "396.00.05.00186.8",
+        "saldo": 475428201.77
+      },
+      {
+        "no": 79,
+        "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
+        "nomor_rekening": "396.00.05.00331.5",
+        "saldo": 146283734.95
+      },
+      {
+        "no": 80,
+        "nama_rekening": "Puskesmas Karta Raharja Program JKN",
+        "nomor_rekening": "396.00.05.00194.5",
+        "saldo": 933844062.32
+      },
+      {
+        "no": 81,
+        "nama_rekening": "Puskesmas Marga Kencana Program JKN",
+        "nomor_rekening": "›96.00.05.00329.7",
+        "saldo": 99214677.22
+      },
+      {
+        "no": 82,
+        "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
+        "nomor_rekening": "396.00.05.00187.1",
+        "saldo": 287077553.77
+      },
+      {
+        "no": 83,
+        "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
+        "nomor_rekening": "396.00. 05.00190.4",
+        "saldo": 871004203.23
+      },
+      {
+        "no": 84,
+        "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
+        "nomor_rekening": "396.00. 05.00189.2",
+        "saldo": 800337352.69
+      },
+      {
+        "no": 85,
+        "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
+        "nomor_rekening": "396.00.05.00196.0",
+        "saldo": 535993200.73
+      },
+      {
+        "no": 86,
+        "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
+        "nomor_rekening": "396.00. 05.00192.9",
+        "saldo": 850727004.89
+      },
+      {
+        "no": 87,
+        "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
+        "nomor_rekening": "396.00.05.00332.2",
+        "saldo": 366212563.03
+      },
+      {
+        "no": 88,
+        "nama_rekening": "Puskesmas Sukajaya Program JKN",
+        "nomor_rekening": "396.00.05.00193.2",
+        "saldo": 686605329.29
+      },
+      {
+        "no": 89,
+        "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
+        "nomor_rekening": "396.00.05.00195.7",
+        "saldo": 799002755.73
+      },
+      {
+        "no": 90,
+        "nama_rekening": "Puskesmas Totomulyo Program JKN",
+        "nomor_rekening": "396.00.05.00198.5",
+        "saldo": 301252027.23
+      },
+      {
+        "no": 91,
+        "nama_rekening": "Puskesmas Toto Katon Program JKN",
+        "nomor_rekening": "396.00.05.00197.7",
+        "saldo": 530736024.55
+      },
+      {
+        "no": 92,
+        "nama_rekening": "Puskesmas  Mercubuana Program JKN",
+        "nomor_rekening": "396.00.05.00188.9",
+        "saldo": 660895791.33
+      },
+      {
+        "no": 93,
+        "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
+        "nomor_rekening": "396.00. 05.00330.6",
+        "saldo": 220773146.32
+      }
+    ],
+    "skpd_penerimaan": [
+      {
+        "no": 94,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
+        "nomor_rekening": "396.00.05.00415.9",
+        "saldo": 2443992835.31
+      },
+      {
+        "no": 95,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
+        "nomor_rekening": "396.00.05.00416.9",
+        "saldo": 3410396037.48
+      },
+      {
+        "no": 96,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
+        "nomor_rekening": "396.00.05.00417.1",
+        "saldo": 3896966841.23
+      },
+      {
+        "no": 97,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
+        "nomor_rekening": "396.00.05.00418.8",
+        "saldo": 4981780058.25
+      },
+      {
+        "no": 98,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
+        "nomor_rekening": "396.00.05.00419.3",
+        "saldo": 3384567356.72
+      },
+      {
+        "no": 99,
+        "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
+        "nomor_rekening": "396.00.05.00420.5",
+        "saldo": 477443791.26
+      },
+      {
+        "no": 100,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
+        "nomor_rekening": "396.00.05.00421.6",
+        "saldo": 560008463.57
+      },
+      {
+        "no": 101,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
+        "nomor_rekening": "396.00.05.00426.6",
+        "saldo": 1486813919.74
+      }
+    ],
+    "sekolah": [
+      {
+        "no": 102,
+        "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
+        "nomor_rekening": "3940005005271",
+        "saldo": 475031185.36
+      },
+      {
+        "no": 103,
+        "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
+        "nomor_rekening": "394OOO5005427",
+        "saldo": 37828361.77
+      },
+      {
+        "no": 104,
+        "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
+        "nomor_rekening": "394OO05OO5266",
+        "saldo": 212644352.51
+      },
+      {
+        "no": 105,
+        "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
+        "nomor_rekening": "394OOO5OO5O33",
+        "saldo": 58090797.91
+      }
+    ]
+  },
+  {
+    "date": "12/01/2025",
+    "kasda": [
+      {
+        "no": 1,
+        "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
+        "nomor_rekening": "396.100.09.00002.3",
+        "saldo": 16369992149.48
+      },
+      {
+        "no": 2,
+        "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
+        "nomor_rekening": "396.00.09.00002.3",
+        "saldo": 10368639531.25
+      },
+      {
+        "no": 3,
+        "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
+        "nomor_rekening": "396.00.09.00003.3",
+        "saldo": 37256938303.77
+      }
+    ],
+    "escrow": [
+      {
+        "no": 4,
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "nomor_rekening": "396.20.202.10.00018",
+        "saldo": 1502665527.95
+      },
+      {
+        "no": 5,
+        "nama_rekening": "TITIPAN POTONGAN GAJI",
+        "nomor_rekening": "396.20.202.03.00007",
+        "saldo": 1558236818.01
+      },
+      {
+        "no": 6,
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "nomor_rekening": "396.20.202.03.00008",
+        "saldo": 993448748.03
+      },
+      {
+        "no": 7,
+        "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
+        "nomor_rekening": "20.202.10.00033",
+        "saldo": 1250181398.78
+      },
+      {
+        "no": 8,
+        "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN—KB  PEMDA",
+        "nomor_rekening": "20.202.10.00035",
+        "saldo": 20045293.81
+      },
+      {
+        "no": 9,
+        "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
+        "nomor_rekening": "20.202.10.00036",
+        "saldo": 954040155.31
+      },
+      {
+        "no": 10,
+        "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
+        "nomor_rekening": "20.202.10.00037",
+        "saldo": 1375370670.29
+      },
+      {
+        "no": 11,
+        "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
+        "nomor_rekening": "396.03.01.03103.4",
+        "saldo": 591090533.35
+      },
+      {
+        "no": 12,
+        "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
+        "nomor_rekening": "396.03.01.03193.8",
+        "saldo": 1059452141.13
+      },
+      {
+        "no": 13,
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
+        "nomor_rekening": "396.03.01.03196.4",
+        "saldo": 1189072560.11
+      },
+      {
+        "no": 14,
+        "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
+        "nomor_rekening": "396.03.01.03197.8",
+        "saldo": 1412169016.81
+      },
+      {
+        "no": 15,
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
+        "nomor_rekening": "396.03.01.03199.8",
+        "saldo": 1886242886.09
+      },
+      {
+        "no": 16,
+        "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
+        "nomor_rekening": "396.03.01.03200.7",
+        "saldo": 1867121296.99
+      },
+      {
+        "no": 17,
+        "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
+        "nomor_rekening": "396.03.01.03201.0",
+        "saldo": 876028430.42
+      },
+      {
+        "no": 18,
+        "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
+        "nomor_rekening": "396.03.01.22525.4",
+        "saldo": 1237705824.77
+      },
+      {
+        "no": 19,
+        "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
+        "nomor_rekening": "396.03.01.29814.5",
+        "saldo": 1629976313.87
+      }
+    ],
+    "skpd_pengeluaran": [
+      {
+        "no": 20,
+        "nama_rekening": "Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00066.8",
+        "saldo": 1231972296.24
+      },
+      {
+        "no": 21,
+        "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00040.7",
+        "saldo": 1504023282.22
+      },
+      {
+        "no": 22,
+        "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
+        "nomor_rekening": "390.00.05.00041.6",
+        "saldo": 1457767913.64
+      },
+      {
+        "no": 23,
+        "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00042.6",
+        "saldo": 3523332155.55
+      },
+      {
+        "no": 24,
+        "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00044.7",
+        "saldo": 4418405958.82
+      },
+      {
+        "no": 25,
+        "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00045.3",
+        "saldo": 1562567910.95
+      },
+      {
+        "no": 26,
+        "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00010.1",
+        "saldo": 1221986529.72
+      },
+      {
+        "no": 27,
+        "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00172.6",
+        "saldo": 854742116.04
+      },
+      {
+        "no": 28,
+        "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
+        "nomor_rekening": "396.00.05.00039.5",
+        "saldo": 4366574803.92
+      },
+      {
+        "no": 29,
+        "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00063.9",
+        "saldo": 4491657102.9
+      },
+      {
+        "no": 30,
+        "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00345.8",
+        "saldo": 4142297499.7
+      }
+    ],
+    "blud_pasar_puskes": [
+      {
+        "no": 65,
+        "nama_rekening": "RSUD Tulang Bawang Barat",
+        "nomor_rekening": "396.00.05.00174.8",
+        "saldo": 234088663.43
+      },
+      {
+        "no": 78,
+        "nama_rekening": "Puskesmas  Dayamurni Program JKN",
+        "nomor_rekening": "396.00.05.00186.8",
+        "saldo": 749588041.1
+      },
+      {
+        "no": 79,
+        "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
+        "nomor_rekening": "396.00.05.00331.5",
+        "saldo": 696462626.79
+      },
+      {
+        "no": 80,
+        "nama_rekening": "Puskesmas Karta Raharja Program JKN",
+        "nomor_rekening": "396.00.05.00194.5",
+        "saldo": 706309554.39
+      },
+      {
+        "no": 81,
+        "nama_rekening": "Puskesmas Marga Kencana Program JKN",
+        "nomor_rekening": "›96.00.05.00329.7",
+        "saldo": 142786624.23
+      },
+      {
+        "no": 82,
+        "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
+        "nomor_rekening": "396.00.05.00187.1",
+        "saldo": 908691539.11
+      },
+      {
+        "no": 83,
+        "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
+        "nomor_rekening": "396.00. 05.00190.4",
+        "saldo": 817546972.49
+      },
+      {
+        "no": 84,
+        "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
+        "nomor_rekening": "396.00. 05.00189.2",
+        "saldo": 840261938.7
+      },
+      {
+        "no": 85,
+        "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
+        "nomor_rekening": "396.00.05.00196.0",
+        "saldo": 855181075.15
+      },
+      {
+        "no": 86,
+        "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
+        "nomor_rekening": "396.00. 05.00192.9",
+        "saldo": 323899192.53
+      },
+      {
+        "no": 87,
+        "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
+        "nomor_rekening": "396.00.05.00332.2",
+        "saldo": 461965729.43
+      },
+      {
+        "no": 88,
+        "nama_rekening": "Puskesmas Sukajaya Program JKN",
+        "nomor_rekening": "396.00.05.00193.2",
+        "saldo": 391710341.03
+      },
+      {
+        "no": 89,
+        "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
+        "nomor_rekening": "396.00.05.00195.7",
+        "saldo": 795204197.3
+      },
+      {
+        "no": 90,
+        "nama_rekening": "Puskesmas Totomulyo Program JKN",
+        "nomor_rekening": "396.00.05.00198.5",
+        "saldo": 763336897.05
+      },
+      {
+        "no": 91,
+        "nama_rekening": "Puskesmas Toto Katon Program JKN",
+        "nomor_rekening": "396.00.05.00197.7",
+        "saldo": 152405567.14
+      },
+      {
+        "no": 92,
+        "nama_rekening": "Puskesmas  Mercubuana Program JKN",
+        "nomor_rekening": "396.00.05.00188.9",
+        "saldo": 115034649.12
+      },
+      {
+        "no": 93,
+        "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
+        "nomor_rekening": "396.00. 05.00330.6",
+        "saldo": 299478075.58
+      }
+    ],
+    "skpd_penerimaan": [
+      {
+        "no": 94,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
+        "nomor_rekening": "396.00.05.00415.9",
+        "saldo": 1147380559.26
+      },
+      {
+        "no": 95,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
+        "nomor_rekening": "396.00.05.00416.9",
+        "saldo": 627603321.49
+      },
+      {
+        "no": 96,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
+        "nomor_rekening": "396.00.05.00417.1",
+        "saldo": 2252349347.41
+      },
+      {
+        "no": 97,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
+        "nomor_rekening": "396.00.05.00418.8",
+        "saldo": 3434220293.25
+      },
+      {
+        "no": 98,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
+        "nomor_rekening": "396.00.05.00419.3",
+        "saldo": 4689576586.02
+      },
+      {
+        "no": 99,
+        "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
+        "nomor_rekening": "396.00.05.00420.5",
+        "saldo": 3053971649.8
+      },
+      {
+        "no": 100,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
+        "nomor_rekening": "396.00.05.00421.6",
+        "saldo": 4753436416.63
+      },
+      {
+        "no": 101,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
+        "nomor_rekening": "396.00.05.00426.6",
+        "saldo": 2651411566.73
+      }
+    ],
+    "sekolah": [
+      {
+        "no": 102,
+        "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
+        "nomor_rekening": "3940005005271",
+        "saldo": 306101513.44
+      },
+      {
+        "no": 103,
+        "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
+        "nomor_rekening": "394OOO5005427",
+        "saldo": 484405060.39
+      },
+      {
+        "no": 104,
+        "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
+        "nomor_rekening": "394OO05OO5266",
+        "saldo": 258540859.33
+      },
+      {
+        "no": 105,
+        "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
+        "nomor_rekening": "394OOO5OO5O33",
+        "saldo": 404849765.57
+      }
+    ]
+  },
+  {
+    "date": "12/30/2025",
+    "kasda": [
+      {
+        "no": 1,
+        "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
+        "nomor_rekening": "396.100.09.00002.3",
+        "saldo": 6388746.32
+      },
+      {
+        "no": 2,
+        "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
+        "nomor_rekening": "396.00.09.00002.3",
+        "saldo": 50046610.13
+      },
+      {
+        "no": 3,
+        "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
+        "nomor_rekening": "396.00.09.00003.3",
+        "saldo": 701000.69
+      }
+    ],
+    "escrow": [
+      {
+        "no": 4,
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "nomor_rekening": "396.20.202.10.00018",
+        "saldo": 782726994.13
+      },
+      {
+        "no": 5,
+        "nama_rekening": "TITIPAN POTONGAN GAJI",
+        "nomor_rekening": "396.20.202.03.00007",
+        "saldo": 1864072646.89
+      },
+      {
+        "no": 6,
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "nomor_rekening": "396.20.202.03.00008",
+        "saldo": 515192485.7
+      },
+      {
+        "no": 7,
+        "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
+        "nomor_rekening": "20.202.10.00033",
+        "saldo": 1335108250.02
+      },
+      {
+        "no": 8,
+        "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN—KB  PEMDA",
+        "nomor_rekening": "20.202.10.00035",
+        "saldo": 1065757040.03
+      },
+      {
+        "no": 9,
+        "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
+        "nomor_rekening": "20.202.10.00036",
+        "saldo": 127634918.18
+      },
+      {
+        "no": 10,
+        "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
+        "nomor_rekening": "20.202.10.00037",
+        "saldo": 1552342978.73
+      },
+      {
+        "no": 11,
+        "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
+        "nomor_rekening": "396.03.01.03103.4",
+        "saldo": 1667458633.7
+      },
+      {
+        "no": 12,
+        "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
+        "nomor_rekening": "396.03.01.03193.8",
+        "saldo": 961434795.29
+      },
+      {
+        "no": 13,
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
+        "nomor_rekening": "396.03.01.03196.4",
+        "saldo": 1330774343.65
+      },
+      {
+        "no": 14,
+        "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
+        "nomor_rekening": "396.03.01.03197.8",
+        "saldo": 1524959452.6
+      },
+      {
+        "no": 15,
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
+        "nomor_rekening": "396.03.01.03199.8",
+        "saldo": 1473951563.92
+      },
+      {
+        "no": 16,
+        "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
+        "nomor_rekening": "396.03.01.03200.7",
+        "saldo": 1998212640.65
+      },
+      {
+        "no": 17,
+        "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
+        "nomor_rekening": "396.03.01.03201.0",
+        "saldo": 1666237188.57
+      },
+      {
+        "no": 18,
+        "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
+        "nomor_rekening": "396.03.01.22525.4",
+        "saldo": 1489304317.28
+      },
+      {
+        "no": 19,
+        "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
+        "nomor_rekening": "396.03.01.29814.5",
+        "saldo": 349411872.43
+      }
+    ],
+    "skpd_pengeluaran": [
+      {
+        "no": 20,
+        "nama_rekening": "Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00066.8",
+        "saldo": 2317034407.73
+      },
+      {
+        "no": 21,
+        "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00040.7",
+        "saldo": 2011489948.33
+      },
+      {
+        "no": 22,
+        "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
+        "nomor_rekening": "390.00.05.00041.6",
+        "saldo": 713354970.88
+      },
+      {
+        "no": 23,
+        "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00042.6",
+        "saldo": 4689248386.35
+      },
+      {
+        "no": 24,
+        "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00044.7",
+        "saldo": 1696613866.4
+      },
+      {
+        "no": 25,
+        "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00045.3",
+        "saldo": 1432373288.64
+      },
+      {
+        "no": 26,
+        "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00010.1",
+        "saldo": 3492665476.64
+      },
+      {
+        "no": 27,
+        "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00172.6",
+        "saldo": 2098537538.41
+      },
+      {
+        "no": 28,
+        "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
+        "nomor_rekening": "396.00.05.00039.5",
+        "saldo": 3180783049.81
+      },
+      {
+        "no": 29,
+        "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00063.9",
+        "saldo": 1198579306.54
+      },
+      {
+        "no": 30,
+        "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
+        "nomor_rekening": "396.00.05.00345.8",
+        "saldo": 722039813.8
+      }
+    ],
+    "blud_pasar_puskes": [
+      {
+        "no": 65,
+        "nama_rekening": "RSUD Tulang Bawang Barat",
+        "nomor_rekening": "396.00.05.00174.8",
+        "saldo": 922835842.28
+      },
+      {
+        "no": 78,
+        "nama_rekening": "Puskesmas  Dayamurni Program JKN",
+        "nomor_rekening": "396.00.05.00186.8",
+        "saldo": 437630975.79
+      },
+      {
+        "no": 79,
+        "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
+        "nomor_rekening": "396.00.05.00331.5",
+        "saldo": 931882427.42
+      },
+      {
+        "no": 80,
+        "nama_rekening": "Puskesmas Karta Raharja Program JKN",
+        "nomor_rekening": "396.00.05.00194.5",
+        "saldo": 416409705.74
+      },
+      {
+        "no": 81,
+        "nama_rekening": "Puskesmas Marga Kencana Program JKN",
+        "nomor_rekening": "›96.00.05.00329.7",
+        "saldo": 546302835.42
+      },
+      {
+        "no": 82,
+        "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
+        "nomor_rekening": "396.00.05.00187.1",
+        "saldo": 349364758.29
+      },
+      {
+        "no": 83,
+        "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
+        "nomor_rekening": "396.00. 05.00190.4",
+        "saldo": 683529079.22
+      },
+      {
+        "no": 84,
+        "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
+        "nomor_rekening": "396.00. 05.00189.2",
+        "saldo": 625078515.68
+      },
+      {
+        "no": 85,
+        "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
+        "nomor_rekening": "396.00.05.00196.0",
+        "saldo": 154116067.38
+      },
+      {
+        "no": 86,
+        "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
+        "nomor_rekening": "396.00. 05.00192.9",
+        "saldo": 655747399
+      },
+      {
+        "no": 87,
+        "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
+        "nomor_rekening": "396.00.05.00332.2",
+        "saldo": 601289932.47
+      },
+      {
+        "no": 88,
+        "nama_rekening": "Puskesmas Sukajaya Program JKN",
+        "nomor_rekening": "396.00.05.00193.2",
+        "saldo": 376619878.29
+      },
+      {
+        "no": 89,
+        "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
+        "nomor_rekening": "396.00.05.00195.7",
+        "saldo": 153320706.74
+      },
+      {
+        "no": 90,
+        "nama_rekening": "Puskesmas Totomulyo Program JKN",
+        "nomor_rekening": "396.00.05.00198.5",
+        "saldo": 476378539.3
+      },
+      {
+        "no": 91,
+        "nama_rekening": "Puskesmas Toto Katon Program JKN",
+        "nomor_rekening": "396.00.05.00197.7",
+        "saldo": 915830941.51
+      },
+      {
+        "no": 92,
+        "nama_rekening": "Puskesmas  Mercubuana Program JKN",
+        "nomor_rekening": "396.00.05.00188.9",
+        "saldo": 589765639.49
+      },
+      {
+        "no": 93,
+        "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
+        "nomor_rekening": "396.00. 05.00330.6",
+        "saldo": 84559391.27
+      }
+    ],
+    "skpd_penerimaan": [
+      {
+        "no": 94,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
+        "nomor_rekening": "396.00.05.00415.9",
+        "saldo": 1899471767.92
+      },
+      {
+        "no": 95,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
+        "nomor_rekening": "396.00.05.00416.9",
+        "saldo": 3729995641.91
+      },
+      {
+        "no": 96,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
+        "nomor_rekening": "396.00.05.00417.1",
+        "saldo": 2773378002.74
+      },
+      {
+        "no": 97,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
+        "nomor_rekening": "396.00.05.00418.8",
+        "saldo": 1090406732.1
+      },
+      {
+        "no": 98,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
+        "nomor_rekening": "396.00.05.00419.3",
+        "saldo": 4823875179.58
+      },
+      {
+        "no": 99,
+        "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
+        "nomor_rekening": "396.00.05.00420.5",
+        "saldo": 3954058499.24
+      },
+      {
+        "no": 100,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
+        "nomor_rekening": "396.00.05.00421.6",
+        "saldo": 513520227.72
+      },
+      {
+        "no": 101,
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
+        "nomor_rekening": "396.00.05.00426.6",
+        "saldo": 3387454115.62
+      }
+    ],
+    "sekolah": [
+      {
+        "no": 102,
+        "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
+        "nomor_rekening": "3940005005271",
+        "saldo": 1000000.93
+      },
+      {
+        "no": 103,
+        "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
+        "nomor_rekening": "394OOO5005427",
+        "saldo": 2468782.29
+      },
+      {
+        "no": 104,
+        "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
+        "nomor_rekening": "394OO05OO5266",
+        "saldo": 492967.53
+      },
+      {
+        "no": 105,
+        "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
+        "nomor_rekening": "394OOO5OO5O33",
+        "saldo": 235470.67
+      }
+    ]
+  },
+  {
+    "date": "04/03/2026",
+    "kasda": [
+      {
+        "nomor_rekening": "30",
+        "nama_rekening": "Bagian  Protokol dan  Komunikasi  Pimpinan  Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "kasda"
+      },
+      {
+        "nomor_rekening": "49",
+        "nama_rekening": "Dinas Komunikasi  dan  Informatika",
+        "saldo": 396,
+        "kategori": "kasda"
+      }
+    ],
+    "escrow": [
+      {
+        "nomor_rekening": "4",
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "saldo": 396.2,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "5",
+        "nama_rekening": "TITIPAN POTONGAN GAJI",
+        "saldo": 396.2,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "6",
+        "nama_rekening": "TITIPAN PAJAK LAINNYA",
+        "saldo": 396.2,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "7",
+        "nama_rekening": "TITIPAN POKOK OPSEN PKB PEMDA",
+        "saldo": 20.202,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "8",
+        "nama_rekening": "TITIPAN  POKOK  OPSEN  BBN—KB  PEMDA",
+        "saldo": 20.202,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "9",
+        "nama_rekening": "TITIPAN DENDA OPSEN PKB PEMDA",
+        "saldo": 20.202,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "10",
+        "nama_rekening": "TITIPAN DENDA OPSEN BBN-KB PEMDA",
+        "saldo": 20.202,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "11",
+        "nama_rekening": "TITIPAN PBB KEC TUBA TENGAH",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "12",
+        "nama_rekening": "TITIPAN PBB KEC TUMIJAJAR",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "13",
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG AGUNG",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "14",
+        "nama_rekening": "TITIPAN PBB KEC TUBA UDIK",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "15",
+        "nama_rekening": "TITIPAN PBB KEC GUNUNG TERANG",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "16",
+        "nama_rekening": "TITIPAN PBB KEC WAY KENANGA",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "17",
+        "nama_rekening": "TITIPAN PBB KEC LAMBU KIBANG",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "18",
+        "nama_rekening": "TITIPAN PBB KEC PAGAR DEWA",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      },
+      {
+        "nomor_rekening": "19",
+        "nama_rekening": "TITIPAN PBB KEC BATU PUTIH",
+        "saldo": 396.03,
+        "kategori": "escrow"
+      }
+    ],
+    "skpd_pengeluaran": [
+      {
+        "nomor_rekening": "35",
+        "nama_rekening": "Dinas Pendidikan  dan  Kebudayaan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "36",
+        "nama_rekening": "Dinas Kesehatan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "37",
+        "nama_rekening": "Dinas Pekerjaan  Umum dan  Penataan  Ruang",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "38",
+        "nama_rekening": "Dinas Perumahan,  Kawasan  Pemukiman,  dan  Pertanahan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "40",
+        "nama_rekening": "Dinas Sosial",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "41",
+        "nama_rekening": "Dinas Tenaga Kerja dan  Transmigrasi",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "42",
+        "nama_rekening": "Dinas Pemberdayaan  Perempuan  dan  Perlindungan  Anak",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "43",
+        "nama_rekening": "Dinas Pengendalian  Penduduk  dan  Keluarga Berencana",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "44",
+        "nama_rekening": "Dinas Ketahanan  Pangan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "45",
+        "nama_rekening": "Dinas Lingkungan  Hidup",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "46",
+        "nama_rekening": "Dinas Kependudukan  dan  Pencatatan Sipil",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "47",
+        "nama_rekening": "Dinas Pemberdayaan  Masyarakat  dan  Tiyuh",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "48",
+        "nama_rekening": "Dinas Perhubungan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "50",
+        "nama_rekening": "Dinas Koperasi,  Usaha Kecil dan   Menengah,  Perindustrian, dan  Perdagangan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "51",
+        "nama_rekening": "Dinas Penanaman  Modal dan  Pelayanan Terpadu  Satu Pintu",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "52",
+        "nama_rekening": "Dinas Pemuda,  Olahraga,  dan  Pariwisata",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "53",
+        "nama_rekening": "Dinas Perpustakaan  dan  Kearsipan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "54",
+        "nama_rekening": "Dinas Perikarian",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "55",
+        "nama_rekening": "Dinas Tanaman  Pangan,  Hortikultura,  dan Perkebunan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "56",
+        "nama_rekening": "Dinas Peternakan  dan  Kesehatan  Hewan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "57",
+        "nama_rekening": "Dinas Pemadam  Kebakaran  dan  Penyelamatan",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "66",
+        "nama_rekening": "Kecamatan  Tulang Bawang Tengah",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "67",
+        "nama_rekening": "Kecamatan  Tulang Bawang Udik",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "68",
+        "nama_rekening": "Kecamatan  Gunung Terang",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "69",
+        "nama_rekening": "Kecamatan  Gunung Agung",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "70",
+        "nama_rekening": "Kecamatan  Lambu Kibang",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "71",
+        "nama_rekening": "Kecamatan  Way Kenanga",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "72",
+        "nama_rekening": "Kecamatan Tumijajar",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "73",
+        "nama_rekening": "Kecamatan  Pagar Dewa",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "74",
+        "nama_rekening": "Kecamatan  Batu Putih",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "75",
+        "nama_rekening": "Kelurahan  Dayamurni",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "76",
+        "nama_rekening": "Kelurahan  Mulya Asri",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "77",
+        "nama_rekening": "Kelurahan  Panaragan  Jaya",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "94",
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS LINGKUNGAN HUDUP",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "95",
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERHUBUNGAN",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "96",
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEKERJAAN UMUM",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "97",
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PEMUDA OLAHRAGA",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "98",
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS KOPERINDAG",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "100",
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PERKIMTA",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      },
+      {
+        "nomor_rekening": "101",
+        "nama_rekening": "OPERASIONAL PENERIMAAN DINAS PETERNAKAN",
+        "saldo": 396,
+        "kategori": "skpd_pengeluaran"
+      }
+    ],
+    "skpd_penerimaan": [
+      {
+        "nomor_rekening": "NO",
+        "nama_rekening": "NAMA REKENING",
+        "saldo": 0,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "1",
+        "nama_rekening": "RKUD KAB. TULANG BAWANG BARAT",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "2",
+        "nama_rekening": "OPERASIONAL  KAB TULANG BAWANG BARAT",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "3",
+        "nama_rekening": "OPERASIONAL KAB TULANG BAWANG BARAT",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "20",
+        "nama_rekening": "Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "21",
+        "nama_rekening": "Bagian Tata Pemerintahan  Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "22",
+        "nama_rekening": "Bagian  Hukum  Sekretariat  Daerah",
+        "saldo": 390,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "23",
+        "nama_rekening": "Bagian  Kesejahteraan  Rakyat Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "24",
+        "nama_rekening": "Bagian  Perekonomian  Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "25",
+        "nama_rekening": "Bagian Administrasi  Pembangunan  Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "26",
+        "nama_rekening": "Bagian  Umum Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "27",
+        "nama_rekening": "Bagian  Perencanaan  dan  Keuangan  Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "28",
+        "nama_rekening": "Bagian  Pengadaan  Barang dan  Jasa Sekretariat Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "29",
+        "nama_rekening": "Bagian  Organisasi  Sekretariat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "31",
+        "nama_rekening": "Sekretariat  Dewan  Perwakilan  Rakyat Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "32",
+        "nama_rekening": "Bagian  Umum dan  Keuangan  Sekretariat  DPRD",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "33",
+        "nama_rekening": "Bagian  Persidangan  dan  Perundang-undangan Sekretariat  DPRD",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "34",
+        "nama_rekening": "Bagian  Fasilitasi  Penganggaran  dan  Pengawasan  Sekretariat  DPRD",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "39",
+        "nama_rekening": "Satuan Polisi Pamong Praja",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "58",
+        "nama_rekening": "Inspektorat  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "59",
+        "nama_rekening": "Badan Perencanaan  Pembangunan,  Riset dan  Inovasi Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "60",
+        "nama_rekening": "Badan  Kepegawaian  dan  Pengembangan  Sumber  Daya Manusia",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "61",
+        "nama_rekening": "Badan  Keuangan dan  Aset  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "62",
+        "nama_rekening": "Badan  Pendapatan  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "63",
+        "nama_rekening": "Badan  Kesatuan  Bangsa dan  Politik   Daeröh",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "64",
+        "nama_rekening": "Badan  Penanggulangan Bencana  Daerah",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "65",
+        "nama_rekening": "RSUD Tulang Bawang Barat",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "99",
+        "nama_rekening": "OPERASIONAL PENERIMAAN BADAN PENDAPATAN DAERAH",
+        "saldo": 396,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "322",
+        "nama_rekening": "10809235 SM PN  12 TU LANG  BAWANG  BARAT",
+        "saldo": 3900052447,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "330",
+        "nama_rekening": "10808394  SM PN  16  TULANG  BAWANG  BARAT",
+        "saldo": 39053767,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "332",
+        "nama_rekening": "10809191 SM PN  18  TU LANG  BAWANG  BARAT",
+        "saldo": 39404883,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "335",
+        "nama_rekening": "10808387 SM PN  1 TULANG  BAWANG  BARAT",
+        "saldo": 3960005002391,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "336",
+        "nama_rekening": "10808387  SM PN  1 TU LANG  BAWANG  BARAT",
+        "saldo": 3960005003671,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "337",
+        "nama_rekening": "10804096  SM PN 20  TULANG  BAWANG  BARAT",
+        "saldo": 3940005004935,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "344",
+        "nama_rekening": "O983OO99  SM PN 24  TULANG  BAWANG  BARAT",
+        "saldo": 3960005003672,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "345",
+        "nama_rekening": "69772268 SM PN 25  TU LANG  BAWANG  BARAT",
+        "saldo": 3960304213754,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "346",
+        "nama_rekening": "69864645 SM PN 26  TULANG  BAWANG  BARAT",
+        "saldo": 3940005005917,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "348",
+        "nama_rekening": "10808388 SM PN 2 TU LANG  BAWANG  BA RAT",
+        "saldo": 3960005002375,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "349",
+        "nama_rekening": "10808388 SM PN  2 TU LANG  BAWANG  BARAT",
+        "saldo": 3960005003707,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "350",
+        "nama_rekening": "10808403 SM PN 3  TU LANG  BAWANG  BA RAT",
+        "saldo": 3960005002474,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "351",
+        "nama_rekening": "10808403 SM PN 3 TU LANG  BAWANG  BARAT",
+        "saldo": 3960005003722,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "352",
+        "nama_rekening": "10809217 SM PN  4 TU LANG  BAWANG  BA RAT",
+        "saldo": 3960005002468,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "353",
+        "nama_rekening": "10810524 SM PN 5  TU LAN G  BAWAN G  BA RAT",
+        "saldo": 3960005002498,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "354",
+        "nama_rekening": "10810524 SM PN  5  TU LANG  BAWANG  BA RAT",
+        "saldo": 3960005004044,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "355",
+        "nama_rekening": "10804115  SM PN 6  TU LANG  BAWANG  BA RAT",
+        "saldo": 3960005002401,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "356",
+        "nama_rekening": "10804115  SM PN 6  TU LANG  BAWANG  BARAT",
+        "saldo": 3960005004092,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "357",
+        "nama_rekening": "10804115  SM PN 6  TU LANG  BAWANG  BA RAT",
+        "saldo": 396342541,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "358",
+        "nama_rekening": "10808401 SM PN 7  TU LANG  BAWANG  BARAT",
+        "saldo": 3960005002450,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "359",
+        "nama_rekening": "10808401 SM PN 7  TU LANG  BAWAN G  BA RAT",
+        "saldo": 3960005003742,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "362",
+        "nama_rekening": "10809230 SM PN 9  TU LANG  BAWAN G  BA RAT",
+        "saldo": 4140005000053,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "363",
+        "nama_rekening": "10809230 SM PN 9  TU LANG  BAWAN G  BA RAT",
+        "saldo": 4140005000601,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "364",
+        "nama_rekening": "10808422  SM PN  SATU  ATAP 1 TU LANG  BAWANG BA RAT",
+        "saldo": 3960005003288,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "365",
+        "nama_rekening": "10808422  SM PN SATU  ATAP 1 TULANG  BAWANG BARAT",
+        "saldo": 3960005004282,
+        "kategori": "skpd_penerimaan"
+      },
+      {
+        "nomor_rekening": "367",
+        "nama_rekening": "10810675 SM PN SATU  ATAP 3 TU LANG  BAWANG BARAT",
+        "saldo": 3940005004950,
+        "kategori": "skpd_penerimaan"
+      }
+    ],
+    "blud_pasar_puskes": [],
+    "sekolah": [
+      {
+        "nomor_rekening": "78",
+        "nama_rekening": "Puskesmas  Dayamurni Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "79",
+        "nama_rekening": "Puskesmas  Margo Dadi Program  JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "80",
+        "nama_rekening": "Puskesmas Karta Raharja Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "81",
+        "nama_rekening": "Puskesmas Marga Kencana Program JKN",
+        "saldo": 96,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "82",
+        "nama_rekening": "Puskesmas  Panaragan Jaya Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "83",
+        "nama_rekening": "Puskesmas  Mulya Asri Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "84",
+        "nama_rekening": "Puskesmas Candra  Mukti Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "85",
+        "nama_rekening": "Puskesmas Pagar Dewa Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "86",
+        "nama_rekening": "Puskesmas  Kibang Budi Jaya Program  JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "87",
+        "nama_rekening": "Puskesmas Gilang Tunggal Makarta  Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "88",
+        "nama_rekening": "Puskesmas Sukajaya Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "89",
+        "nama_rekening": "Puskesmas  Dwikora Jaya Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "90",
+        "nama_rekening": "Puskesmas Totomulyo Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "91",
+        "nama_rekening": "Puskesmas Toto Katon Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "92",
+        "nama_rekening": "Puskesmas  Mercubuana Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "93",
+        "nama_rekening": "Puskesmas Indraloka Jaya Program JKN",
+        "saldo": 396,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "102",
+        "nama_rekening": "10809616  SDN  10  BATU  PUTIH",
+        "saldo": 3940005005271,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "103",
+        "nama_rekening": "1O8O9O 58  SDN  10  GUNUNG  AGUNG",
+        "saldo": 3945005427,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "104",
+        "nama_rekening": "10809671 SDN  10  GU NU NG TERANG",
+        "saldo": 394055266,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "105",
+        "nama_rekening": "10808038 SDN  10  LAMBU  KIBANG",
+        "saldo": 3945533,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "106",
+        "nama_rekening": "10809619 SDN  10 TULANG  BAWANG TENGAH",
+        "saldo": 3900301009179,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "107",
+        "nama_rekening": "1O8O9O 19  SDN  10 TULANG  BAWANG  TENGAH",
+        "saldo": 414005027,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "108",
+        "nama_rekening": "1O8O9O38  SDN  10 TULANG  BAWANG  UDIK",
+        "saldo": 3900502718,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "109",
+        "nama_rekening": "10808790 SDN  10 TUMIJAJAR",
+        "saldo": 3960005002987,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "110",
+        "nama_rekening": "108 10701 SDN  10  WAY  KENANGA",
+        "saldo": 3940005000569,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "111",
+        "nama_rekening": "1O8O87'23  SDN  11  GU NUNG  AGUNG",
+        "saldo": 3940005005390,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "112",
+        "nama_rekening": "10808609  SDN  11  GUNU NG TE RANG",
+        "saldo": 3940055169,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "113",
+        "nama_rekening": "1O8O96O6  SDN  11  LAMBU  KIBANG",
+        "saldo": 3940005000986,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "114",
+        "nama_rekening": "1O8O9O62  SDN  11 TULANG  BAWANG TE NGAH",
+        "saldo": 4140005000194,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "115",
+        "nama_rekening": "10809662 SDN  11 TULANG  BAWANG  TE NGAH",
+        "saldo": 3960005004075,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "116",
+        "nama_rekening": "10808647 SDN  11 TULANG  BAWANG  UDIK",
+        "saldo": 3960502721,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "117",
+        "nama_rekening": "10808051 SDN  11  TUMIJAJAR",
+        "saldo": 3960005002649,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "118",
+        "nama_rekening": "1O8O9O79  SDN  11  WAY  KENANGA",
+        "saldo": 394573,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "119",
+        "nama_rekening": "10808072  SDN  12  GU NUNG AG UNG",
+        "saldo": 3940001477,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "120",
+        "nama_rekening": "10808072 SDN  12  GUNUNG  AGUNG",
+        "saldo": 3960005003817,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "121",
+        "nama_rekening": "10808005 SDN  12  GUNUNG  TERANG",
+        "saldo": 3940304070452,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "122",
+        "nama_rekening": "10808005 SDN  12  GUNUNG TERANG",
+        "saldo": 3940304028097,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "123",
+        "nama_rekening": "10808005 SDN  12  GUNUNG TERANG",
+        "saldo": 3940005005402,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "124",
+        "nama_rekening": "10808113 SDN  12  LAMBU  KIBANG",
+        "saldo": 3940005005198,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "125",
+        "nama_rekening": "10808113 SDN  12  LAMBU  KIBANG",
+        "saldo": 3960005003918,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "126",
+        "nama_rekening": "10809685 SDN  12 TULANG  BAWANG  TENGAH",
+        "saldo": 3960005003123,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "127",
+        "nama_rekening": "10810024  SDN  12  TULANG  BAWANG  UDIK",
+        "saldo": 39605051,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "128",
+        "nama_rekening": "1080803 l  SDN  12  TU MIuAJAR",
+        "saldo": 3960005003156,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "129",
+        "nama_rekening": "10808620  SDN  12  WAY  KE NANGA",
+        "saldo": 3940005000584,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "130",
+        "nama_rekening": "10808620  SDN  12 WAY  KE NANGA",
+        "saldo": 3950005003881,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "131",
+        "nama_rekening": "69863229 SDN  13  GUNUNG  AGUNG",
+        "saldo": 3945543,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "132",
+        "nama_rekening": "10808657 SDN  l3  LAMBU  KIBANG",
+        "saldo": 3940005005145,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "133",
+        "nama_rekening": "10808739  SDN  13 TULANG  BAWANG  TENGAH",
+        "saldo": 4140500219,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "134",
+        "nama_rekening": "1O8O96TO  SDN  13 TU LANG  BAWANG  UDIK",
+        "saldo": 3960005003068,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "135",
+        "nama_rekening": "10811579  SDN  13  TUMIJAJAR",
+        "saldo": 3960005003188,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "136",
+        "nama_rekening": "09787517  SDN  13  WAY  KENANGA",
+        "saldo": 394558,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "137",
+        "nama_rekening": "1O8O4O 16 SDN  14  GUNUNG  AGUNG",
+        "saldo": 3940005005213,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "138",
+        "nama_rekening": "10804016  SDN  14  GUNUNG  AGUNG",
+        "saldo": 3960005003785,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "139",
+        "nama_rekening": "10808675 SDN  14  LAMBU  KIBANG",
+        "saldo": 3940005006985,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "140",
+        "nama_rekening": "10808675 SDN  14  LAMBU  KIBANG",
+        "saldo": 3940304034288,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "141",
+        "nama_rekening": "1O8O8O75  SDN  14  LAMBU  KIBANG",
+        "saldo": 3940005005539,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "142",
+        "nama_rekening": "10809633 SDN  14  TULANG  BAWANG TENGAH",
+        "saldo": 41450147,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "143",
+        "nama_rekening": "10801363 SDN  14 TU LANG  BAWANG  UDI K",
+        "saldo": 39502838,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "144",
+        "nama_rekening": "10801363 SDN  14 TU LANG  BAWANG  UDIK",
+        "saldo": 3953953,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "145",
+        "nama_rekening": "10808649  SDN  14 TUMIJAJAR",
+        "saldo": 365074,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "146",
+        "nama_rekening": "l O808'2O2  SDN  II   GUNUNG  AGUNG",
+        "saldo": 3940005001570,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "147",
+        "nama_rekening": "1O8O8'2O2  SDN  15  GUNUNG  AGUNG",
+        "saldo": 3960503792,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "148",
+        "nama_rekening": "10809670  UPT SDN  1Si TULANG  BAWANG\r\nTENGAH",
+        "saldo": 4140005000062,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "149",
+        "nama_rekening": "10809601 SDN  15  TU LANG  BAWANG  UDIK",
+        "saldo": 396533,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "150",
+        "nama_rekening": "10808080 SDN  15  TUMIJAJAR",
+        "saldo": 3960005003141,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "151",
+        "nama_rekening": "10808030 SDN  15  TUMIJAJAR",
+        "saldo": 3960005004023,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "152",
+        "nama_rekening": "10808715 SDN  10  GU NUNG  AG UNG",
+        "saldo": 3940005005224,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "153",
+        "nama_rekening": "10808715 SDN  16  GUNU NG AGUNG",
+        "saldo": 3940005006952,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "154",
+        "nama_rekening": "1O8O9O87  SDN  16  TULANG  BAWANG  TENGAH",
+        "saldo": 3960005002625,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "155",
+        "nama_rekening": "10809651 SDN  l6  TULANG  BAWANG  UDI K",
+        "saldo": 39650299,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "156",
+        "nama_rekening": "10808117  SDN  16  TUM IJAJAR",
+        "saldo": 3960005002632,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "157",
+        "nama_rekening": "10808117 SDN  16 TUMIJAJAR",
+        "saldo": 3960005003699,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "158",
+        "nama_rekening": "10809625 SDN  17  GUNUNG  AGUNG",
+        "saldo": 394050597,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "159",
+        "nama_rekening": "10809693 SDN  17  TULANG  BAWANG  TENGAH",
+        "saldo": 4140005000115,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "160",
+        "nama_rekening": "10809680 SDN  17  TULANG  BAWANG  UDIK",
+        "saldo": 3960005003046,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "161",
+        "nama_rekening": "10808152 SDN  17  TUMIJAJAR",
+        "saldo": 3960005002600,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "162",
+        "nama_rekening": "10808152 SDN  17 TUMIJAJAR",
+        "saldo": 3960005004276,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "163",
+        "nama_rekening": "10809668 SDN  18  GUNUNG  AGUNG",
+        "saldo": 3940005001183,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "164",
+        "nama_rekening": "1O808O7O  SDN  18  TULANG  BAWANG  TENGAH",
+        "saldo": 4140005000075,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "165",
+        "nama_rekening": "10808625 SDN  18 TULANG  BAWANG  UDIK",
+        "saldo": 39650032,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "166",
+        "nama_rekening": "10808643 SDN  18  TUMIJAJAR",
+        "saldo": 3960005008617,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "167",
+        "nama_rekening": "10808043 SDN  18 TUMIJAJAR",
+        "saldo": 3905094251,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "168",
+        "nama_rekening": "10810370  SDN  19  GUNUNG  AGUNG",
+        "saldo": 3940005005241,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "169",
+        "nama_rekening": "1O8O9O 11  SDN  19  TULANG  BAWANG TENGAH",
+        "saldo": 3960005002798,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "170",
+        "nama_rekening": "10809603 SDN  19 TULANG  BAWANG  VDIK",
+        "saldo": 396003166,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "171",
+        "nama_rekening": "10809608 SDN  19 TUMIJAJAR",
+        "saldo": 396000500302,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "172",
+        "nama_rekening": "108O87OO  SDN  1 BATU  PUTI H",
+        "saldo": 3940005005120,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "173",
+        "nama_rekening": "1O8086SO  SDN  l  GUNUNG  AGU NG",
+        "saldo": 3940005005018,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "174",
+        "nama_rekening": "10808614 SDN  1  GUNU NG TERANG",
+        "saldo": 3880005008843,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "175",
+        "nama_rekening": "10808642 SDN  1  LAMBU  KIBANG",
+        "saldo": 3940005005328,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "176",
+        "nama_rekening": "10808674 SDN  lPAGARDEWA",
+        "saldo": 3880005008851,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "177",
+        "nama_rekening": "1O8O8O76  SDN  1 TULANG  BAWANG TENGAH",
+        "saldo": 4140005000355,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "178",
+        "nama_rekening": "1O8O8OO7  SDN  1 TULANG  BAWANG  UDIK",
+        "saldo": 4140005000202,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "179",
+        "nama_rekening": "10808071 SDN  1 TUMIJAJAR",
+        "saldo": 395318,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "180",
+        "nama_rekening": "10808562 SDN  1 WAY  KENANGA",
+        "saldo": 394505117,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "181",
+        "nama_rekening": "10808562  SDN  1 WAY  KENANGA",
+        "saldo": 39653945,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "182",
+        "nama_rekening": "10808749  SDN 20  GUNUNG  AGUNG",
+        "saldo": 39456375,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "183",
+        "nama_rekening": "10809616  SDN  10  BATU  PUTI H",
+        "saldo": 3940005006935,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "184",
+        "nama_rekening": "10809659  SDN 20 TULANG  BAWANG  TENGAH",
+        "saldo": 3960005003171,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "185",
+        "nama_rekening": "1O8O9O 53  SDN  20  TULANG  BAWANG  UDIK",
+        "saldo": 3960002545,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "186",
+        "nama_rekening": "10809655 SDN  '20 TUM IJAJAR",
+        "saldo": 3960005002773,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "187",
+        "nama_rekening": "10809683 SDN  21  TULANG  BAWANG  TE NGAH",
+        "saldo": 3960502962,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "188",
+        "nama_rekening": "10808610 SDN  21  TULANG  BAWANG  UDIK",
+        "saldo": 41450162,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "189",
+        "nama_rekening": "10808610 SDN  21  TULANG  BAWANG  U DIK",
+        "saldo": 4140005000629,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "190",
+        "nama_rekening": "10808594  SDN  21  TUM IJAJAR",
+        "saldo": 3960005002809,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "191",
+        "nama_rekening": "10808594  SDN  '21 TUM IJAJAR",
+        "saldo": 3960005003739,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "192",
+        "nama_rekening": "1080969 I  SDN  '22 TU LANG  BAWANG  TENGAH",
+        "saldo": 4140005000342,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "193",
+        "nama_rekening": "10810625 SDN  22  TULANG  BAWANG  UDIK",
+        "saldo": 3960005002751,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "194",
+        "nama_rekening": "10808792  SDN  22  TUM IJAJAR",
+        "saldo": 3960005002906,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "195",
+        "nama_rekening": "10809094  SDN  23  TULANG  BAWANG  TE NGA H",
+        "saldo": 3960005003108,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "196",
+        "nama_rekening": "10809046  SDN  23  TUMIJAJAR",
+        "saldo": 3960005002696,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "197",
+        "nama_rekening": "10808608 SDN  24  TULANG  BAWANG  TE NGA H",
+        "saldo": 3960005002704,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "198",
+        "nama_rekening": "10809677  SDN  24  TUMIJAJAR",
+        "saldo": 3960005003138,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "199",
+        "nama_rekening": "10808041 SDN  25  TULANG  BAWANG  TE NGA H",
+        "saldo": 3960005002577,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "200",
+        "nama_rekening": "69838554  SDN  25  TUM IJAJAR",
+        "saldo": 3960005002824,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "201",
+        "nama_rekening": "10808119 SDN 26  TULANG  BAWANG  TENGAH",
+        "saldo": 3960005002653,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "202",
+        "nama_rekening": "10808119 SDN 26  TU LANG  BAWANG  TENGAH",
+        "saldo": 3960304202726,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "203",
+        "nama_rekening": "10808119 SDN  26  TULANG  BAWANG  TENGAH",
+        "saldo": 3960005004323,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "204",
+        "nama_rekening": "10809027 SDN  '26 TUMIJAJAR",
+        "saldo": 3960005003083,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "205",
+        "nama_rekening": "10808153 SDN  27  TULANG  BAWANG  TE NGAH",
+        "saldo": 3960005002557,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "206",
+        "nama_rekening": "10808179 SDN 27  TUMIJAJAR",
+        "saldo": 396399,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "207",
+        "nama_rekening": "10808179  SDN  '27 TUM IJAJAR",
+        "saldo": 3960005003640,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "208",
+        "nama_rekening": "10808164 SDN  28 TULANG  BAWANG  TENGAH",
+        "saldo": 39652894,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "209",
+        "nama_rekening": "10808164  SDN  28  TULANG  BAWANG TENGAH",
+        "saldo": 3960005003771,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "210",
+        "nama_rekening": "10808169  SDN  29  TU LANG  BAWANG  TENGAH",
+        "saldo": 3960005002813,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "211",
+        "nama_rekening": "108081O9 SDN  29  TU LANG  BAWANG  TE NGA H",
+        "saldo": 39650368,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "212",
+        "nama_rekening": "10808648 SDN  2 BATU  PUTI H",
+        "saldo": 39405549,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "213",
+        "nama_rekening": "10808035 SDN  2 GUNUNG  AGU NG",
+        "saldo": 394055238,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "214",
+        "nama_rekening": "10808062  SDN  2  GUNUNG TERANG",
+        "saldo": 4140005000251,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "215",
+        "nama_rekening": "10808062  SDN  2  GUNUNG TERANG",
+        "saldo": 3960005003825,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "216",
+        "nama_rekening": "10809924  SDN  2  LAMBU  KIBANG",
+        "saldo": 3940005005137,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "217",
+        "nama_rekening": "10809613 SDN  2  PAGAR  DEWA",
+        "saldo": 3960005002888,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "218",
+        "nama_rekening": "10809614 SDN  2 TU LANG  BAWANG  TE NGAH",
+        "saldo": 3960348129,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "219",
+        "nama_rekening": "10809594  SDN 2 TULANG  BAWANG  UDIK",
+        "saldo": 3960005002934,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "220",
+        "nama_rekening": "1 O8O9O 12  SDN  2 TUMIJAJAR",
+        "saldo": 3960005003004,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "221",
+        "nama_rekening": "10808771 SDN  2  WAY  KENANGA",
+        "saldo": 3940005005024,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "222",
+        "nama_rekening": "10808771 SDN  2 WAY  KENANGA",
+        "saldo": 3940050683,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "223",
+        "nama_rekening": "10809695 SDN  30  TU LANG  BAWANG  TENGA H",
+        "saldo": 3960005002871,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "224",
+        "nama_rekening": "10808589 SDN 3 1 TULANG  BAWANG  TENGAH",
+        "saldo": 4140005000183,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "225",
+        "nama_rekening": "10808589  SDN  3 1 TULANG  BAWANG  TENGAH",
+        "saldo": 4140005000657,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "226",
+        "nama_rekening": "10808786  SDN  32  TULANG  BAWANG  TENGAH",
+        "saldo": 3960005002592,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "227",
+        "nama_rekening": "1O8O9O44  SDN  33  TULANG  BAWANG  TENGAH",
+        "saldo": 3960005002866,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "228",
+        "nama_rekening": "10809675 SDN  34  TU LANG  BAWANG  TENGAH",
+        "saldo": 4140005000307,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "229",
+        "nama_rekening": "10809689  SDN  35  TULANG  BAWANG  TENGAH",
+        "saldo": 3960005002975,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "230",
+        "nama_rekening": "10808677  SDN  36  TULANG  BAWANG  TENGAH",
+        "saldo": 3960005002841,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "231",
+        "nama_rekening": "1O8O9O 15  SDN  37  TULANG  BAWANG  TENGAH",
+        "saldo": 4140005000179,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "232",
+        "nama_rekening": "1O8O9O 15  SDN  37  TULANG  BAWANG  TENGAH",
+        "saldo": 3960005004314,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "233",
+        "nama_rekening": "10808124 SDN  38  TULANG  BAWANG  TENGAH",
+        "saldo": 4140005000315,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "234",
+        "nama_rekening": "10808124  SDN  38  TU LANG  BAWANG  TE NGAH",
+        "saldo": 4140005000645,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "235",
+        "nama_rekening": "10809684  SDN  39  TULANG  BAWANG  TENGAH",
+        "saldo": 445002,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "236",
+        "nama_rekening": "10808033 SDN 5  BATU  PUTIH",
+        "saldo": 394053447,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "237",
+        "nama_rekening": "10808033 SDN  3  BATU  PUTI H",
+        "saldo": 3940304033831,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "238",
+        "nama_rekening": "10808033 SDN 3  BATU  PUTIH",
+        "saldo": 3960005003853,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "239",
+        "nama_rekening": "10808564  SDN  3  GUNU NG AGUNG",
+        "saldo": 3940005005001,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "240",
+        "nama_rekening": "10808504  SDN  3  GUNUNG  AGUNG",
+        "saldo": 3960005003800,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "241",
+        "nama_rekening": "10809616  SDN  10  BATU  PUTI H",
+        "saldo": 4140005000248,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "242",
+        "nama_rekening": "1O8O8O37  SDN 3  LAMBU  KIBANG",
+        "saldo": 39400012,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "243",
+        "nama_rekening": "10808007  SDN  3  LAMBU  KIBANG",
+        "saldo": 3940005006908,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "244",
+        "nama_rekening": "1O8085iS8  SDN  3  PAGAR  DEWA",
+        "saldo": 3940005006563,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "245",
+        "nama_rekening": "10808558 SDN  3  PAGAR  DEWA",
+        "saldo": 3960005003936,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "246",
+        "nama_rekening": "1O8O8O6O  SDN  3 TULANG  BAWANG  TENGAH",
+        "saldo": 3960005002664,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "247",
+        "nama_rekening": "10808024  SDN 3 TULANG  BAWANG  UDIK",
+        "saldo": 3960005002585,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "248",
+        "nama_rekening": "10809660 SDN  3  TU MIJAJAR",
+        "saldo": 3960005002928,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "249",
+        "nama_rekening": "1O808OO 1  SDN  3  WAY  KENANGA",
+        "saldo": 3940005005105,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "250",
+        "nama_rekening": "10808661 SDN 3  WAY  KENANGA",
+        "saldo": 3940005006910,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "251",
+        "nama_rekening": "lO809692SDN 40  TULANG  BAWANG  TEN GAH",
+        "saldo": 4140503,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "252",
+        "nama_rekening": "1O8O87O 1  SDN  4 1 TULANG  BAWANG  TENGAH",
+        "saldo": 3960005002856,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "253",
+        "nama_rekening": "10808710 SDN  42  TU LANG  BAWANG  TENGAH",
+        "saldo": 4140005000339,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "254",
+        "nama_rekening": "10808744  SDN  4  BATU  PUTI H",
+        "saldo": 3940005005184,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "255",
+        "nama_rekening": "10808772  SDN  4  GUNUNG  AGUNG",
+        "saldo": 3940005001179,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "256",
+        "nama_rekening": "10808701 SDN  4  GUNUNG  TERANG",
+        "saldo": 3940005003465,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "257",
+        "nama_rekening": "1O8O8O06  SDN  4  LAMBU  KIBANG",
+        "saldo": 3940005001016,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "258",
+        "nama_rekening": "10808636  SDN  4  LAMBU  KIBANG",
+        "saldo": 3940005006828,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "259",
+        "nama_rekening": "69892758SDN 4  PAGAR  DEWA",
+        "saldo": 3940005003769,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "260",
+        "nama_rekening": "lO808693SDN 4 TULANG  BAWANG  TENGAH",
+        "saldo": 4140005000299,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "261",
+        "nama_rekening": "10809602  SDN  4 TULANG  BAWANG  UDIK",
+        "saldo": 3960052943,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "262",
+        "nama_rekening": "10808593 SDN  4 TUMIJAJAR",
+        "saldo": 3960005002784,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "263",
+        "nama_rekening": "10808593 SDN  4 TU MIJAJAR",
+        "saldo": 3960503745,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "264",
+        "nama_rekening": "10808673 SDN  4 WAY  KENANGA",
+        "saldo": 3940005004989,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "265",
+        "nama_rekening": "10808673 SDN  4  WAY  KENANGA",
+        "saldo": 3940304028097,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "266",
+        "nama_rekening": "10809635 SDN  5  BATU  PUTI H",
+        "saldo": 1140005000275,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "267",
+        "nama_rekening": "10809635 SDN  5  BATU  PUTI H",
+        "saldo": 3940005006885,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "268",
+        "nama_rekening": "10808750 SDN  5  GUNUNG  AGUNG",
+        "saldo": 394050519,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "269",
+        "nama_rekening": "10809597 SDN 5  GUNUN G TERANG",
+        "saldo": 3940005001117,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "270",
+        "nama_rekening": "10809005 SDN  5  LAMBU  KIBANG",
+        "saldo": 3940005005306,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "271",
+        "nama_rekening": "1O808O5O  SDN  5 TULANG  BAWANG TENGAH",
+        "saldo": 4140005000282,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "272",
+        "nama_rekening": "10808056  SDN  5 TULANG  BAWANG  TENGAH",
+        "saldo": 3960005004072,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "273",
+        "nama_rekening": "10809616  SDN  10  BATU  PUTI H",
+        "saldo": 3960005002911,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "274",
+        "nama_rekening": "10808791 SDN  5 TUMIJAJAR",
+        "saldo": 3960005002736,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "275",
+        "nama_rekening": "10804273 SDN  5 WAY  KENANGA",
+        "saldo": 3940005004993,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "276",
+        "nama_rekening": "10804273 SDN  5 WAY  KENANGA",
+        "saldo": 3960005003878,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "277",
+        "nama_rekening": "10808 I3O  SDN 6  BATU  PUTI H",
+        "saldo": 394005387,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "278",
+        "nama_rekening": "10808136 SDN 6  BATU  PUTI H",
+        "saldo": 3960005003864,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "279",
+        "nama_rekening": "10809030  SDN  6  GUNUNG  AGU NG",
+        "saldo": 3940005005455,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "280",
+        "nama_rekening": "10809648 SDN  6  GUNUNG TERANG",
+        "saldo": 3940005005065,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "281",
+        "nama_rekening": "1080861'2 SDN  O  LAMBU  KIBANG",
+        "saldo": 3940005005343,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "282",
+        "nama_rekening": "10808612 SDN  6  LAMBU  KIBANG",
+        "saldo": 396000500392,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "283",
+        "nama_rekening": "10808694 SDN  O TULANG  BAWANG TE NGAH",
+        "saldo": 4140005000127,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "284",
+        "nama_rekening": "1O8O9O81  SDN  6  TULANG  BAWANG  UDIK",
+        "saldo": 396503216,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "285",
+        "nama_rekening": "10809645 SDN  O TUM IJAJAR",
+        "saldo": 39653194,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "286",
+        "nama_rekening": "1O8O87O8  SDN 6  WAY  KENANGA",
+        "saldo": 3945552,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "287",
+        "nama_rekening": "69775301 SDN  7  BATU  PUTI H",
+        "saldo": 3940005005077,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "288",
+        "nama_rekening": "1O8O9O72  SDN  7 GUNUNG  AGU NG",
+        "saldo": 3940005005188,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "289",
+        "nama_rekening": "10808147 SDN  7  GUNU NG TERANG",
+        "saldo": 3940005001120,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "290",
+        "nama_rekening": "10809682  SDN  7  LAMBU  KIBANG",
+        "saldo": 3940005005495,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "291",
+        "nama_rekening": "10809618 SDN  7 TULANG  BAWANG  TENGAH",
+        "saldo": 39054385,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "292",
+        "nama_rekening": "10809618 SDN  7 TULANG  BAWANG  TENGAH",
+        "saldo": 4140301027097,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "293",
+        "nama_rekening": "10809618 SDN  7 TULANG  BAWANG  TENGAH",
+        "saldo": 4140005000322,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "294",
+        "nama_rekening": "108O8O2O  SDN  7 TULANG  BAWANG  UDIK",
+        "saldo": 3960005002746,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "295",
+        "nama_rekening": "1O8O8O26  SDN  7 TULANG  BAWANG  UDIK",
+        "saldo": 39600445,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "296",
+        "nama_rekening": "1O8O9O7O  SDN  7 TUM IJAJAR",
+        "saldo": 3960005002959,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "297",
+        "nama_rekening": "10809643 SDN 7  WAY  KENANGA",
+        "saldo": 39405539,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "298",
+        "nama_rekening": "10808032  SDN 8  BATU  PUTI H",
+        "saldo": 3940005005152,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "299",
+        "nama_rekening": "10808032  SDN 8  BATU  PUTI H",
+        "saldo": 3960005003849,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "300",
+        "nama_rekening": "1O8O86O9  SDN 8  GUNUNG  AGU NG",
+        "saldo": 3940005005430,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "301",
+        "nama_rekening": "10808743 SDN 8  GUNUNG  TERANG",
+        "saldo": 414234,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "302",
+        "nama_rekening": "10808725 SDN 8  LAMBU  KIBANG",
+        "saldo": 3940005001534,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "303",
+        "nama_rekening": "108081'26  UPT SDN 8 TULANG  BAWANG TENGAH",
+        "saldo": 4140005000090,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "304",
+        "nama_rekening": "1080812O  UPT SDN 8 TULANG  BAWANG  TENGAH",
+        "saldo": 4140511,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "305",
+        "nama_rekening": "10808017 SDN 8 TULANG  BAWANG  UDIK",
+        "saldo": 3960005002768,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "306",
+        "nama_rekening": "10810724 SDN 8 TUMIJAJAR",
+        "saldo": 3960005003114,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "307",
+        "nama_rekening": "10808621 SDN 8  WAY  KENANGA",
+        "saldo": 3940005005311,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "308",
+        "nama_rekening": "10808621 SDN 8  WAY  KENANGA",
+        "saldo": 3960005003896,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "309",
+        "nama_rekening": "10808680 SDN 9  BATU  PUTIH",
+        "saldo": 4140005000223,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "310",
+        "nama_rekening": "10809610 SDN 9  GUNUNG  AGUNG",
+        "saldo": 3940005005503,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "311",
+        "nama_rekening": "10808084 SDN 9  GUNUNG  TERANG",
+        "saldo": 3880005008836,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "312",
+        "nama_rekening": "10808084 SDN 9  GUNUNG  TERANG",
+        "saldo": 3960005003832,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "313",
+        "nama_rekening": "10808612 SDN 9  LAMBU  KIBANG",
+        "saldo": 3940005005173,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "314",
+        "nama_rekening": "10808612 SDN 9  LAMBU  KIBANG",
+        "saldo": 3960005003921,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "315",
+        "nama_rekening": "10808695 SDN 9 TULANG  BAWANG TENGAH",
+        "saldo": 3960005002681,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "316",
+        "nama_rekening": "10808755 SDN 9 TULANG  BAWANG  UDIK",
+        "saldo": 3960005002560,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "317",
+        "nama_rekening": "10808755 SDN 9 TULANG  BAWANG  UDIK",
+        "saldo": 3960005004299,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "318",
+        "nama_rekening": "10808592 SDN 9 TUMIJAJAR",
+        "saldo": 396052678,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "319",
+        "nama_rekening": "10808045 SDN 9  WAY  KENANGA",
+        "saldo": 3940005001523,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "320",
+        "nama_rekening": "10809840  SMPN  10 TU LANG  BAWAN G  BA RAT",
+        "saldo": 3965349,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "321",
+        "nama_rekening": "10809616  SDN  10  BATU  PUTI H",
+        "saldo": 3952435,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "323",
+        "nama_rekening": "10809235 SMPN  12 TU LANG  BAWANG  BARAT",
+        "saldo": 3960005004069,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "324",
+        "nama_rekening": "10808375 SMPN  13  TU LANG  BAWANG  BARAT",
+        "saldo": 3940005004859,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "325",
+        "nama_rekening": "10808375 SMPN       TU LANG  BAWAN G  BARAT",
+        "saldo": 3940589,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "326",
+        "nama_rekening": "10809848 SMPN  14  TU LANG  BAWAN G  BARAT",
+        "saldo": 3960005002410,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "327",
+        "nama_rekening": "10809848 SMPN  14  TU LANG  BAWANG  BARAT",
+        "saldo": 3940506927,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "328",
+        "nama_rekening": "10809852  SMPN  15  TU LANG  BAWAN G  BARAT",
+        "saldo": 3960050259,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "329",
+        "nama_rekening": "10808394  SMPN  16  TU LANG  BAWAN G  BARAT",
+        "saldo": 388058822,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "331",
+        "nama_rekening": "10809847 SMPN 17  TULANG  BAWANG  BARAT",
+        "saldo": 39405492,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "333",
+        "nama_rekening": "10808407 SMPN  19  TU LANG  BAWANG  BARAT",
+        "saldo": 3940005004947,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "334",
+        "nama_rekening": "10808407  SMPN  19  TULANG  BAWANG  BARAT",
+        "saldo": 3940005006945,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "338",
+        "nama_rekening": "10804096  SMPN 20  TU LANG  BAWANG  BARAT",
+        "saldo": 3940005006969,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "339",
+        "nama_rekening": "10809221 SMPN  2 1 TULANG  BAWANG  BARAT",
+        "saldo": 3960005002362,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "340",
+        "nama_rekening": "10821999 SMPN  22  TULANG  BAWANG  BARAT",
+        "saldo": 396052425,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "341",
+        "nama_rekening": "10821999 SMPN  22  TULANG  BAWANG  BARAT",
+        "saldo": 3960005004307,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "342",
+        "nama_rekening": "108  14690 SMPN 23  TULANG  BAWANG  BARAT",
+        "saldo": 394000500352,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "343",
+        "nama_rekening": "69830099  SMPN  24  TULANG  BAWANG  BARAT",
+        "saldo": 3960005002387,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "347",
+        "nama_rekening": "69946004  SMPN  27  TU LANG  BAWANG  BARAT",
+        "saldo": 394054919,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "360",
+        "nama_rekening": "10809228 SMP  NEGERI 8 TULANG  BAWANG BARAT",
+        "saldo": 3960005002484,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "361",
+        "nama_rekening": "10809228 SMP  NEGERI  8 TULANG  BAWANG BARAT",
+        "saldo": 3960005003715,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "366",
+        "nama_rekening": "69787362  SMPN  SATU  ATAP 2 TULANG  BAWANG BARAT",
+        "saldo": 3954842,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "368",
+        "nama_rekening": "69759049  SMPN  SATU  ATAP 4 TULANG  BAWANG BARAT",
+        "saldo": 3940005001587,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "369",
+        "nama_rekening": "69787365 SMPN  SATU  ATAP 5 TULANG  BAWANG BARAT",
+        "saldo": 4140005000362,
+        "kategori": "sekolah"
+      },
+      {
+        "nomor_rekening": "370",
+        "nama_rekening": "69787363 SMPN  SATU  ATAP 6  TULANG  BAWANG BARAT",
+        "saldo": 3940005003455,
+        "kategori": "sekolah"
+      }
+    ]
+  }
 ]

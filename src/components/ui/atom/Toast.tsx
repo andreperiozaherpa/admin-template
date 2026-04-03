@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Alert, AlertVariant } from "./Alert";
 
@@ -27,15 +27,14 @@ export const Toast = ({
     onClose,
     position = "top-right"
 }: ToastProps) => {
-    const [mounted, setMounted] = useState(false);
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
-        setMounted(true);
-        const timer = setTimeout(() => onClose(id), duration);
-        return () => clearTimeout(timer);
+        timerRef.current = setTimeout(() => onClose(id), duration);
+        return () => {
+            if (timerRef.current) clearTimeout(timerRef.current);
+        };
     }, [id, duration, onClose]);
-
-    if (!mounted) return null;
 
     // Konfigurasi arah animasi berdasarkan posisi
     const variants = {

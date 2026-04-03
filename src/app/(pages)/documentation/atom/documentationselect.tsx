@@ -182,7 +182,7 @@ isLoading  : boolean (loading state)
                                 </li>
                                 <li className="flex gap-2">
                                     <div className="w-1 h-1 rounded-full bg-primary-base mt-1.5 shrink-0" />
-                                    <span>**A11y**: Mendukung `role="combobox"` dan `aria-expanded`.</span>
+                                    <span>**A11y**: Mendukung `role=&quot;combobox&quot;` dan `aria-expanded`.</span>
                                 </li>
                                 <li className="flex gap-2">
                                     <div className="w-1 h-1 rounded-full bg-primary-base mt-1.5 shrink-0" />
