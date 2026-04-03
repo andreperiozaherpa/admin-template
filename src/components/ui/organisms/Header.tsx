@@ -27,9 +27,7 @@ const GLOBAL_QUICK_ACCESS = [
 ];
 
 const INITIAL_NOTIFICATIONS = [
-    { id: 1, type: "info", title: "Quantum Sync", message: "Protokol sinkronisasi berhasil.", time: "2m ago", isRead: false },
-    { id: 2, type: "warning", title: "Security Alert", message: "Upaya akses terdeteksi di Terminal 04.", time: "15m ago", isRead: true },
-    { id: 3, type: "success", title: "Update Ready", message: "Versi 2.0.26 tersedia untuk diinstal.", time: "1h ago", isRead: false },
+    { id: 1, type: "info", title: "", message: "", time: "2m ago", isRead: true },
 ];
 
 export const Header = () => {
@@ -92,7 +90,7 @@ export const Header = () => {
                                 style={{ boxShadow: 'var(--success-glow)' }}
                                 className="w-1.5 h-1.5 rounded-full bg-success-base animate-pulse"
                             />
-                            <span className="hidden lg:inline">Sync Online</span>
+                            <span className="hidden lg:inline">Online</span>
                         </span>
                     </div>
 
@@ -144,7 +142,7 @@ export const Header = () => {
                                         className="absolute right-0 mt-4 w-72 md:w-80 bg-surface shadow-neumorph rounded-[var(--border-radius)] border border-white/5 overflow-hidden z-[125]"
                                     >
                                         <div className="p-4 border-b border-border-main/5 bg-surface-secondary/30 flex justify-between items-center">
-                                            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-text-primary italic">System Alerts</h3>
+                                            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-text-primary italic">Notifikasi</h3>
                                             <span className="px-2 py-0.5 rounded-full bg-[var(--theme-base)]/10 text-[var(--theme-base)] text-[8px] font-black uppercase tracking-tighter">
                                                 {notifs.filter(n => !n.isRead).length} New
                                             </span>
@@ -190,7 +188,7 @@ export const Header = () => {
                                                 onClick={markAllRead}
                                                 className="text-[9px] font-black uppercase tracking-widest text-[var(--theme-base)] hover:opacity-70 transition-opacity"
                                             >
-                                                Clear All Protocols
+                                                Clear All
                                             </button>
                                         </div>
                                     </motion.div>

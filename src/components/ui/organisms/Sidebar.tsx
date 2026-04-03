@@ -82,10 +82,10 @@ export const Sidebar = ({ menuItems }: { menuItems: any[] }) => {
                         </div>
                         <div className="flex flex-col justify-center">
                             <span className="text-[10px] font-bold tracking-[0.35em] leading-none mb-1.5 text-[var(--theme-base)]">
-                                GUWAY
+                                Tracking Keuangan
                             </span>
                             <h1 className="text-2xl font-black tracking-tighter text-text-primary leading-none uppercase">
-                                Tubaba
+                                BKAD Tubaba
                             </h1>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ export const Sidebar = ({ menuItems }: { menuItems: any[] }) => {
                 {/* SCROLLABLE CONTENT */}
                 <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-6">
                     <div className="px-3 flex justify-center w-full">
-                        <ThemeToggle />
+                        {/* <ThemeToggle /> */}
                     </div>
                     <div className="pb-6">
                         <NavMenu

@@ -229,7 +229,7 @@ export default function LoginPage() {
                 </form>
 
                 {/* Quick Login Buttons */}
-                <div className="mt-6 pt-6 border-t border-gray-100">
+                {/* <div className="mt-6 pt-6 border-t border-gray-100">
                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider text-center mb-4">Login Cepat (Demo)</p>
                     <div className="grid grid-cols-2 gap-3">
                         <button
@@ -253,10 +253,10 @@ export default function LoginPage() {
                             Login Bank
                         </button>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Social Login */}
-                <div className="mt-8">
+                {/* <div className="mt-8">
                     <div className="relative">
                         <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-gray-200"></div></div>
                         <div className="relative flex justify-center text-xs uppercase"><span className="bg-white px-3 text-gray-400 font-semibold tracking-wider">Atau masuk dengan</span></div>
@@ -267,7 +267,7 @@ export default function LoginPage() {
                             <span className="text-sm">Google Workspace</span>
                         </button>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="mt-8 text-center">
                     <p className="text-[10px] text-gray-400 font-medium">&copy; 2026 Sistem Informasi Keuangan Daerah v2.0</p>
