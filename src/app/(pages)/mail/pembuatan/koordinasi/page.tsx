@@ -16,7 +16,7 @@ import dynamic from 'next/dynamic';
 import {
     pembuatanService,
     WorkflowStep
-} from "@/services/surat/pembuatanService";
+} from "@/services/mailPembuatanService";
 
 // IMPORT PENTING: PDFDocument dari pdf-lib untuk memproses file
 import { PDFDocument } from "pdf-lib";

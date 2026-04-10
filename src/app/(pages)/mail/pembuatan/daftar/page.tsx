@@ -14,7 +14,7 @@ import {
 import { toast } from "sonner";
 
 // --- IMPORT SERVICE ---
-import { pembuatanService, DraftSurat } from "@/services/surat/pembuatanService";
+import { pembuatanService, DraftSurat } from "@/services/mailPembuatanService";
 
 export default function PembuatanSuratListPage() {
     const router = useRouter();

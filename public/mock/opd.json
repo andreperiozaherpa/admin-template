@@ -1,0 +1,30 @@
+[
+    {
+        "id": "OPD-001",
+        "nama": "Dinas Komunikasi dan Informatika",
+        "kode": "DISKOMINFO",
+        "alamat": "Jl. Merdeka No. 123",
+        "telepon": "08123456789",
+        "email": "diskominfo@example.go.id",
+        "website": "https://diskominfo.example.go.id",
+        "status": "active"
+    },
+    {
+        "id": "OPD-002",
+        "nama": "Sekretariat Daerah",
+        "kode": "SETDA",
+        "alamat": "Jl. Balaikota No. 1",
+        "telepon": "08987654321",
+        "email": "setda@example.go.id",
+        "status": "active"
+    },
+    {
+        "id": "OPD-003",
+        "nama": "Badan Kepegawaian Daerah",
+        "kode": "BKD",
+        "alamat": "Jl. Pendidikan No. 45",
+        "telepon": "08112233445",
+        "email": "bkd@example.go.id",
+        "status": "active"
+    }
+]

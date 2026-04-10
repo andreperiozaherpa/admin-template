@@ -16,7 +16,7 @@ import {
     distribusiService,
     OutgoingLetter,
     OpdTarget
-} from "@/services/surat/distribusiService";
+} from "@/services/mailDistribusiService";
 
 export default function DistribusiPage() {
     // --- STATE DATA (Dari Service) ---

@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 
 // --- IMPORT SERVICE ---
-import { pembuatanService, DraftSurat, KategoriSurat } from "@/services/surat/pembuatanService";
+import { pembuatanService, DraftSurat, KategoriSurat } from "@/services/mailPembuatanService";
 
 export default function SuratEditorPage() {
     const router = useRouter();

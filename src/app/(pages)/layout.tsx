@@ -2,43 +2,72 @@
 
 import React from "react";
 import { Sidebar, NavItem, Header, Footer } from "@/components/ui/Index";
-import { Layers, LayoutDashboard, Palette, Mail, FilePlus, Share2, Settings, MonitorCog } from "lucide-react";
+import { Layers, LayoutDashboard, Palette, Mail, FilePlus, Share2, Settings, MonitorCog, Building2, Users } from "lucide-react";
 
 // Menu Configuration
 const menuItems: NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   {
-    href: "/surat",
+    href: "/mail",
     label: "Surat",
     icon: Mail,
     children: [
       {
-        href: "/surat/pembuatan",
+        href: "/mail/pembuatan",
         label: "Pembuatan Surat",
         icon: FilePlus,
         children: [
-          { href: "/surat/pembuatan/daftar", label: "Daftar Surat" },
-          { href: "/surat/pembuatan/editor", label: "Pembuatan & Editor Surat" },
-          { href: "/surat/pembuatan/koordinasi", label: "Koordinasi & TTE" },
+          { href: "/mail/pembuatan/daftar", label: "Daftar Surat" },
+          { href: "/mail/pembuatan/editor", label: "Pembuatan & Editor Surat" },
+          { href: "/mail/pembuatan/koordinasi", label: "Koordinasi & TTE" },
         ]
       },
       {
-        href: "/surat/distribusi",
+        href: "/mail/distribusi",
         label: "Distribusi Surat",
         icon: Share2,
         children: [
-          { href: "/surat/distribusi/daftar", label: "Daftar Distribusi Surat" },
-          { href: "/surat/distribusi/masuk", label: "Registrasi Surat" },
-          { href: "/surat/distribusi/disposisi", label: "Surat Disposisi" },
+          { href: "/mail/distribusi/daftar", label: "Daftar Distribusi Surat" },
+          { href: "/mail/distribusi/masuk", label: "Registrasi Surat" },
+          { href: "/mail/distribusi/disposisi", label: "Surat Disposisi" },
         ]
       },
       {
-        href: "/surat/config",
+        href: "/mail/config",
         label: "Config",
         icon: MonitorCog,
         children: [
-          { href: "/surat/config/kategori", label: "Kategori" },
-          { href: "/surat/config/koordinasi", label: "List Paraf Koordinasi" },
+          { href: "/mail/config/kategori", label: "Kategori" },
+          { href: "/mail/config/koordinasi", label: "List Paraf Koordinasi" },
+        ]
+      }
+    ]
+  },
+  {
+    href: "/management",
+    label: "Manajemen",
+    icon: Building2,
+    children: [
+      {
+        href: "/management/user",
+        label: "Manajemen User",
+        icon: Users,
+        children: [
+          { href: "/management/user/list", label: "Daftar User" },
+          { href: "/management/user/roles", label: "Daftar Role" },
+          { href: "/management/user/rank", label: "Daftar Pangkat" },
+          { href: "/management/user/position", label: "Daftar Jabatan" },
+          { href: "/management/user/career_types", label: "Jenis Jabatan" },
+        ]
+      },
+      {
+        href: "/management/organization",
+        label: "Manajemen OPD",
+        icon: Building2,
+        children: [
+          { href: "/management/organization/list_opd", label: "Daftar OPD" },
+          { href: "/management/organization/list_uptd", label: "Daftar UPTD/Kantor" },
+          { href: "/management/organization/list_category", label: "Daftar Kategori" },
         ]
       }
     ]

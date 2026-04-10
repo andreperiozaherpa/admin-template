@@ -1,0 +1,44 @@
+[
+    {
+        "id": "USR-001",
+        "username": "admin",
+        "name": "Administrator Sistem",
+        "nip": "198001012000011001",
+        "email": "admin@example.com",
+        "role": "admin",
+        "pangkat": "Pembina Utama",
+        "golongan": "IV/e",
+        "jabatan": "Administrator Sistem",
+        "opdId": "OPD-001",
+        "status": "active",
+        "createdAt": "2024-01-01T08:00:00Z"
+    },
+    {
+        "id": "USR-002",
+        "username": "johndoe",
+        "name": "John Doe, S.Kom",
+        "nip": "199005052015031002",
+        "email": "johndoe@example.com",
+        "role": "user",
+        "pangkat": "Penata Muda",
+        "golongan": "III/a",
+        "jabatan": "Pranata Komputer",
+        "opdId": "OPD-001",
+        "status": "active",
+        "createdAt": "2024-02-15T09:30:00Z"
+    },
+    {
+        "id": "USR-003",
+        "username": "janedoe",
+        "name": "Jane Doe, M.T",
+        "nip": "198510102010122001",
+        "email": "janedoe@example.com",
+        "role": "operator",
+        "pangkat": "Penata Utama Muda",
+        "golongan": "IV/c",
+        "jabatan": "Kepala Bagian Umum",
+        "opdId": "OPD-002",
+        "status": "active",
+        "createdAt": "2024-03-10T11:00:00Z"
+    }
+]

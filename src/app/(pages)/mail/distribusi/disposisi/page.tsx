@@ -17,7 +17,7 @@ import {
     distribusiService,
     IncomingLetter,
     OrgNode
-} from "@/services/surat/distribusiService";
+} from "@/services/mailDistribusiService";
 
 export default function DisposisiPage() {
     // --- STATE DATA (Dari Service) ---

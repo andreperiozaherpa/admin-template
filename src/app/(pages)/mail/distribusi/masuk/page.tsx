@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import {
     distribusiService,
     IncomingLetter
-} from "@/services/surat/distribusiService";
+} from "@/services/mailDistribusiService";
 
 export default function RegistrasiMasukPage() {
     // --- STATE DATA (Dari Service) ---

@@ -3,7 +3,7 @@
 import {
   pembuatanService,
   DraftSurat,
-} from "@/services/surat/pembuatanService";
+} from "@/services/mailPembuatanService";
 
 // ==========================================
 // 1. DEFINISI TIPE DATA (INTERFACES)
